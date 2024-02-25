@@ -1,0 +1,9 @@
+﻿carnx_max_aptitude_difference_value = {
+	value = carnx_vanilla_max_aptitude_difference_value
+	min = carnx_agot_max_aptitude_difference_value
+}
+
+carnx_court_position_traits_character_value = {
+	value = carnx_vanilla_court_position_traits_character_value
+	min = carnx_agot_court_position_traits_character_value
+}

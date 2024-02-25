@@ -1,0 +1,4 @@
+﻿carnx_max_councillor_skill_difference_value = {
+	value = carnx_vanilla_max_councillor_skill_difference_value
+	min = carnx_agot_max_councillor_skill_difference_value
+}

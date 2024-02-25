@@ -1,0 +1,28 @@
+﻿l_english:
+ # Council positions
+ carnx_debug_msg_admiral_received: "$carnx_debug_prefix$: Admiral council position received"
+ carnx_debug_msg_admiral_revoked: "$carnx_debug_prefix$: Admiral council position revoked"
+ carnx_debug_msg_castellan_received: "$carnx_debug_prefix$: Castellan council position received"
+ carnx_debug_msg_castellan_revoked: "$carnx_debug_prefix$: Castellan council position revoked"
+
+ # Court positions
+ carnx_debug_msg_household_guard_received: "$carnx_debug_prefix$: Household Guard court position received"
+ carnx_debug_msg_household_guard_revoked: "$carnx_debug_prefix$: Household Guard court position revoked"
+ carnx_debug_msg_household_guard_invalidated: "$carnx_debug_prefix$: Household Guard court position invalidated"
+ carnx_debug_msg_gaoler_received: "$carnx_debug_prefix$: Gaoler court position received"
+ carnx_debug_msg_gaoler_revoked: "$carnx_debug_prefix$: Gaoler court position revoked"
+ carnx_debug_msg_gaoler_invalidated: "$carnx_debug_prefix$: Gaoler court position invalidated"
+ carnx_debug_msg_harbormaster_received: "$carnx_debug_prefix$: Harbormaster court position received"
+ carnx_debug_msg_harbormaster_revoked: "$carnx_debug_prefix$: Harbormaster court position revoked"
+ carnx_debug_msg_harbormaster_invalidated: "$carnx_debug_prefix$: Harbormaster court position invalidated"
+ carnx_debug_msg_master_at_arms_received: "$carnx_debug_prefix$: Master at Arms court position received"
+ carnx_debug_msg_master_at_arms_revoked: "$carnx_debug_prefix$: Master at Arms court position revoked"
+ carnx_debug_msg_master_at_arms_invalidated: "$carnx_debug_prefix$: Master at Arms court position invalidated"
+ carnx_debug_msg_court_smith_received: "$carnx_debug_prefix$: Court Smith court position received"
+ carnx_debug_msg_court_smith_revoked: "$carnx_debug_prefix$: Court Smith Guard court position revoked"
+ carnx_debug_msg_court_smith_invalidated: "$carnx_debug_prefix$: Court Smith court position invalidated"
+
+ # Adding courtiers
+ carnx_debug_msg_adding_courtier_nightswatch: "$carnx_debug_prefix$: Adding slave courtier nightswatch"
+ carnx_debug_msg_adding_courtier_silent_sister: "$carnx_debug_prefix$: Adding slave courtier silent_sister"
+ carnx_debug_msg_adding_courtier_wildling: "$carnx_debug_prefix$: Adding slave courtier wildling"

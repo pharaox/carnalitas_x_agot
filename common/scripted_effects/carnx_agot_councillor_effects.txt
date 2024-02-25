@@ -1,0 +1,35 @@
+﻿carnx_got_admiral_council_position_effect = {
+	got_council_position_effect = yes
+	carnx_got_council_position_opinion_effect = yes
+	if = {
+		limit = { has_trait = slave }
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_admiral_received }
+	}
+}
+
+carnx_fired_from_admiral_council_position_effect = {
+	fired_from_council_position_effect = yes
+	carnx_fired_from_council_position_opinion_effect = yes
+	if = {
+		limit = { has_trait = slave }
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_admiral_revoked }
+	}
+}
+
+carnx_got_castellan_council_position_effect = {
+	got_council_position_effect = yes
+	carnx_got_council_position_opinion_effect = yes
+	if = {
+		limit = { has_trait = slave }
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_castellan_received }
+	}
+}
+
+carnx_fired_from_castellan_council_position_effect = {
+	fired_from_council_position_effect = yes
+	carnx_fired_from_council_position_opinion_effect = yes
+	if = {
+		limit = { has_trait = slave }
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_castellan_revoked }
+	}
+}

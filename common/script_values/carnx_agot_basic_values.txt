@@ -1,0 +1,6 @@
+﻿# Aptitude thresholds
+carnx_household_guard_aptitude_threshold = 2 # average_effectiveness
+carnx_gaoler_aptitude_threshold = 2 # average_effectiveness
+carnx_harbormaster_aptitude_threshold = 2 # average_effectiveness
+carnx_master_at_arms_aptitude_threshold = 2 # average_effectiveness
+carnx_court_smith_aptitude_threshold = 2 # average_effectiveness

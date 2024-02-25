@@ -1,0 +1,25 @@
+﻿carnx_can_be_household_guard_trigger = {
+	is_capable_adult = yes
+	can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = $LIEGE$ }
+}
+
+carnx_can_be_gaoler_trigger = {
+	is_capable_adult = yes
+	NOT = { is_spouse_of = $LIEGE$ }
+	is_ruler = no
+}
+
+carnx_can_be_harbormaster_trigger = {
+	is_capable_adult = yes
+	NOT = { is_spouse_of = $LIEGE$ }
+}
+
+carnx_can_be_master_at_arms_trigger = {
+	is_capable_adult = yes
+	exists = $LIEGE$
+}
+
+carnx_can_be_court_smith_trigger = {
+	is_capable_adult = yes
+	NOT = { is_spouse_of = $LIEGE$ }
+}

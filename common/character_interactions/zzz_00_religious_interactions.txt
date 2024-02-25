@@ -1,0 +1,3 @@
+﻿#AGOT Disabled
+# ask_for_conversion_courtier_interaction = {
+# }

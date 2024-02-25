@@ -1,0 +1,31 @@
+﻿carnx_admiral_skill_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_admiral_trigger = { RULER = scope:liege }
+		}
+		value = martial
+		subtract = carnx_default_skill_threshold
+	}
+}
+
+carnx_castellan_skill_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_castellan_trigger = { RULER = scope:liege }
+		}
+		value = average_of_all_skills
+		subtract = carnx_default_skill_threshold
+	}
+}
+
+carnx_agot_max_councillor_skill_difference_value = {
+	value = 0
+	min = {
+		value = carnx_admiral_skill_difference_value
+		min = {
+			value = carnx_castellan_skill_difference_value
+		}
+	}
+}

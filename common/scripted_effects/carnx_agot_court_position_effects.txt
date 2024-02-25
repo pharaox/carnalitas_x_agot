@@ -1,0 +1,104 @@
+﻿# AGOT COURT POSITIONS
+
+# maester_court_position - No [special]
+# household_guard_court_position - Yes
+# septon_court_position - No [religious, special]
+# septa_court_position - No [religious, special]
+# gaoler_court_position - Yes
+# harbormaster_court_position - Yes* [ceremonial]
+# warden_of_the_north_court_position - No [vassal] [ceremonial] [title:IT]
+# warden_of_the_east_court_position - No [vassal] [ceremonial] [title:IT]
+# warden_of_the_west_court_position - No [vassal] [ceremonial] [title:IT]
+# warden_of_the_south_court_position - No [vassal] [ceremonial] [title:IT]
+# master_at_arms_court_position - Yes* [ceremonial]
+# court_smith_court_position - Yes
+# goldcloaks_court_position - No [title:KL]
+
+# CSR Court Positions
+
+# ?
+
+# HOUSELHOD GUARD
+
+carnx_agot_household_guard_title_accepted_effect = {
+	agot_household_guard_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = household_guard }
+}
+
+carnx_agot_household_guard_title_revoked_effect = {
+	agot_household_guard_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = household_guard }
+}
+
+carnx_agot_household_guard_title_invalidated_effect = {
+	agot_household_guard_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = household_guard }
+}
+
+# GAOLER
+
+carnx_agot_gaoler_title_accepted_effect = {
+	agot_gaoler_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = gaoler }
+}
+
+carnx_agot_gaoler_title_revoked_effect = {
+	agot_gaoler_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = gaoler }
+}
+
+carnx_agot_gaoler_title_invalidated_effect = {
+	agot_gaoler_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = gaoler }
+}
+
+# HARBORMASTER
+
+carnx_agot_harbormaster_title_accepted_effect = {
+	agot_harbormaster_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = harbormaster }
+}
+
+carnx_agot_harbormaster_title_revoked_effect = {
+	agot_harbormaster_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = harbormaster }
+}
+
+carnx_agot_harbormaster_title_invalidated_effect = {
+	agot_harbormaster_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = harbormaster }
+}
+
+# MASTER AT ARMS
+
+carnx_agot_master_at_arms_title_accepted_effect = {
+	agot_master_at_arms_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = master_at_arms }
+}
+
+carnx_agot_master_at_arms_title_revoked_effect = {
+	agot_master_at_arms_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = master_at_arms }
+}
+
+carnx_agot_master_at_arms_title_invalidated_effect = {
+	agot_master_at_arms_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = master_at_arms }
+}
+
+# COURT SMITH
+
+carnx_agot_court_smith_title_accepted_effect = {
+	agot_court_smith_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = court_smith }
+}
+
+carnx_agot_court_smith_title_revoked_effect = {
+	agot_court_smith_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = court_smith }
+}
+
+carnx_agot_court_smith_title_invalidated_effect = {
+	agot_court_smith_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = court_smith }
+}

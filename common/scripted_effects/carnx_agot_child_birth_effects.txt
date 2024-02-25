@@ -1,0 +1,57 @@
+﻿carnx_agot_child_birth_dynasty_effect = {
+	carnx_agot_child_birth_update_dynasty_perk_traits_effect = yes
+	carnx_agot_child_birth_update_magic_traits_effect = yes
+}
+
+carnx_agot_child_birth_faith_effect = {
+	carnx_agot_child_birth_update_magic_traits_effect = yes
+}
+
+carnx_agot_child_birth_culture_effect = {
+	carnx_agot_child_birth_update_magic_traits_effect = yes
+}
+
+carnx_agot_child_birth_update_dynasty_perk_traits_effect = {
+	# Remove existing dynasty perk traits
+	if = {
+		limit = {
+			scope:dynasty ?= { has_dynasty_perk = umber_legacy_1 }
+			has_trait = physique_good_1
+		}
+		remove_trait = physique_good_1
+	}
+	if = {
+		limit = {
+			scope:dynasty ?= { has_dynasty_perk = borrell_legacy_1 }
+			has_trait = the_mark
+		}
+		remove_trait = the_mark
+	}
+
+	# Add new dynasty perk traits
+	agot_birth_dynasty_effect = yes
+}
+
+carnx_agot_child_birth_update_magic_traits_effect = {
+	# Only update magic traits once
+	if = {
+		limit = {
+			NOT = { has_character_flag = carnx_agot_magic_traits_updated }
+		}
+
+		# Remove existing magic traits
+		if = {
+			limit = { has_character_flag = dragon_dreams }
+			remove_character_flag = dragon_dreams
+		}
+		if = {
+			limit = { has_character_flag = greensight }
+			remove_character_flag = greensight
+		}
+
+		# Add new magic traits
+		agot_birth_magic_traits_effect = yes
+
+		add_character_flag = carnx_agot_magic_traits_updated
+	}
+}

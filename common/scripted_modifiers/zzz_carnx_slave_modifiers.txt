@@ -1,0 +1,372 @@
+﻿carnx_lacking_councillors_modifier = {
+	first_valid = {
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = chancellor
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_chancellor_reason
+		}
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = marshal
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_marshal_reason
+		}
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = steward
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_steward_reason
+		}
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = spymaster
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_spymaster_reason
+		}
+		# AGOT
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = admiral
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_admiral_reason
+		}
+		modifier = {
+			carnx_has_max_councillor_skill_difference_trigger = {
+				NAME = castellan
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_councillor_skill_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_castellan_reason
+		}
+	}
+}
+
+carnx_lacking_court_positions_modifier = {
+	first_valid = {
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_physician
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_physician_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = antiquarian
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_antiquarian_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_gardener
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_gardener_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = wet_nurse
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_wet_nurse_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_tutor
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_tutor_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = food_taster
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_food_taster_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = seneschal
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_seneschal_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = cupbearer
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_cupbearer_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = chief_eunuch
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_chief_eunuch_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_jester
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_jester_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_poet
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_poet_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_musician
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_musician_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = bodyguard
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_bodyguard_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = champion
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_champion_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = executioner
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_executioner_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = master_assassin
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_master_assassin_reason
+		}
+		# CSR
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = slave_concubine
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_slave_concubine_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = slave_captain
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_slave_captain_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = slave_eunuch
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_slave_eunuch_reason
+		}
+		# AGOT
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = household_guard
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_household_guard_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = gaoler
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_gaoler_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = harbormaster
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_harbormaster_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = master_at_arms
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_master_at_arms_reason
+		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = court_smith
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_court_smith_reason
+		}
+	}
+}

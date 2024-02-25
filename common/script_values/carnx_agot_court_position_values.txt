@@ -1,0 +1,192 @@
+﻿# Salaries
+
+carnx_court_position_household_guard_salary = {
+	value = minor_court_position_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = household_guard_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
+carnx_court_position_gaoler_salary = {
+	value = minor_court_position_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = gaoler_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
+carnx_court_position_harbormaster_salary = {
+	value = minor_court_position_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = harbormaster_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
+carnx_court_position_master_at_arms_salary = {
+	value = minor_court_position_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = master_at_arms_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
+carnx_court_position_court_smith_salary = {
+	value = court_position_court_smith_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = court_smith_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
+# Aptitude differences
+
+carnx_household_guard_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_household_guard_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:household_guard_court_position
+		subtract = carnx_household_guard_aptitude_threshold
+	}
+}
+
+carnx_gaoler_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_gaoler_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:gaoler_court_position
+		subtract = carnx_gaoler_aptitude_threshold
+	}
+}
+
+carnx_harbormaster_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_harbormaster_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:harbormaster_court_position
+		subtract = carnx_harbormaster_aptitude_threshold
+	}
+}
+
+carnx_master_at_arms_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_master_at_arms_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:master_at_arms_court_position
+		subtract = carnx_master_at_arms_aptitude_threshold
+	}
+}
+
+carnx_court_smith_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_court_smith_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:court_smith_court_position
+		subtract = carnx_court_smith_aptitude_threshold
+	}
+}
+
+carnx_agot_max_aptitude_difference_value = {
+	value = 0
+	min = {
+		value = carnx_household_guard_aptitude_difference_value
+		min = {
+			value = carnx_gaoler_aptitude_difference_value
+			min = {
+				value = carnx_harbormaster_aptitude_difference_value
+				min = {
+					value = carnx_master_at_arms_aptitude_difference_value
+					min = {
+						value = carnx_court_smith_aptitude_difference_value
+					}
+				}
+			}
+		}
+	}
+}
+
+# Desired positions
+
+carnx_number_of_desired_harbormasters = {
+	value = 0
+}
+
+carnx_number_of_desired_masters_at_arms = {
+	value = 0
+}
+
+# Traits character value
+
+carnx_agot_court_position_traits_character_value = {
+	value = 0
+	if = {
+		limit = { # 40
+			OR = {
+				has_trait = torturer # Gaoler
+			}
+		}
+		add = 4
+	}
+	else_if = {
+		limit = { # 30
+			OR = {
+				has_completed_inspiration = yes # Court Smith
+			}
+		}
+		add = 3
+	}
+	else_if = { # 15-20
+		limit = {
+			OR = {
+				has_trait = authoritative # Household Guard
+				carnx_has_tiered_trait_xp_trigger = { TRAIT = lifestyle_blademaster XP = 100 } # Household Guard
+				has_trait = overseer # Harbormaster
+				hunt_lifestyle_track_greater_equal_trigger = { TRACK = hunter GREATER_EQUAL = 100 } # Master at Arms
+				has_trait = strong # Court Smith
+				has_trait = athletic # Court Smith
+			}
+		}
+		add = 2
+	}
+	else_if = { # 10
+		limit = {
+			OR = {
+				carnx_has_tiered_trait_xp_trigger = { TRAIT = lifestyle_blademaster XP = 50 } # Household Guard
+				has_trait = administrator # Harbormaster, Court Smith
+				hunt_lifestyle_track_greater_equal_trigger = { TRACK = hunter GREATER_EQUAL = 50 } # Master at Arms
+			}
+		}
+		add = 1
+	}
+}

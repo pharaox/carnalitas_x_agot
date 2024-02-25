@@ -1,0 +1,10 @@
+﻿l_english:
+ # Modifier reasons, council positions
+ carnx_lacking_admiral_reason: "[recipient.GetShortUIName|U] is lacking a good $councillor_admiral$: $VALUE|=+0$"
+ carnx_lacking_castellan_reason: "[recipient.GetShortUIName|U] is lacking a good $councillor_castellan$: $VALUE|=+0$"
+ # Modifier reasons, court positions
+ carnx_lacking_household_guard_reason: "[recipient.GetShortUIName|U] is lacking a good $household_guard_court_position$: $VALUE|=+0$"
+ carnx_lacking_gaoler_reason: "[recipient.GetShortUIName|U] is lacking a good $gaoler_court_position$: $VALUE|=+0$"
+ carnx_lacking_harbormaster_reason: "[recipient.GetShortUIName|U] is lacking a good $harbormaster_court_position$: $VALUE|=+0$"
+ carnx_lacking_master_at_arms_reason: "[recipient.GetShortUIName|U] is lacking a good $master_at_arms_court_position$: $VALUE|=+0$"
+ carnx_lacking_court_smith_reason: "[recipient.GetShortUIName|U] is lacking a good $court_smith_court_position$: $VALUE|=+0$"

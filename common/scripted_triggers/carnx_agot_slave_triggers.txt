@@ -1,0 +1,59 @@
+﻿carnx_can_serve_as_admiral_trigger = {
+	carnx_can_serve_as_councillor_trigger = {
+		TYPE = councillor_admiral
+		NAME = admiral
+		LIEGE = $RULER$
+		SKILL = martial
+	}
+}
+
+carnx_can_serve_as_castellan_trigger = {
+	carnx_can_serve_as_councillor_trigger = {
+		TYPE = councillor_castellan
+		NAME = castellan
+		LIEGE = $RULER$
+		SKILL = average_of_all_skills
+	}
+}
+
+carnx_can_serve_as_household_guard_trigger = {
+	carnx_can_serve_as_court_position_trigger = {
+		TYPE = household_guard_court_position
+		NAME = household_guard
+		LIEGE = $RULER$
+	}
+}
+
+carnx_can_serve_as_gaoler_trigger = {
+	carnx_can_serve_as_court_position_trigger = {
+		TYPE = gaoler_court_position
+		NAME = gaoler
+		LIEGE = $RULER$
+	}
+}
+
+carnx_can_serve_as_harbormaster_trigger = {
+	carnx_can_serve_as_multi_court_position_trigger = {
+		TYPE = harbormaster_court_position
+		NAME = harbormaster
+		LIEGE = $RULER$
+		DESIRED_COUNT = $RULER$.carnx_number_of_desired_harbormasters
+	}
+}
+
+carnx_can_serve_as_master_at_arms_trigger = {
+	carnx_can_serve_as_multi_court_position_trigger = {
+		TYPE = master_at_arms_court_position
+		NAME = master_at_arms
+		LIEGE = $RULER$
+		DESIRED_COUNT = $RULER$.carnx_number_of_desired_masters_at_arms
+	}
+}
+
+carnx_can_serve_as_court_smith_trigger = {
+	carnx_can_serve_as_court_position_trigger = {
+		TYPE = court_smith_court_position
+		NAME = court_smith
+		LIEGE = $RULER$
+	}
+}

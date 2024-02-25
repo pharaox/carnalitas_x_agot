@@ -1,0 +1,37 @@
+﻿carnx_can_be_admiral_trigger = {
+	can_be_admiral_trigger = { COURT_OWNER = $COURT_OWNER$ }
+	OR = {
+		NOT = { carnx_is_slave_trigger = yes }
+		$COURT_OWNER$ = {
+			carnx_is_slave_employment_enabled_trigger = yes
+		}
+	}
+}
+
+carnx_can_be_castellan_trigger = {
+	can_be_steward_trigger = { COURT_OWNER = $COURT_OWNER$ }
+	OR = {
+		NOT = { carnx_is_slave_trigger = yes }
+		$COURT_OWNER$ = {
+			carnx_is_slave_employment_enabled_trigger = yes
+		}
+	}
+}
+
+carnx_can_be_kingsguard_trigger = {
+	can_be_kingsguard_trigger = { COURT_OWNER = $COURT_OWNER$ }
+	NOT = { carnx_is_slave_trigger = yes }
+}
+
+carnx_can_appoint_admiral_trigger = {
+	# valid_position
+	any_sub_realm_county = {
+		any_county_province = {
+			is_coastal = yes
+		}
+	}
+}
+
+carnx_can_appoint_castellan_trigger = {
+	always = yes
+}

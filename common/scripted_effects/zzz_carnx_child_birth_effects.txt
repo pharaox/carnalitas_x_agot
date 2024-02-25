@@ -1,0 +1,14 @@
+﻿carnx_child_birth_dynasty_effect = {
+	carnx_vanilla_child_birth_dynasty_effect = yes
+	carnx_agot_child_birth_dynasty_effect = yes
+}
+
+carnx_child_birth_faith_effect = {
+	carnx_vanilla_child_birth_faith_effect = yes
+	carnx_agot_child_birth_faith_effect = yes
+}
+
+carnx_child_birth_culture_effect = {
+	carnx_vanilla_child_birth_culture_effect = yes
+	carnx_agot_child_birth_culture_effect = yes
+}
