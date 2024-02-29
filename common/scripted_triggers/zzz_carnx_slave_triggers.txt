@@ -69,11 +69,14 @@ carnx_slavery_attitude_employer_government_trigger = {
 }
 
 carnx_slavery_attitude_slaver_faith_culture_trigger = {
-	faith.religion = {
-		OR = {
-			is_in_family = rf_winter
-			this = religion:drowned_god_religion
+	OR = {
+		faith.religion = {
+			OR = {
+				is_in_family = rf_winter
+				this = religion:drowned_god_religion
+			}
 		}
+		culture = { carnx_agot_is_slavery_thralls_trigger = yes }
 	}
 }
 
@@ -84,19 +87,40 @@ carnx_slavery_attitude_liberator_faith_culture_trigger = {
 			this = religion:old_gods_religion
 		}
 	}
+	culture = {
+		NOR = {
+			carnx_agot_is_slavery_embraced_trigger = yes
+			carnx_agot_is_slavery_thralls_trigger = yes
+		}
+	}
 }
 
 carnx_slavery_attitude_trader_faith_culture_trigger = {
-	faith.religion = {
-		is_in_family = rf_valyrian
+	OR = {
+		faith.religion = {
+			is_in_family = rf_valyrian
+		}
+		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
 	}
 }
 
 carnx_slavery_attitude_employer_faith_culture_trigger = {
-	faith = {
-		OR = {
+	OR = {
+		faith = {
 			has_doctrine_parameter = carnx_slave_employment_active
 			religion = { is_in_family = rf_dawnbringers }
+		}
+		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+	}
+}
+
+carnx_is_declining_to_free_illegal_slaves_crime_trigger = {
+	has_realm_law = slavery_disallowed_law
+
+	culture = {
+		NOR = {
+			carnx_agot_is_slavery_embraced_trigger = yes
+			carnx_agot_is_slavery_thralls_trigger = yes
 		}
 	}
 }

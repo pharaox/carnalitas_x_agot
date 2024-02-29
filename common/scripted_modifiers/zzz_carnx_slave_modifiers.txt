@@ -370,3 +370,90 @@ carnx_lacking_court_positions_modifier = {
 		}
 	}
 }
+
+carnx_slavery_modifier = {
+	first_valid = {
+		modifier = {
+			exists = liege
+			NOT = { liege = this }
+			liege = {
+				carnx_agot_is_slavery_capital_crime_trigger = {
+					CHARACTER = $SLAVE$
+					ACTION = $ACTION$
+				}
+			}
+			add = {
+				value = -100
+				multiply = carnx_ai_honor_impact_multiplier
+			}
+			desc = carnx_agot_slavery_capital_crime_reason
+		}
+		modifier = {
+			exists = liege
+			NOT = { liege = this }
+			liege = {
+				carnx_agot_is_slavery_crime_trigger = {
+					CHARACTER = $SLAVE$
+					ACTION = $ACTION$
+				}
+			}
+			add = {
+				value = -50
+				multiply = carnx_ai_honor_impact_multiplier
+			}
+			desc = carnx_agot_slavery_crime_reason
+		}
+		modifier = {
+			exists = liege
+			NOT = { liege = this }
+			liege = {
+				carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
+			}
+			add = {
+				value = -10
+				multiply = carnx_ai_honor_impact_multiplier
+			}
+			desc = carnx_agot_slavery_forbidden_reason
+		}
+	}
+	first_valid = {
+		modifier = {
+			culture = {
+				carnx_agot_is_slavery_embraced_trigger = yes
+			}
+			NOR = {
+				$ACTION$ = flag:free
+				$ACTION$ = flag:demand_ransom
+			}
+			add = 10
+			desc = carnx_agot_slavery_embraced_reason
+		}
+		modifier = {
+			culture = {
+				carnx_agot_is_slavery_thralls_trigger = yes
+			}
+			OR = {
+				$ACTION$ = flag:enslave
+				$ACTION$ = flag:seize
+			}
+			add = 10
+			desc = carnx_agot_slavery_embraced_reason
+		}
+		modifier = {
+			culture = {
+				carnx_agot_is_slavery_thralls_trigger = yes
+			}
+			OR = {
+				$ACTION$ = flag:buy
+				$ACTION$ = flag:sell
+				$ACTION$ = flag:offer_gift
+				$ACTION$ = flag:accept_gift
+			}
+			add = {
+				value = -50
+				multiply = carnx_ai_honor_impact_multiplier
+			}
+			desc = carnx_agot_slavery_thralls_reason
+		}
+	}
+}

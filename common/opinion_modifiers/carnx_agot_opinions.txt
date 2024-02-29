@@ -1,0 +1,16 @@
+﻿carnx_broke_slavery_law_mild_opinion = {
+	opinion = -10
+}
+
+carnx_broke_slavery_law_standard_opinion = {
+	opinion = -20
+	imprisonment_reason = yes
+}
+
+carnx_broke_slavery_law_harsh_opinion = {
+	opinion = -50
+	imprisonment_reason = yes
+	execute_reason = yes
+	banish_reason = yes
+	revoke_title_reason = yes
+}

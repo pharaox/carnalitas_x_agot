@@ -1,0 +1,60 @@
+﻿carnx_agot_add_broke_slavery_law_mild_opinion_effect = {
+	if = {
+		limit = {
+			NOR = {
+				has_opinion_modifier = {
+					target = $TARGET$
+					modifier = carnx_broke_slavery_law_harsh_opinion
+				}
+				has_opinion_modifier = {
+					target = $TARGET$
+					modifier = carnx_broke_slavery_law_standard_opinion
+				}
+			}
+		}
+		add_opinion = {
+			target = $TARGET$
+			modifier = carnx_broke_slavery_law_mild_opinion
+		}
+	}
+}
+
+carnx_agot_add_broke_slavery_law_standard_opinion_effect = {
+	if = {
+		limit = {
+			NOT = {
+				has_opinion_modifier = {
+					target = $TARGET$
+					modifier = carnx_broke_slavery_law_harsh_opinion
+				}
+			}
+		}
+		hidden_effect = {
+			remove_opinion = {
+				target = $TARGET$
+				modifier = carnx_broke_slavery_law_mild_opinion
+			}
+		}
+		add_opinion = {
+			target = $TARGET$
+			modifier = carnx_broke_slavery_law_standard_opinion
+		}
+	}
+}
+
+carnx_agot_add_broke_slavery_law_harsh_opinion_effect = {
+	hidden_effect = {
+		remove_opinion = {
+			target = $TARGET$
+			modifier = carnx_broke_slavery_law_mild_opinion
+		}
+		remove_opinion = {
+			target = $TARGET$
+			modifier = carnx_broke_slavery_law_standard_opinion
+		}
+	}
+	add_opinion = {
+		target = $TARGET$
+		modifier = carnx_broke_slavery_law_harsh_opinion
+	}
+}

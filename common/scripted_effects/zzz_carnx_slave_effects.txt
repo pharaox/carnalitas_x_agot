@@ -55,3 +55,67 @@ carnx_add_courtier_effect = {
 		}
 	}
 }
+
+carnx_apply_slavery_consequences_effect = {
+	if = {
+		limit = {
+			exists = liege
+			NOT = { liege = this }
+		}
+
+		save_temporary_scope_as = slaver
+		liege = {
+			if = {
+				limit = {
+					carnx_agot_is_slavery_capital_crime_trigger = {
+						CHARACTER = $CHARACTER$
+						ACTION = $ACTION$
+					}
+				}
+				carnx_agot_add_broke_slavery_law_harsh_opinion_effect = { TARGET = scope:slaver }
+			}
+			else_if = {
+				limit = {
+					carnx_agot_is_slavery_crime_trigger = {
+						CHARACTER = $CHARACTER$
+						ACTION = $ACTION$
+					}
+				}
+				carnx_agot_add_broke_slavery_law_standard_opinion_effect = { TARGET = scope:slaver }
+			}
+			else_if = {
+				limit = {
+					carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
+				}
+				carnx_agot_add_broke_slavery_law_mild_opinion_effect = { TARGET = scope:slaver }
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			culture = {
+				carnx_agot_is_slavery_thralls_trigger = yes
+			}
+			OR = {
+				$ACTION$ = flag:buy
+				$ACTION$ = flag:sell
+				$ACTION$ = flag:offer_gift
+				$ACTION$ = flag:accept_gift
+			}
+		}
+		add_prestige = {
+			if = {
+				limit = {
+					$CHARACTER$ = {
+						has_no_particular_noble_roots_trigger = yes
+					}
+				}
+				value = medium_prestige_loss
+			}
+			else = {
+				value = major_prestige_loss
+			}
+		}
+	}
+}

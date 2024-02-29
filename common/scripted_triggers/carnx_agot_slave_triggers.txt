@@ -57,3 +57,105 @@ carnx_can_serve_as_court_smith_trigger = {
 		LIEGE = $RULER$
 	}
 }
+
+carnx_agot_is_slavery_capital_crime_trigger = {
+	# Slavery must be forbidden by law to be considered a capital crime
+	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
+
+	# Slavery must be criminal in faith to be considered a capital crime
+	carnx_is_slavery_crime_trigger = { CHARACTER = $CHARACTER$ }
+
+	# Cultures that embrace slavery or keep thralls (Ironborn)
+	# do not consider any action a capital crime
+	trigger_if = {
+		limit = {
+			culture = {
+				OR = {
+					carnx_agot_is_slavery_embraced_trigger = yes
+					carnx_agot_is_slavery_thralls_trigger = yes
+				}
+			}
+		}
+		always = no
+	}
+	# Other cultures consider enslaving a capital crime
+	trigger_else = {
+		$ACTION$ = flag:enslave
+	}
+}
+
+carnx_agot_is_slavery_crime_trigger = {
+	# Slavery must be forbidden by law to be considered a crime
+	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
+
+	# Slavery must not be accepted in faith to be considered a crime
+	NOT = { carnx_is_slavery_accepted_trigger = { CHARACTER = $CHARACTER$ } }
+
+	# Cultures that embrace slavery consider enslaving a crime
+	trigger_if = {
+		limit = {
+			culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		}
+		$ACTION$ = flag:enslave
+	}
+	# Cultures that keep thralls (Ironborn) consider trading slaves a crime
+	trigger_else_if = {
+		limit = {
+			culture = { carnx_agot_is_slavery_thralls_trigger = yes }
+		}
+		OR = {
+			$ACTION$ = flag:buy
+			$ACTION$ = flag:sell
+			$ACTION$ = flag:offer_gift
+			$ACTION$ = flag:accept_gift
+		}
+	}
+	# Other cultures consider all actions a crime
+	trigger_else = {
+		always = yes
+	}
+}
+
+carnx_agot_is_slavery_forbidden_trigger = {
+	has_realm_law = slavery_disallowed_law
+
+	NOR = {
+		$ACTION$ = flag:free
+		$ACTION$ = flag:demand_ransom
+	}
+}
+
+carnx_agot_is_slavery_embraced_trigger = {
+	# has_cultural_parameter = carnx_slavery_embraced
+	OR = {
+		carnx_agot_is_slavery_embraced_historical_trigger = yes
+		any_parent_culture = {
+			carnx_agot_is_slavery_embraced_historical_trigger = yes
+		}
+	}
+}
+
+carnx_agot_is_slavery_thralls_trigger = {
+	# has_cultural_parameter = carnx_slavery_thralls
+	OR = {
+		carnx_agot_is_slavery_thralls_historical_trigger = yes
+		any_parent_culture = {
+			carnx_agot_is_slavery_thralls_historical_trigger = yes
+		}
+	}
+}
+
+carnx_agot_is_slavery_embraced_historical_trigger = {
+	OR = {
+		this = culture:pentoshi
+		this = culture:tyroshi
+		this = culture:myrish
+		this = culture:lyseni
+		this = culture:hartalari
+		this = culture:volantene
+	}
+}
+
+carnx_agot_is_slavery_thralls_historical_trigger = {
+	this = culture:ironborn
+}
