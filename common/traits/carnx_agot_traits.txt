@@ -1,0 +1,30 @@
+﻿carnx_agot_unsullied = {
+	shown_in_ruler_designer = no
+
+	# This trait must always be accompanied by the eunuch and loyal traits,
+	# their effects are not duplicated here
+
+	diplomacy = -1
+	martial = 1
+	intrigue = -1
+	prowess = 3
+
+	same_opinion = 10
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_carnx_agot_unsullied_desc
+			}
+			desc = trait_carnx_agot_unsullied_character_desc
+		}
+	}
+
+	ai_boldness = 50
+	ai_energy = 50
+	ai_greed = -50
+	ai_honor = 50
+}

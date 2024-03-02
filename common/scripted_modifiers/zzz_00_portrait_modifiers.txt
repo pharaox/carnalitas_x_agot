@@ -1,0 +1,30 @@
+﻿portrait_western_beards_clothes_modifier = {
+	modifier = {
+		add = 70
+        OR = {
+            portrait_western_clothing_trigger = yes
+            portrait_byzantine_clothing_trigger = yes
+        }
+	}
+	# CSR
+	modifier = {
+		add = -70
+		has_trait = eunuch
+	}
+}
+
+portrait_mena_beards_clothes_modifier = {
+	modifier = {
+		add = 70
+		OR = {
+			portrait_mena_clothing_trigger = yes
+			portrait_african_clothing_trigger = yes
+		}
+	}
+	# CSR
+	modifier = {
+		add = -70
+		has_trait = eunuch
+	}
+}
+

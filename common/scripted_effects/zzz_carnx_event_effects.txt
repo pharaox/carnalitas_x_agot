@@ -1,0 +1,64 @@
+﻿carnx_slave_0001_create_captain_character_effect = {
+	create_character = {
+		#name = "Captain"
+		location = root.capital_province
+		template = carnx_agot_unsullied_character_template
+		culture = scope:foreign_ruler.culture
+		faith = root.faith
+		dynasty = none
+		save_scope_as = valuable_option
+	}
+}
+
+carnx_slave_0001_create_character_effect = {
+	random_list = {
+		10 = {
+			# Diplomacy: Chancellor, Cupbearer, Court Jester, Court Poet, Court Musician
+			carnx_slave_0001_create_diplomacy_character_effect = yes
+		}
+		10 = {
+			# Martial: Marhsal, Commanders
+			carnx_slave_0001_create_martial_character_effect = yes
+		}
+		10 = {
+			# Stewardship: Steward, Court Gardener, Seneschal
+			carnx_slave_0001_create_stewardship_character_effect = yes
+		}
+		10 = {
+			# Intrigue: Spymaster, Food Taster, Executioner
+			carnx_slave_0001_create_intrigue_character_effect = yes
+		}
+		10 = {
+			# Learning: Court Physician, Antiquarian, Court Tutor, Court Poet (secondary)
+			carnx_slave_0001_create_learning_character_effect = yes
+		}
+		10 = {
+			# Prowess: Knights, Bodyguard, Champion
+			carnx_slave_0001_create_prowess_character_effect = yes
+		}
+		5 = {
+			# Eunuch: Chief Eunuch, Slave Eunuch
+			modifier = {
+				root = { carnx_slave_eunuch_court_position_enabled_trigger = yes }
+				add = 5
+			}
+			carnx_slave_0001_create_eunuch_character_effect = yes
+		}
+		10 = {
+			# Concubine: Slave Concubine
+			modifier = {
+				root = { carnx_slave_concubine_court_position_enabled_trigger = yes }
+				add = 20
+			}
+			carnx_slave_0001_create_concubine_character_effect = yes
+		}
+		10 = {
+			# Captain: Slave Captain
+			modifier = {
+				root = { carnx_slave_captain_court_position_enabled_trigger = yes }
+				add = 10
+			}
+			carnx_slave_0001_create_captain_character_effect = yes
+		}
+	}
+}

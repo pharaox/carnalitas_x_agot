@@ -1,0 +1,39 @@
+﻿# Generated on 2022-10-13 by ACOT Culture Tool
+astapori = {
+	color = { 0.87 0.49 0.42 }
+
+	ethos = ethos_bellicose
+	heritage = heritage_ghiscari
+	language = language_valyrian
+	martial_custom = martial_custom_male_only
+
+	traditions = {
+		#tradition_unsullied #AGOT TODO
+		tradition_city_keepers
+		tradition_maritime_mercantilism
+		tradition_artisans
+	}
+
+	name_list = name_list_ghiscari
+
+	coa_gfx = { ghiscari_coa_gfx }
+	building_gfx = { ghiscari_building_gfx }
+	clothing_gfx = {
+		ghiscari_clothing_gfx
+		mena_clothing_gfx
+		#iranian_clothing_gfx
+		#byzantine_clothing_gfx
+		#dde_abbasid_clothing_gfx
+		#afr_berber_clothing_gfx
+		#turkic_clothing_gfx
+	}
+	unit_gfx = { ghiscari_unit_gfx }
+
+	ethnicities = { 10 = mediterranean }
+
+	parents = {
+		old_ghiscari
+		high_valyrian
+	}
+	created = 3400.1.1
+}

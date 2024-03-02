@@ -1,0 +1,109 @@
+﻿carnx_agot_unsullied_character_template = {
+	gender_female_chance = 0
+	age = { 16 30 }
+	random_traits = no
+	culture = root.culture
+	faith = root.faith
+	martial = { min_template_average_skill max_template_decent_skill }
+	prowess = { min_template_average_skill max_template_decent_skill }
+	# Education traits
+	random_traits_list = {
+		education_martial_1 = { weight = { base = 35 } }
+		education_martial_2 = { weight = { base = 35 } }
+		education_martial_3 = { weight = { base = 20 } }
+		education_martial_4 = { weight = { base = 10 } }
+	}
+	random_traits_list = {
+		count = { 0 1 }
+		education_martial_prowess_1 = { weight = { base = 35 } }
+		education_martial_prowess_2 = { weight = { base = 35 } }
+		education_martial_prowess_3 = { weight = { base = 20 } }
+		education_martial_prowess_4 = { weight = { base = 10 } }
+	}
+	# Personality traits
+	random_traits_list = {
+		count = 2
+		calm = {}
+		#wrathful = {}
+		content = {}
+		#ambitious = {}
+		diligent = {}
+		#lazy = {}
+		forgiving = {}
+		vengeful = {}
+		generous = {}
+		#greedy = {}
+		gregarious = {}
+		shy = {}
+		honest = {}
+		#deceitful = {}
+		humble = {}
+		#arrogant = {}
+		just = {}
+		arbitrary = {}
+		patient = {}
+		impatient = {}
+		temperate  = {}
+		#gluttonous = {}
+		trusting = {}
+		paranoid = {}
+		zealous = {}
+		cynical = {}
+		compassionate = {}
+		callous = {}
+		sadistic = {}
+		fickle = {}
+		stubborn = {}
+		#eccentric = {}
+	}
+	# Generic and other traits
+	random_traits_list = {
+		count = { 0 1 }
+		# Martial
+		intellect_good_1 = { weight = { base = 10 } }
+		intellect_good_2 = { weight = { base = 5 } }
+		intellect_good_3 = { weight = { base = 2 } }
+		overseer = { weight = { base = 5 } }
+		strategist = { weight = { base = 5 } }
+		# Prowess
+		physique_good_1 = { weight = { base = 10 } }
+		physique_good_2 = { weight = { base = 5 } }
+		physique_good_3 = { weight = { base = 2 } }
+		strong = { weight = { base = 5 } }
+		athletic = { weight = { base = 5 } }
+		lifestyle_blademaster = { weight = { base = 10 } }
+	}
+	# Commander traits
+	random_traits_list = {
+		count = 1
+		aggressive_attacker = {}
+		flexible_leader = {}
+		forder = {}
+		logistician = {}
+		military_engineer = {}
+		organizer = {}
+		unyielding_defender = {}
+		cautious_leader = {}
+		reckless = {}
+		open_terrain_expert = {}
+		rough_terrain_expert = {}
+	}
+	trait = brave
+	trait = eunuch
+	trait = loyal
+	trait = carnx_agot_unsullied
+	dynasty = none
+	after_creation = {
+		set_culture = culture:astapori
+
+		# Avoid Carnalitas DT traits
+		add_character_flag = carn_dt_traits_seeded
+
+		set_interesting_traits_and_modifiers_effect = yes
+		add_random_tiered_trait_xp_effect = {
+			TRAIT = lifestyle_blademaster
+			LEVEL_1 = yes
+			LEVEL_3 = yes
+		}
+	}
+}
