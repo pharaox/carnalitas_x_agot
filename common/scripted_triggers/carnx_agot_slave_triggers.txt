@@ -126,36 +126,35 @@ carnx_agot_is_slavery_forbidden_trigger = {
 }
 
 carnx_agot_is_slavery_embraced_trigger = {
-	# has_cultural_parameter = carnx_slavery_embraced
-	OR = {
-		carnx_agot_is_slavery_embraced_historical_trigger = yes
-		any_parent_culture = {
-			carnx_agot_is_slavery_embraced_historical_trigger = yes
-		}
-	}
+	has_cultural_parameter = carnx_agot_slavery_embraced
+	#carnx_agot_is_slavery_embraced_historical_trigger = yes
 }
 
 carnx_agot_is_slavery_thralls_trigger = {
-	# has_cultural_parameter = carnx_slavery_thralls
-	OR = {
-		carnx_agot_is_slavery_thralls_historical_trigger = yes
-		any_parent_culture = {
-			carnx_agot_is_slavery_thralls_historical_trigger = yes
-		}
-	}
+	has_cultural_parameter = carnx_agot_slavery_thralls
+	#carnx_agot_is_slavery_thralls_historical_trigger = yes
 }
 
 carnx_agot_is_slavery_embraced_historical_trigger = {
 	OR = {
-		this = culture:pentoshi
-		this = culture:tyroshi
-		this = culture:myrish
-		this = culture:lyseni
-		this = culture:hartalari
-		this = culture:volantene
+		has_cultural_tradition = agot_tradition_lyseni
+		has_cultural_tradition = agot_tradition_myrish
+		has_cultural_tradition = agot_tradition_pentoshi
+		has_cultural_tradition = agot_tradition_qohorik
+		has_cultural_tradition = agot_tradition_tyroshi
+		#has_cultural_tradition = agot_tradition_volantene
+		#has_cultural_tradition = agot_tradition_astapori
+		#has_cultural_tradition = agot_tradition_yunkish
+		#has_cultural_tradition = agot_tradition_meereenese
+		#has_cultural_tradition = agot_tradition_ghiscari
+		has_cultural_tradition = agot_tradition_hartalari
 	}
 }
 
 carnx_agot_is_slavery_thralls_historical_trigger = {
-	this = culture:ironborn
+	OR = {
+		has_cultural_tradition = agot_tradition_wildling
+		has_cultural_tradition = agot_tradition_firstman
+		has_cultural_tradition = agot_tradition_ironborn
+	}
 }
