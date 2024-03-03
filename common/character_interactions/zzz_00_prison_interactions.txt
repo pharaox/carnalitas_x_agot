@@ -1283,6 +1283,7 @@ release_from_prison_interaction = {
 
 			scope:recipient = {
 				NOT = { has_trait = nightswatch }
+				NOT = { has_trait = kingsguard }
 			}
 		}
 	}
