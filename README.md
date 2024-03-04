@@ -33,7 +33,7 @@ In the main CSR mod, *Chancellor*, *Steward*, and *Marshal* are only available t
 
 #### Court Positions
 
-In addition to the 16 court positions that are available to slaves in CSR, the following AGOT court positions are also available to slaves: *Captain of the Household Guard*, *Keeper of the Cells*, *Harbormaster*, *Master-at-Arms*, and *Court Smith*. The remaining AGOT court positions are not available to slaves, for the following reasons:
+In addition to the 16 court positions that are available to slaves in CSR, the following 5 AGOT court positions are also available to slaves: *Captain of the Household Guard*, *Keeper of the Cells*, *Harbormaster*, *Master-at-Arms*, and *Court Smith*. The remaining AGOT court positions are not available to slaves, for the following reasons:
 
 * *Maester* requires its holder to be a member of the Master's order. It is not clear from the sources if an enslaved Maester can continue to serve as such, so I left it out to be on the safe side.
 * *Septon* and *Septa* are religious and therefore incompatible with slavery.
@@ -43,10 +43,50 @@ In addition to the 16 court positions that are available to slaves in CSR, the f
 
 In the main CSR mod, *Cupbearer*, is only available to slaves if your government is clan or tribal. In CSR AGOT, this position, as well as *Harbormaster* and *Master-at-Arms* are available to slaves also if your government form is feudal, free city, or pirate.
 
-### New Court Positions
+### New Slave Court Positions
 
-TODO
+The *Mameluke Captain* court position is renamed to *Unsullied Captain* and requires the slave to actually have the *Unsullied* trait. Although Astapor is still not on the AGOT map, soldiers with this trait are occasionally sold in the *Buy Foreign Slaves* event, and so they can be acquired either via this event or via trade.
 
 ## Integration with AGOT Slavery System
 
-TODO
+Starting with version 0.2.0, AGOT introduces its own slavery system. This system is still pretty rudimentary and mostly does not conflict with Carnalitas and CSR. This mod integrates with or disables some of this slavery system features.
+
+### Slavery Realm Laws
+
+In AGOT, rulers can decide to either allow or forbid slavery via a realm law. Most Free Cities start with slavery allowed, while most other realms start with slavery forbidden. Every ruler can set their own slavery law, however in this mod it is assumed that rulers must abide by the slavery law of their liege if they have one.
+
+If slavery is forbidden by a ruler's liege, slavery actions performed by this ruler may have different consequences depending on whether the violation is considered a capital crime, a non-capital crime, or neither by the liege.
+
+* If owning slaves of a certain faith is a crime in the liege's faith, enslaving such characters is considered a capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
+* If owning slaves of a certain faith is either crime or shunned in the liege's faith, performing slavery actions on such characters (except freeing or ransoming) is considered a non-capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
+* If owning slaves of a certain faith is accepted in the liege's faith, performing slavery actions on such characters (except freeing or ransoming) is still frowned upon, but not considered a crime.
+
+If a ruler actually breaks the slavery law of their liege, this is punished by adding an opinion modifier to the liege with 3 different levels of harshness, depending on the severity of the violation:
+
+* If it is a capital crime, the opinion modifier has all possible punishment reasons, including an execution reason.
+* If it is a non-capital crime, the opinion modifier has only an imprisonment reason.
+* If it is neither, the opinion modifier has no punishment reasons.
+
+### Slavery Interactions
+
+AGOT introduces one new prisoner interaction, *Sell into Slavery*. It allows rulers to effectively kill prisoners in exchange for gold. This interaction is disabled as it is redundant, does not fit well with other CSR features, and would break the CSR balance by allowing rulers to make money out of almost every prisoner.
+
+### Slavery Traits
+
+AGOT introduces 3 new slavery traits:
+
+* *Slave* is en empty trait that is currently not used. It is overridden by the Carnalitas *Slave* trait.
+* *Slave Owner* is added to rulers with slave realm population. It is modified to avoid -100 opinion penalty with *Slave* characters.
+* *Freedman* is similar to *Former Slave*. It is been changed as it is only used when creating slave revolt leaders.
+
+## Slavery Cultural Parameters
+
+Although Carnalitas has religious doctrines that capture different attitudes to slavery and they are seeded in accordance with the world's lore by the [Carnalitas AGOT Compatibility](?) mod, they are insufficient to correctly represent the variety of attitudes to slavery in the world of *A Song of Ice and Fire*. In particular, according to the [sources](https://awoiaf.westeros.org/index.php/Slavery):
+
+* The Ironborn keep thralls and salt wives, and some of the wildling clans north of the Wall also practice thralldom. Thralls however are not slaves in the literal sense as they can't be sold or gifted. In Ironborn culture in particular, one must pay the "iron price" for their thralls. To reflect the ubiquitousness of thralls, the *Drowned God* and *Old God* (north of the Wall) faiths should regard slavery as either shunned or accepted, but then Ironborn and wildlings would also be able to trade slaves without any penalty.
+* Slavery is widespread in most of the Free Cities, even in cities where it's forbidden by law, such as Pentos. Therefore, most Essosi faiths should regard slavery as accepted. However, there are other Free Cities (Braavos) and Andal populations in Essos that practice the same faiths, but have a much harsher view on slavery.
+
+To address these inconsistencies, this mod introduces 2 new cultural parameters that capture the above regional differences:
+
+* The *Slavery Embraced* parameter represents the attitudes to slavery that are prevalent in most of the Free Cities. Rulers of such cultures regard enslaving as a non-capital crime if it's normally regarded as a capital crime, and other slavery actions as non-criminal. They are also somewhat more willing to engage in slavery. This parameter is added to the special traditions of Lyseni, Myrish, Pentoshi, Qohoric, Tyroshi, and Hartalari cultures.
+* The *Thralls* parameter represents the attitudes to slavery that are prevalent in the Iron Islands and north of the Wall. Rulers of such cultures regard trading and gifting slaves as a non-capital crime if it's normally regarded as such, and other slavery actions as non-criminal. Trading and gifting slaves also incurs a prestige penalty and AI rulers are quite reluctant to do it. This parameter is added to the special traditions of Ironborn and Wildling cultures.
