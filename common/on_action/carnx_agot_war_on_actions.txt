@@ -1,0 +1,67 @@
+﻿# called when a war is started.
+# same scopes are available in these events as in the CBs' on_declaration, this just fires for all CBs instead of a specific CB.
+
+on_war_started = {
+	on_actions = { carnx_agot_on_war_started }
+}
+
+carnx_agot_on_war_started = {
+	effect = {
+		scope:war = {
+			carnx_agot_debug_log_slavery_war_effect = { ACTION = started }
+		}
+	}
+}
+
+# called for when a casus belli resolves in one of the following ways.
+# same scopes are available in these events as in the CBs themselves, this just fires for all CBs instead of a specific CB.
+# note that any events/effects fired here WILL NOT show up in the war summary tooltip; they fire at the same time as the war resolution, but are not actually part of the war resolution itself.
+
+on_war_won_attacker = {
+	on_actions = { carnx_agot_on_war_won_attacker }
+}
+
+on_war_won_defender = {
+	on_actions = { carnx_agot_on_war_won_defender }
+}
+
+on_war_white_peace = {
+	on_actions = { carnx_agot_on_war_white_peace }
+}
+
+on_war_invalidated = {
+	on_actions = { carnx_agot_on_war_invalidated }
+}
+
+carnx_agot_on_war_won_attacker = {
+	effect = {
+		scope:war = {
+			carnx_agot_debug_log_slavery_war_effect = { ACTION = won_attacker }
+		}
+	}
+}
+
+carnx_agot_on_war_won_defender = {
+	effect = {
+		scope:war = {
+			carnx_agot_debug_log_slavery_war_effect = { ACTION = won_defender }
+		}
+	}
+}
+
+carnx_agot_on_war_white_peace = {
+	effect = {
+		scope:war = {
+			carnx_agot_debug_log_slavery_war_effect = { ACTION = white_peace }
+		}
+	}
+}
+
+carnx_agot_on_war_invalidated = {
+	effect = {
+		scope:war = {
+			carnx_agot_debug_log_slavery_war_effect = { ACTION = invalidated }
+		}
+	}
+}
+

@@ -26,3 +26,23 @@
  carnx_debug_msg_adding_courtier_nightswatch: "$carnx_debug_prefix$: Adding slave courtier nightswatch"
  carnx_debug_msg_adding_courtier_silent_sister: "$carnx_debug_prefix$: Adding slave courtier silent_sister"
  carnx_debug_msg_adding_courtier_wildling: "$carnx_debug_prefix$: Adding slave courtier wildling"
+
+ # AGOT slavery interactions
+ carnx_debug_msg_character_sold_into_slavery: "$carnx_debug_prefix$: Character sold into slavery"
+
+ # AGOT slavery wars
+ carnx_debug_msg_slave_raid_cb_war_started: "$slave_raid_cb$ war started"
+ carnx_debug_msg_slave_raid_cb_war_won_attacker: "$slave_raid_cb$ war won by attacker"
+ carnx_debug_msg_slave_raid_cb_war_won_defender: "$slave_raid_cb$ war won by defender"
+ carnx_debug_msg_slave_raid_cb_war_white_peace: "$slave_raid_cb$ war ended in white piece"
+ carnx_debug_msg_slave_raid_cb_war_invalidated: "$slave_raid_cb$ war invalidated"
+ carnx_debug_msg_free_slaves_cb_war_started: "$free_slaves_cb$ war started"
+ carnx_debug_msg_free_slaves_cb_war_won_attacker: "$free_slaves_cb$ war won by attacker"
+ carnx_debug_msg_free_slaves_cb_war_won_defender: "$free_slaves_cb$ war won by defender"
+ carnx_debug_msg_free_slaves_cb_war_white_peace: "$free_slaves_cb$ war ended in white piece"
+ carnx_debug_msg_free_slaves_cb_war_invalidated: "$free_slaves_cb$ war invalidated"
+ carnx_debug_msg_slavery_revolt_war_started: "$slavery_revolt$ war started"
+ carnx_debug_msg_slavery_revolt_war_won_attacker: "$slavery_revolt$ war won by attacker"
+ carnx_debug_msg_slavery_revolt_war_won_defender: "$slavery_revolt$ war won by defender"
+ carnx_debug_msg_slavery_revolt_war_white_peace: "$slavery_revolt$ war ended in white piece"
+ carnx_debug_msg_slavery_revolt_war_invalidated: "$slavery_revolt$ war invalidated"

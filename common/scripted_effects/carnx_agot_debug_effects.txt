@@ -1,0 +1,20 @@
+﻿carnx_agot_debug_log_slavery_war_effect = {
+	if = {
+		limit = { debug_only = yes }
+		switch = {
+			trigger = using_cb
+			slave_raid_cb = {
+				carnx_debug_log_effect = { MSG = carnx_debug_msg_slave_raid_cb_war_$ACTION$ }
+				debug_log_scopes = yes
+			}
+			free_slaves_cb = {
+				carnx_debug_log_effect = { MSG = carnx_debug_msg_free_slaves_cb_war_$ACTION$ }
+				debug_log_scopes = yes
+			}
+			slavery_revolt = {
+				carnx_debug_log_effect = { MSG = carnx_debug_msg_slavery_revolt_war_$ACTION$ }
+				debug_log_scopes = yes
+			}
+		}
+	}
+}
