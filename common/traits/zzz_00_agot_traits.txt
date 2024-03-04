@@ -1,0 +1,25 @@
+﻿slave_master = {
+	category = fame
+	opposites = {
+		#slave # CSR
+		freedman
+	}
+
+	opposite_opinion = -50 # CSR Reduced
+
+	dread_baseline_add = 25
+	enemy_hostile_scheme_success_chance_add = 20
+
+	name = trait_slave_owner
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_slave_owner_desc
+			}
+			desc = trait_slave_owner_character_desc
+		}
+	}
+}
