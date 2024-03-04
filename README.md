@@ -4,7 +4,7 @@ This is a [Carnalitas Slavery Reimagined](https://www.loverslab.com/files/file/2
 
 The latest version is compatible with CK3 1.11.x, Carnalitas 2.2, CSR 0.17.x, and AGOT 0.2.x.
 
-Note that since Carnalitas 2.2 itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](?).
+Note that since Carnalitas 2.2 itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/).
 
 Load order:
 
@@ -77,11 +77,11 @@ AGOT introduces 3 new slavery traits:
 
 * *Slave* is en empty trait that is currently not used. It is overridden by the Carnalitas *Slave* trait.
 * *Slave Owner* is added to rulers with slave realm population. It is modified to avoid -100 opinion penalty with *Slave* characters.
-* *Freedman* is similar to *Former Slave*. It is been changed as it is only used when creating slave revolt leaders.
+* *Freedman* is similar to *Former Slave*. It is not changed as it is only used when creating slave revolt leaders.
 
 ## Slavery Cultural Parameters
 
-Although Carnalitas has religious doctrines that capture different attitudes to slavery and they are seeded in accordance with the world's lore by the [Carnalitas AGOT Compatibility](?) mod, they are insufficient to correctly represent the variety of attitudes to slavery in the world of *A Song of Ice and Fire*. In particular, according to the [sources](https://awoiaf.westeros.org/index.php/Slavery):
+Although Carnalitas has religious doctrines that capture different attitudes to slavery and they are seeded in accordance with the world's lore by the [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/) mod, they are insufficient to correctly represent the variety of attitudes to slavery in the world of *A Song of Ice and Fire*. In particular, according to the [sources](https://awoiaf.westeros.org/index.php/Slavery):
 
 * The Ironborn keep thralls and salt wives, and some of the wildling clans north of the Wall also practice thralldom. Thralls however are not slaves in the literal sense as they can't be sold or gifted. In Ironborn culture in particular, one must pay the "iron price" for their thralls. To reflect the ubiquitousness of thralls, the *Drowned God* and *Old God* (north of the Wall) faiths should regard slavery as either shunned or accepted, but then Ironborn and wildlings would also be able to trade slaves without any penalty.
 * Slavery is widespread in most of the Free Cities, even in cities where it's forbidden by law, such as Pentos. Therefore, most Essosi faiths should regard slavery as accepted. However, there are other Free Cities (Braavos) and Andal populations in Essos that practice the same faiths, but have a much harsher view on slavery.
@@ -90,3 +90,15 @@ To address these inconsistencies, this mod introduces 2 new cultural parameters 
 
 * The *Slavery Embraced* parameter represents the attitudes to slavery that are prevalent in most of the Free Cities. Rulers of such cultures regard enslaving as a non-capital crime if it's normally regarded as a capital crime, and other slavery actions as non-criminal. They are also somewhat more willing to engage in slavery. This parameter is added to the special traditions of Lyseni, Myrish, Pentoshi, Qohoric, Tyroshi, and Hartalari cultures.
 * The *Thralls* parameter represents the attitudes to slavery that are prevalent in the Iron Islands and north of the Wall. Rulers of such cultures regard trading and gifting slaves as a non-capital crime if it's normally regarded as such, and other slavery actions as non-criminal. Trading and gifting slaves also incurs a prestige penalty and AI rulers are quite reluctant to do it. This parameter is added to the special traditions of Ironborn and Wildling cultures.
+
+## Links
+
+* [LoversLab](https://www.loverslab.com/files/file/25565-carnalitas-slavery-reimagined/)
+* [GitHub Repository](https://github.com/pharaox/carnalitas_x_agot)
+
+If you like this mod, you may also consider my other mods:
+
+* [Carnalitas Love Reimagined](https://www.loverslab.com/files/file/29200-carnalitas-love-reimagined/), a rework of the Carnalitas *Make Love* interaction and its related effects.
+* [Search & Trade Artifacts](https://steamcommunity.com/sharedfiles/filedetails/?id=2962238514), search for artifacts, buy them from other characters, and sell them to other characters.
+* [Travelers](https://steamcommunity.com/sharedfiles/filedetails/?id=3082182371), characters always travel to their home when it changes instead of teleporting.
+* [Active Courtiers](https://steamcommunity.com/sharedfiles/filedetails/?id=3157170996), courtiers search for spouses themselves for less micromanagement, stronger AI, and immersion.
