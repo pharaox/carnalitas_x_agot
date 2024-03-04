@@ -186,3 +186,27 @@ echo "Character acquired Slaver 2 trait: $(grep -a "Character acquired Slaver 2 
 echo "Character acquired Infamous Slaver trait: $(grep -a "Character acquired Infamous Slaver trait" debug.log | wc -l)"
 echo "Character acquired Famous Liberator trait: $(grep -a "Character acquired Famous Liberator trait" debug.log | wc -l)"
 echo
+# AGOT slavery features
+echo "Character sold into slavery: $(grep -a "Character sold into slavery" debug.log | wc -l)"
+echo
+echo "Slavery war started: $(grep -a "war started" debug.log | wc -l)"
+echo "- Raid for Slaves: $(grep -a "Raid for Slaves war started" debug.log | wc -l)"
+echo "- Free Slaves: $(grep -a "Free Slaves war started" debug.log | wc -l)"
+echo "- Slave Revolt: $(grep -a "Slave Revolt war started" debug.log | wc -l)"
+echo "Slavery war won by attacker: $(grep -a "war won by attacker" debug.log | wc -l)"
+echo "- Raid for Slaves: $(grep -a "Raid for Slaves war won by attacker" debug.log | wc -l)"
+echo "- Free Slaves: $(grep -a "Free Slaves war won by attacker" debug.log | wc -l)"
+echo "- Slave Revolt: $(grep -a "Slave Revolt war won by attacker" debug.log | wc -l)"
+echo "Slavery war won by defender: $(grep -a "war won by defender" debug.log | wc -l)"
+echo "- Raid for Slaves: $(grep -a "Raid for Slaves war won by defender" debug.log | wc -l)"
+echo "- Free Slaves: $(grep -a "Free Slaves war won by defender" debug.log | wc -l)"
+echo "- Slave Revolt: $(grep -a "Slave Revolt war won by defender" debug.log | wc -l)"
+echo "Slavery war ended in white peace: $(grep -a "war ended in white peace" debug.log | wc -l)"
+echo "- Raid for Slaves: $(grep -a "Raid for Slaves war ended in white peace" debug.log | wc -l)"
+echo "- Free Slaves: $(grep -a "Free Slaves war ended in white peace" debug.log | wc -l)"
+echo "- Slave Revolt: $(grep -a "Slave Revolt war ended in white peace" debug.log | wc -l)"
+echo "Slavery war invalidated: $(grep -a "war invalidated" debug.log | wc -l)"
+echo "- Raid for Slaves: $(grep -a "Raid for Slaves war invalidated" debug.log | wc -l)"
+echo "- Free Slaves: $(grep -a "Free Slaves war invalidated" debug.log | wc -l)"
+echo "- Slave Revolt: $(grep -a "Slave Revolt war invalidated" debug.log | wc -l)"
+echo
