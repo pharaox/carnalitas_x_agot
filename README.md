@@ -2,9 +2,9 @@
 
 This is a [Carnalitas Slavery Reimagined](https://www.loverslab.com/files/file/25565-carnalitas-slavery-reimagined/) compatibility patch for [A Game of Thrones](https://steamcommunity.com/sharedfiles/filedetails/?id=2887120253). For an overview of features and other changes, see the README of the main mod.
 
-The latest version is compatible with CK3 1.11.x, Carnalitas 2.2, CSR 0.18.0, and AGOT 0.2.x.
+The latest version is compatible with CK3 1.12.x, Carnalitas 2.5, CSR 0.19.x, and AGOT 0.2.2.x.
 
-Note that since Carnalitas 2.2 itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/).
+Note that since Carnalitas 2.5 itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/).
 
 Load order:
 
