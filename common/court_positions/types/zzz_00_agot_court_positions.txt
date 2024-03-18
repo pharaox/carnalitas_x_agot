@@ -202,6 +202,14 @@ maester_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -431,6 +439,14 @@ household_guard_court_position = {
 	revoke_cost = {
 		prestige =  {
 			value = major_court_position_prestige_revoke_cost
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -659,6 +675,14 @@ septon_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -847,6 +871,14 @@ septa_court_position = {
 						exists = dynasty
 						house = prev.house
 					}
+				}
+				multiply = 0
+			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
 				}
 				multiply = 0
 			}
@@ -1063,6 +1095,14 @@ gaoler_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -1231,6 +1271,14 @@ harbormaster_court_position = {
 						exists = dynasty
 						house = prev.house
 					}
+				}
+				multiply = 0
+			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
 				}
 				multiply = 0
 			}
@@ -1433,6 +1481,14 @@ warden_of_the_north_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -1465,19 +1521,19 @@ warden_of_the_north_court_position = {
 
 	scaling_employer_modifiers = {
 		terrible = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		poor = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		average = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		good = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		excellent = {
-			monthly_county_control_change_add = 0.3
+			monthly_county_control_growth_add = 0.3
 		}
 	}
 
@@ -1597,6 +1653,14 @@ warden_of_the_east_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -1629,19 +1693,19 @@ warden_of_the_east_court_position = {
 
 	scaling_employer_modifiers = {
 		terrible = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		poor = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		average = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		good = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		excellent = {
-			monthly_county_control_change_add = 0.3
+			monthly_county_control_growth_add = 0.3
 		}
 	}
 
@@ -1763,6 +1827,14 @@ warden_of_the_west_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -1795,19 +1867,19 @@ warden_of_the_west_court_position = {
 
 	scaling_employer_modifiers = {
 		terrible = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		poor = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		average = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		good = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		excellent = {
-			monthly_county_control_change_add = 0.3
+			monthly_county_control_growth_add = 0.3
 		}
 	}
 
@@ -1928,6 +2000,14 @@ warden_of_the_south_court_position = {
 				}
 				multiply = 0
 			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 
@@ -1960,19 +2040,19 @@ warden_of_the_south_court_position = {
 
 	scaling_employer_modifiers = {
 		terrible = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		poor = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 		}
 		average = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		good = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 		}
 		excellent = {
-			monthly_county_control_change_add = 0.3
+			monthly_county_control_growth_add = 0.3
 		}
 	}
 
@@ -2151,6 +2231,14 @@ master_at_arms_court_position = {
 						exists = dynasty
 						house = prev.house
 					}
+				}
+				multiply = 0
+			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
 				}
 				multiply = 0
 			}
@@ -2375,6 +2463,14 @@ court_smith_court_position = {
 						exists = dynasty
 						house = prev.house
 					}
+				}
+				multiply = 0
+			}
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
 				}
 				multiply = 0
 			}

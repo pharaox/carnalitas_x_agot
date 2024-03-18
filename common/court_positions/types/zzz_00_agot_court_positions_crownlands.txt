@@ -97,6 +97,14 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	revoke_cost = {
 		prestige =  {
 			value = major_court_position_prestige_revoke_cost
+			# CSR: Set revoke cost for AI to 0 as in all other court positions
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
 		}
 	}
 	salary = {
@@ -105,23 +113,23 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	}
 	scaling_employer_modifiers = {
 		terrible = {
-			monthly_county_control_change_add = 0.1
+			monthly_county_control_growth_add = 0.1
 			hostile_scheme_resistance_mult = 0.02
 		}
 		poor = {
-			monthly_county_control_change_add = 0.2
+			monthly_county_control_growth_add = 0.2
 			hostile_scheme_resistance_mult = 0.04
 		}
 		average = {
-			monthly_county_control_change_add = 0.3
+			monthly_county_control_growth_add = 0.3
 			hostile_scheme_resistance_mult = 0.06
 		}
 		good = {
-			monthly_county_control_change_add = 0.4
+			monthly_county_control_growth_add = 0.4
 			hostile_scheme_resistance_mult = 0.08
 		}
 		excellent = {
-			monthly_county_control_change_add = 0.5
+			monthly_county_control_growth_add = 0.5
 			hostile_scheme_resistance_mult = 0.1
 		}
 	}

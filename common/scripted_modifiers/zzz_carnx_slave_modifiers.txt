@@ -270,6 +270,18 @@ carnx_lacking_court_positions_modifier = {
 			}
 			desc = carnx_lacking_master_assassin_reason
 		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = chronicler
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_chronicler_reason
+		}
 		# CSR
 		modifier = {
 			carnx_has_max_aptitude_difference_trigger = {
