@@ -46,3 +46,10 @@
  carnx_debug_msg_slavery_revolt_war_won_defender: "$slavery_revolt$ war won by defender"
  carnx_debug_msg_slavery_revolt_war_white_peace: "$slavery_revolt$ war ended in white piece"
  carnx_debug_msg_slavery_revolt_war_invalidated: "$slavery_revolt$ war invalidated"
+
+ # AGOT slavery laws
+ carnx_debug_msg_slavery_disallowed_law_passed: "$carnx_debug_prefix$: $slavery_disallowed_law$ passed"
+ carnx_debug_msg_slavery_allowed_law_passed: "$carnx_debug_prefix$: $slavery_allowed_law$ passed"
+
+ # AGOT slavery effects
+ carnx_debug_msg_realm_slavery_forcibly_ended: "$carnx_debug_prefix$: Realm slavery forcibly ended"

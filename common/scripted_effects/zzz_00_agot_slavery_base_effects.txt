@@ -1,0 +1,38 @@
+﻿forcibly_end_realm_slavery_effect = {
+	custom_description = {
+		text = forcibly_end_realm_slavery_effect
+		destroy_realm_slave_camps_effect = yes
+		#Call both to clean up any lingering modifiers with no buildings
+		remove_realm_slave_population_effect = yes
+	}
+	if = {
+		limit = {
+			NOT = { has_realm_law = slavery_disallowed_law }
+		}
+		add_realm_law = slavery_disallowed_law
+	}
+	if = {
+		limit = {
+			has_trait = slave_master
+			NOT = { has_character_flag = forced_to_end_slavery }
+		}
+		remove_trait = slave_master
+	}
+	hidden_effect = {
+		every_vassal_or_below = {
+			if = {
+				limit = {
+					primary_title.tier > tier_barony
+					NOT = { has_realm_law = slavery_disallowed_law }
+				}
+				add_character_flag = {
+					flag = forced_to_end_slavery
+					days = 1
+				}
+				add_realm_law = slavery_disallowed_law
+			}
+		}
+	}
+	# CSR
+	carnx_debug_log_effect = { MSG = carnx_debug_msg_realm_slavery_forcibly_ended }
+}
