@@ -25,6 +25,7 @@
  # Adding courtiers
  carnx_debug_msg_adding_courtier_nightswatch: "$carnx_debug_prefix$: Adding slave courtier nightswatch"
  carnx_debug_msg_adding_courtier_silent_sister: "$carnx_debug_prefix$: Adding slave courtier silent_sister"
+ carnx_debug_msg_adding_courtier_kingsguard: "$carnx_debug_prefix$: Adding slave courtier kingsguard"
  carnx_debug_msg_adding_courtier_wildling: "$carnx_debug_prefix$: Adding slave courtier wildling"
 
  # AGOT slavery interactions
@@ -52,6 +53,11 @@
  carnx_debug_msg_slavery_allowed_law_passed: "$carnx_debug_prefix$: $slavery_allowed_law$ passed ($carnx_slavery_allowed_law_ai_will_do$)"
 
  # AGOT slavery effects
+ carnx_debug_msg_realm_slavery_ended: "$carnx_debug_prefix$: Realm slavery ended"
  carnx_debug_msg_realm_slavery_forcibly_ended: "$carnx_debug_prefix$: Realm slavery forcibly ended"
 
+ carnx_agot_debug_msg_freeing_illegal_slave: "$carnx_debug_prefix$: Freeing illegal slave, emancipator: $carnx_emancipator$"
+ carnx_agot_debug_msg_forcibly_freeing_slave: "$carnx_debug_prefix$: Forcibly freeing slave, emancipator: $carnx_emancipator$"
+
  carnx_slavery_allowed_law_ai_will_do: "[THIS.Var('slavery_allowed_law_ai_will_do').GetValue]"
+ carnx_emancipator: "[THIS.Var('emancipator').Char.GetFullNameNoTooltip]"

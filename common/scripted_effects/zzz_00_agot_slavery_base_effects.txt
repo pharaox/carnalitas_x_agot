@@ -1,4 +1,43 @@
-﻿forcibly_end_realm_slavery_effect = {
+﻿end_realm_slavery_effect = {
+	custom_description = {
+		text = end_realm_slavery_effect_desc
+		remove_realm_slave_population_effect = yes
+	}
+	if = {
+		limit = {
+			has_trait = slave_master
+			NOT = { has_character_flag = forced_to_end_slavery }
+		}
+		remove_trait = slave_master
+	}
+	hidden_effect = {
+		every_vassal_or_below = {
+			if = {
+				limit = {
+					primary_title.tier > tier_barony
+					NOT = { has_realm_law = slavery_disallowed_law }
+				}
+				add_character_flag = {
+					flag = forced_to_end_slavery
+					days = 1
+				}
+				add_realm_law = slavery_disallowed_law
+			}
+		}
+	}
+
+	# CSR: Free illegal realm slaves
+	if = {
+		limit = {
+			NOT = { has_character_flag = forced_to_end_slavery }
+		}
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_realm_slavery_ended }
+		save_temporary_scope_as = realm_owner
+		carnx_agot_free_illegal_realm_slaves_effect = { EMANCIPATOR = scope:realm_owner }
+	}
+}
+
+forcibly_end_realm_slavery_effect = {
 	custom_description = {
 		text = forcibly_end_realm_slavery_effect
 		destroy_realm_slave_camps_effect = yes
@@ -33,6 +72,16 @@
 			}
 		}
 	}
-	# CSR
+
+	# CSR: Forcibly free realm slaves
 	carnx_debug_log_effect = { MSG = carnx_debug_msg_realm_slavery_forcibly_ended }
+	if = {
+		limit = { exists = scope:attacker } # attacker in a free_slaves_cb or slavery_revolt war
+		scope:attacker = { save_temporary_scope_as = enforcer }
+	}
+	else_if = {
+		limit = { exists = scope:slave_leader } # leader of a slavery_revolt faction
+		scope:slave_leader = { save_temporary_scope_as = enforcer }
+	}
+	carnx_agot_forcibly_free_realm_slaves_effect = { EMANCIPATOR = scope:enforcer }
 }

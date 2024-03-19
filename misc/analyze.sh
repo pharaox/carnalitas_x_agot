@@ -5,6 +5,7 @@ echo "Slave enslaved: $(grep -a "Slave enslaved" debug.log | wc -l)"
 echo "Slave freed: $(grep -a "Slave freed" debug.log | wc -l)"
 echo "- Freeing slave: $(grep -a "Freeing slave" debug.log | wc -l)"
 echo "- Freeing illegal slave: $(grep -a "Freeing illegal slave" debug.log | wc -l)"
+echo "- Forcibly freeing slave: $(grep -a "Forcibly freeing slave" debug.log | wc -l)"
 echo "Slave ransomed: $(grep -a "Slave ransomed" debug.log | wc -l)"
 echo "Slave bought: $(grep -a "Slave bought" debug.log | wc -l)"
 echo "Slave seized: $(grep -a "Slave seized" debug.log | wc -l)"
@@ -157,6 +158,16 @@ echo "Court Smith court position revoked: $(grep -a "Court Smith court position 
 echo "Court Smith court position invalidated: $(grep -a "Court Smith court position invalidated" debug.log | wc -l)"
 echo
 
+# Maintenance events
+echo "Moving slave to owner's court: $(grep -a "Moving slave to owner's court" debug.log | wc -l)"
+echo
+# AGOT
+echo "Adding slave courtier nightswatch: $(grep -a "Adding slave courtier nightswatch" debug.log | wc -l)"
+echo "Adding slave courtier silent_sister: $(grep -a "Adding slave courtier silent_sister" debug.log | wc -l)"
+echo "Adding slave courtier kingsguard: $(grep -a "Adding slave courtier kingsguard" debug.log | wc -l)"
+echo "Adding slave courtier wildling: $(grep -a "Adding slave courtier wildling" debug.log | wc -l)"
+echo
+
 # Prison events
 echo "Non-slave character imprisoned: $(grep -a "Non-slave character imprisoned" debug.log | wc -l)"
 echo "Non-slave character released from prison: $(grep -a "Non-slave character released from prison" debug.log | wc -l)"
@@ -214,5 +225,7 @@ echo "- invalidated: $(grep -a "Slave Revolt war invalidated" debug.log | wc -l)
 echo
 echo "Slavery Forbidden passed: $(grep -a "Slavery Forbidden passed" debug.log | wc -l)"
 echo "Slavery Allowed passed: $(grep -a "Slavery Allowed passed" debug.log | wc -l)"
+echo
+echo "Realm slavery ended: $(grep -a "Realm slavery ended" debug.log | wc -l)"
 echo "Realm slavery forcibly ended: $(grep -a "Realm slavery forcibly ended" debug.log | wc -l)"
 echo

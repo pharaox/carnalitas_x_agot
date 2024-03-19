@@ -58,3 +58,101 @@ carnx_agot_add_broke_slavery_law_harsh_opinion_effect = {
 		modifier = carnx_broke_slavery_law_harsh_opinion
 	}
 }
+
+carnx_agot_free_illegal_slaves_effect = {
+	save_temporary_scope_as = owner
+	every_relation = {
+		type = slave
+		limit = {
+			# Free only those slaves that are considered criminal to own
+			save_temporary_scope_as = slave
+			scope:owner = {
+				trigger_if = {
+					limit = { exists = liege }
+					liege = {
+						carnx_agot_is_slavery_crime_trigger = {
+							CHARACTER = scope:slave
+							ACTION = flag:none
+						}
+					}
+				}
+				trigger_else = {
+					carnx_agot_is_slavery_crime_trigger = {
+						CHARACTER = scope:slave
+						ACTION = flag:none
+					}
+				}
+			}
+		}
+		save_temporary_scope_as = slave
+
+		$EMANCIPATOR$ ?= {
+			save_temporary_scope_as = emancipator
+			hidden_effect = {
+				# Potentially acquire liberator trait if scope:slave not enslaved by scope:emancipator
+				if = {
+					limit = {
+						scope:slave = {
+							NOT = { carnx_was_enslaved_by_character_trigger = { CHARACTER = scope:emancipator } }
+						}
+					}
+					carnx_potentially_acquire_liberator_trait_effect = yes
+				}
+			}
+		}
+
+		carnx_debug_log_1_effect = {
+			MSG = carnx_agot_debug_msg_freeing_illegal_slave
+			NAME1 = emancipator TYPE1 = flag:character
+		}
+		carn_free_slave_effect = yes
+	}
+}
+
+carnx_agot_forcibly_free_slaves_effect = {
+	every_relation = {
+		type = slave
+		save_temporary_scope_as = slave
+
+		$EMANCIPATOR$ ?= {
+			save_temporary_scope_as = emancipator
+			hidden_effect = {
+				# Potentially acquire liberator trait if scope:slave not enslaved by scope:emancipator
+				if = {
+					limit = {
+						scope:slave = {
+							NOT = { carnx_was_enslaved_by_character_trigger = { CHARACTER = scope:emancipator } }
+						}
+					}
+					carnx_potentially_acquire_liberator_trait_effect = yes
+				}
+			}
+		}
+
+		carnx_debug_log_1_effect = {
+			MSG = carnx_agot_debug_msg_forcibly_freeing_slave
+			NAME1 = emancipator TYPE1 = flag:character
+		}
+		carn_free_slave_effect = yes
+	}
+}
+
+carnx_agot_free_illegal_realm_slaves_effect = {
+	carnx_agot_free_illegal_slaves_effect = { EMANCIPATOR = $EMANCIPATOR$ }
+	every_vassal_or_below = {
+		limit = {
+			highest_held_title_tier >= tier_county
+		}
+		carnx_agot_free_illegal_slaves_effect = { EMANCIPATOR = $EMANCIPATOR$ }
+	}
+}
+
+carnx_agot_forcibly_free_realm_slaves_effect = {
+	carnx_agot_forcibly_free_slaves_effect = { EMANCIPATOR = $EMANCIPATOR$ }
+	every_vassal_or_below = {
+		limit = {
+			highest_held_title_tier >= tier_county
+		}
+		carnx_agot_forcibly_free_slaves_effect = { EMANCIPATOR = $EMANCIPATOR$ }
+	}
+}

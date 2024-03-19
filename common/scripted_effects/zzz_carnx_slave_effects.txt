@@ -1,6 +1,6 @@
 ﻿# carnx_add_courtier_effect allows compatibility mods to prevent conversion mods (e.g. AGOT) from redirecting courtiers.
 carnx_add_courtier_effect = {
-	# Remove nightswatch / silent sister trait and set culture to owner's culture
+	# Remove nightswatch / silent sister / kingsguard trait and set culture to owner's culture
 	# to prevent AGOT from redirecting the courtier to a different court
 	$SLAVE$ = {
 		if = {
@@ -14,6 +14,12 @@ carnx_add_courtier_effect = {
 			carnx_debug_log_effect = { MSG = carnx_debug_msg_adding_courtier_silent_sister }
 			save_temporary_scope_value_as =  { name = saved_trait value = flag:silent_sister }
 			remove_trait = silent_sister
+		}
+		else_if = {
+			limit = { has_trait = kingsguard }
+			carnx_debug_log_effect = { MSG = carnx_debug_msg_adding_courtier_kingsguard }
+			save_temporary_scope_value_as =  { name = saved_trait value = flag:kingsguard }
+			remove_trait = kingsguard
 		}
 		if = {
 			limit = {
@@ -48,6 +54,10 @@ carnx_add_courtier_effect = {
 		else_if = {
 			limit = { scope:saved_trait ?= flag:silent_sister }
 			add_trait = silent_sister
+		}
+		else_if = {
+			limit = { scope:saved_trait ?= flag:kingsguard }
+			add_trait = kingsguard
 		}
 		if = {
 			limit = { exists = scope:saved_culture }
