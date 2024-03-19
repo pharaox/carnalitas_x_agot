@@ -28,6 +28,10 @@
  carnx_debug_msg_adding_courtier_kingsguard: "$carnx_debug_prefix$: Adding slave courtier kingsguard"
  carnx_debug_msg_adding_courtier_wildling: "$carnx_debug_prefix$: Adding slave courtier wildling"
 
+ # Freeing slaves
+ carnx_debug_msg_freeing_slave_nightswatch: "$carnx_debug_prefix$: Freeing slave nightswatch"
+ carnx_debug_msg_freeing_slave_silent_sister: "$carnx_debug_prefix$: Freeing slave silent_sister"
+
  # AGOT slavery interactions
  carnx_debug_msg_character_sold_into_slavery: "$carnx_debug_prefix$: Character sold into slavery"
 

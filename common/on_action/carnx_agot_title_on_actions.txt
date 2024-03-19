@@ -1,0 +1,36 @@
+﻿# A title is transferred to a new character
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Might be dead
+on_title_gain = {
+	on_actions = {
+		carnx_agot_on_title_gain_nightswatch
+		carnx_agot_on_title_gain_silent_sister
+	}
+}
+
+carnx_agot_on_title_gain_nightswatch = {
+	trigger = {
+		has_government = nights_watch_government
+	}
+	effect = {
+		every_relation = {
+			type = slave
+			carnx_debug_log_effect = { MSG = carnx_debug_msg_freeing_slave_nightswatch }
+			carn_free_slave_effect = yes
+		}
+	}
+}
+
+carnx_agot_on_title_gain_silent_sister = {
+	trigger = {
+		has_government = silent_sisterhood_government
+	}
+	effect = {
+		every_relation = {
+			type = slave
+			carnx_debug_log_effect = { MSG = carnx_debug_msg_freeing_slave_silent_sister }
+			carn_free_slave_effect = yes
+		}
+	}
+}
