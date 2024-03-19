@@ -48,8 +48,10 @@
  carnx_debug_msg_slavery_revolt_war_invalidated: "$slavery_revolt$ war invalidated"
 
  # AGOT slavery laws
- carnx_debug_msg_slavery_disallowed_law_passed: "$carnx_debug_prefix$: $slavery_disallowed_law$ passed"
- carnx_debug_msg_slavery_allowed_law_passed: "$carnx_debug_prefix$: $slavery_allowed_law$ passed"
+ carnx_debug_msg_slavery_disallowed_law_passed: "$carnx_debug_prefix$: $slavery_disallowed_law$ passed ($carnx_slavery_allowed_law_ai_will_do$)"
+ carnx_debug_msg_slavery_allowed_law_passed: "$carnx_debug_prefix$: $slavery_allowed_law$ passed ($carnx_slavery_allowed_law_ai_will_do$)"
 
  # AGOT slavery effects
  carnx_debug_msg_realm_slavery_forcibly_ended: "$carnx_debug_prefix$: Realm slavery forcibly ended"
+
+ carnx_slavery_allowed_law_ai_will_do: "[THIS.Var('slavery_allowed_law_ai_will_do').GetValue]"

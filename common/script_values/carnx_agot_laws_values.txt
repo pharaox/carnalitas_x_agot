@@ -1,0 +1,135 @@
+﻿carnx_slavery_allowed_law_ai_will_do_value = {
+	value = 0
+
+	# Compassion (20 to -20 depending on compassion)
+	add = {
+		value = ai_compassion
+		multiply = -0.2
+	}
+
+	# Greed (-20 to 20 depending on greed)
+	add = {
+		value = ai_greed
+		multiply = 0.2
+	}
+
+	# Slavery doctrines (faith)
+	if = {
+		limit = { carnx_is_slavery_always_accepted_trigger = yes }
+		add = 20
+	}
+	else_if = {
+		limit = { carnx_is_slavery_always_crime_trigger = yes }
+		add = -20
+	}
+	else_if = {
+		limit = {
+			# crime / shunned
+			carnx_is_slavery_never_accepted_trigger = yes
+			carnx_is_slavery_never_crime_trigger = no
+		}
+		add = -10
+	}
+	else_if = {
+		limit = {
+			# shunned / accepted
+			carnx_is_slavery_never_crime_trigger = yes
+			carnx_is_slavery_never_accepted_trigger = no
+		}
+		add = 10
+	}
+
+	# Slavery cultural parameters (culture)
+	if = {
+		limit = {
+			culture = {
+				OR = {
+					carnx_agot_is_slavery_embraced_trigger = yes
+					carnx_agot_is_slavery_thralls_trigger = yes
+				}
+			}
+		}
+		add = 20
+	}
+	else = {
+		add = -20
+	}
+
+	# Historical slavery (title)
+	if = {
+		limit = {
+			primary_title ?= {
+				has_variable = historical_slavery
+			}
+		}
+		add = 20
+	}
+
+	# Slavery attitude
+	# Slavers very likely to allow slavery, liberators very unlikely,
+	# traders and employers rather likely
+	if = {
+		limit = {
+			has_character_modifier = carnx_slavery_attitude_slaver_modifier
+		}
+		add = 50
+	}
+	else_if = {
+		limit = {
+			has_character_modifier = carnx_slavery_attitude_liberator_modifier
+		}
+		add = -50
+	}
+	else_if = {
+		limit = {
+			OR = {
+				has_character_modifier = carnx_slavery_attitude_trader_modifier
+				has_character_modifier = carnx_slavery_attitude_employer_modifier
+			}
+		}
+		add = 20
+	}
+
+	# Background
+	# slave_master are rulers with slave populations
+	if = {
+		limit = { has_trait = slave_master }
+		add = 100
+	}
+	# freedman are generated slavery revolt faction leaders
+	if = {
+		limit = { has_trait = freedman }
+		add = -100
+	}
+	else_if = {
+		limit = {
+			any_parent = {
+				has_trait = freedman
+			}
+		}
+		add = -50
+	}
+	else_if = {
+		limit = {
+			any_parent = {
+				any_parent = {
+					has_trait = freedman
+				}
+			}
+		}
+		add = -20
+	}
+	# former_slave are normal former slave characters
+	if = {
+		limit = { has_trait = former_slave }
+		add = -20
+	}
+	else_if = {
+		limit = {
+			any_parent = {
+				has_trait = former_slave
+			}
+		}
+		add = -10
+	}
+}

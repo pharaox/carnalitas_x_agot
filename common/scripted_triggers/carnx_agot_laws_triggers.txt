@@ -1,0 +1,12 @@
+﻿carnx_can_have_slavery_allowed_law_trigger = {
+	OR = {
+		agot_is_independent_ruler = yes
+		liege ?= {
+			has_realm_law = slavery_allowed_law
+		}
+		# Megawars
+		var:pre_war_liege ?= {
+			has_realm_law = slavery_allowed_law
+		}
+	}
+}
