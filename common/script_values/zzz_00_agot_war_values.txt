@@ -1,0 +1,119 @@
+﻿slave_raid_ai_score_value = {
+	value = 0
+	scope:attacker = {
+		# Greed / compassion (0 to 40 depending on greed and compassion)
+		if = {
+			limit = {
+				carnx_greed_compassion_value > 0
+			}
+			add = {
+				value = carnx_greed_compassion_value
+				multiply = 0.2
+			}
+		}
+
+		# Slavery attitude
+		# Slavers more likely to raid for slaves
+		if = {
+			limit = {
+				has_character_modifier = carnx_slavery_attitude_slaver_modifier
+			}
+			add = 50
+		}
+
+		# Background
+		# slave_master are rulers with slave populations
+		if = {
+			limit = { has_trait = slave_master }
+			add = 10
+		}
+
+		# Slavery doctrines & cultural parameters (faith / culture)
+		if = {
+			limit = {
+				NOR = {
+					carnx_is_slavery_always_accepted_trigger = yes
+					culture = {
+						OR = {
+							carnx_agot_is_slavery_embraced_trigger = yes
+							carnx_agot_is_slavery_thralls_trigger = yes
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+
+		if = {
+			limit = {
+				NOT = { agot_can_upgrade_any_slave_population_trigger = yes }
+			}
+			multiply = 0
+		}
+	}
+}
+
+free_slaves_ai_score_value = {
+	value = 0
+	scope:attacker = {
+		# Greed / compassion (0 to 20 depending on greed and compassion)
+		if = {
+			limit = {
+				carnx_greed_compassion_value < 0
+			}
+			add = {
+				value = carnx_greed_compassion_value
+				multiply = -0.1
+			}
+		}
+
+		# Zeal (0 to 10 depending on zeal)
+		if = {
+			limit = {
+				carnx_is_slavery_always_crime_trigger = yes
+				ai_zeal > 0
+			}
+			add = {
+				value = ai_zeal
+				multiply = 0.1
+			}
+		}
+
+		# Slavery attitude
+		# Liberators more likely to free slaves
+		if = {
+			limit = {
+				has_character_modifier = carnx_slavery_attitude_liberator_modifier
+			}
+			add = 20
+		}
+
+		# Background
+		# freedman are generated slavery revolt faction leaders
+		if = {
+			limit = { has_trait = freedman }
+			add = 5
+		}
+
+		# Slavery doctrines & cultural parameters (faith / culture)
+		if = {
+			limit = {
+				NOR = {
+					carnx_is_slavery_always_crime_trigger = yes
+					culture = {
+						carnx_agot_is_slavery_embraced_trigger = no
+						carnx_agot_is_slavery_thralls_trigger = no
+					}
+				}
+			}
+			multiply = 0
+		}
+
+		if = {
+			limit = {
+				NOT = { has_realm_law = crown_authority_3 }
+			}
+			multiply = 0
+		}
+	}
+}

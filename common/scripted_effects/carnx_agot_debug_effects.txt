@@ -4,10 +4,18 @@
 		switch = {
 			trigger = using_cb
 			slave_raid_cb = {
+				save_temporary_scope_value_as = {
+					name = ai_score
+					value = slave_raid_ai_score_value
+				}
 				carnx_debug_log_effect = { MSG = carnx_debug_msg_slave_raid_cb_war_$ACTION$ }
 				debug_log_scopes = yes
 			}
 			free_slaves_cb = {
+				save_temporary_scope_value_as = {
+					name = ai_score
+					value = free_slaves_ai_score_value
+				}
 				carnx_debug_log_effect = { MSG = carnx_debug_msg_free_slaves_cb_war_$ACTION$ }
 				debug_log_scopes = yes
 			}
