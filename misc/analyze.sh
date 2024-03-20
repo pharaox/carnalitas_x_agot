@@ -186,6 +186,7 @@ echo
 
 # Slavery misc events
 echo "Character marked for enslavement: $(grep -a "Character marked for enslavement" debug.log | wc -l)"
+echo "Character captured as potential slave: $(grep -a "Character captured as potential slave" debug.log | wc -l)"
 echo "Character lost piety from slaves: $(grep -a "Character lost piety from slaves" debug.log | wc -l)"
 echo "Character became their enslaver's rival: $(grep -a "Character became their enslaver's rival" debug.log | wc -l)"
 echo
@@ -203,6 +204,7 @@ echo "Character acquired Slaver 2 trait: $(grep -a "Character acquired Slaver 2 
 echo "Character acquired Infamous Slaver trait: $(grep -a "Character acquired Infamous Slaver trait" debug.log | wc -l)"
 echo "Character acquired Famous Liberator trait: $(grep -a "Character acquired Famous Liberator trait" debug.log | wc -l)"
 echo
+
 # AGOT slavery features
 echo "Character sold into slavery: $(grep -a "Character sold into slavery" debug.log | wc -l)"
 echo
