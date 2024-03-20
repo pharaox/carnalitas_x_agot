@@ -945,10 +945,8 @@ release_from_prison_interaction = {
 				}
 			}
 			# CSR: Disable Banish for slaves since they will be returned automatically
-			NOT = {
-				scope:actor = {
-					has_relation_slave = scope:recipient
-				}
+			scope:recipient = {
+				NOT = { carnx_is_slave_trigger = yes }
 			}
 			#scope:recipient = {
 			#	trigger_if = {
@@ -1011,6 +1009,10 @@ release_from_prison_interaction = {
 		is_shown = {
 			scope:actor.faith = {
 				has_doctrine_parameter = take_vows_active
+			}
+			# CSR: Disable Take Vows for slaves since they will be returned automatically
+			scope:recipient = {
+				NOT = { carnx_is_slave_trigger = yes }
 			}
 			# AGOT Added
 			scope:actor = {
@@ -1198,6 +1200,10 @@ release_from_prison_interaction = {
 					}
 				}
 			}
+			# CSR: Disable Recruit for slaves since they will be returned automatically
+			scope:recipient = {
+				NOT = { carnx_is_slave_trigger = yes }
+			}
 			#AGOT Added, NW can only forcibly recruit men over a certain age and wildling children
 			trigger_if = {
 				limit = {
@@ -1301,7 +1307,10 @@ release_from_prison_interaction = {
 					is_spouse_of = scope:actor
 				}
 			}
-
+			# CSR: Disable Banish to Essos for slaves since they will be returned automatically
+			scope:recipient = {
+				NOT = { carnx_is_slave_trigger = yes }
+			}
 			scope:actor = {
 				NOR = {
 					capital_province = {
