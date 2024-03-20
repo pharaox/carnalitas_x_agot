@@ -37,6 +37,14 @@ carnx_agot_on_war_won_attacker = {
 	effect = {
 		scope:war = {
 			carnx_agot_debug_log_slavery_war_effect = { ACTION = won_attacker }
+
+			# Actually capture slaves after a slave raid
+			if = {
+				limit = { using_cb = slave_raid_cb }
+				scope:defender = {
+					carnx_capture_potential_slaves_effect = { WINNER = scope:attacker }
+				}
+			}
 		}
 	}
 }
