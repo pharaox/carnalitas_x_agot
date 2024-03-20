@@ -32,6 +32,14 @@
  carnx_debug_msg_freeing_slave_nightswatch: "$carnx_debug_prefix$: Freeing slave nightswatch"
  carnx_debug_msg_freeing_slave_silent_sister: "$carnx_debug_prefix$: Freeing slave silent_sister"
 
+ # Handling special characters
+ carnx_debug_msg_removing_from_nightswatch: "$carnx_debug_prefix$: Removing from Night's Watch"
+ carnx_debug_msg_removing_from_silent_sisters: "$carnx_debug_prefix$: Removing from Silent Sisterhood"
+ carnx_debug_msg_removing_from_kingsguard: "$carnx_debug_prefix$: Removing from Kingsguard"
+ carnx_debug_msg_sending_to_nightswatch: "$carnx_debug_prefix$: Sending to Night's Watch"
+ carnx_debug_msg_sending_to_silent_sisters: "$carnx_debug_prefix$: Sending to Silent Sisterhood"
+ carnx_debug_msg_sending_to_kingsguard_ruler: "$carnx_debug_prefix$: Sending to Kingsguard ruler"
+
  # AGOT slavery interactions
  carnx_debug_msg_character_sold_into_slavery: "$carnx_debug_prefix$: Character sold into slavery"
 

@@ -1,0 +1,137 @@
+﻿carn_on_slave_enslaved = {
+	on_actions = {
+		carnx_agot_on_slave_enslaved_nightswatch
+		carnx_agot_on_slave_enslaved_silent_sister
+		carnx_agot_on_slave_enslaved_kingsguard
+	}
+}
+
+carn_on_slave_freed = {
+	on_actions = {
+		carnx_agot_on_slave_freed_nightswatch
+		carnx_agot_on_slave_freed_silent_sister
+		carnx_agot_on_slave_freed_kingsguard
+	}
+}
+
+carnx_on_slave_ransomed = {
+	on_actions = {
+		carnx_agot_on_slave_freed_nightswatch
+		carnx_agot_on_slave_freed_silent_sister
+		carnx_agot_on_slave_freed_kingsguard
+	}
+}
+
+carnx_on_slave_escaped = {
+	on_actions = {
+		carnx_agot_on_slave_freed_nightswatch
+		carnx_agot_on_slave_freed_silent_sister
+		carnx_agot_on_slave_freed_kingsguard
+	}
+}
+
+carnx_on_slave_liberated = {
+	on_actions = {
+		carnx_agot_on_slave_freed_nightswatch
+		carnx_agot_on_slave_freed_silent_sister
+		carnx_agot_on_slave_freed_kingsguard
+	}
+}
+
+carnx_agot_on_slave_enslaved_nightswatch = {
+	trigger = {
+		has_trait = nightswatch
+	}
+	effect = {
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_removing_from_nightswatch }
+		remove_trait = nightswatch
+		add_character_modifier = carnx_agot_former_nightswatch_modifier
+	}
+}
+
+carnx_agot_on_slave_enslaved_silent_sister = {
+	trigger = {
+		has_trait = silent_sister
+	}
+	effect = {
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_removing_from_silent_sisters }
+		remove_trait = silent_sister
+		add_character_modifier = carnx_agot_former_silent_sister_modifier
+	}
+}
+
+carnx_agot_on_slave_enslaved_kingsguard = {
+	trigger = {
+		has_trait = kingsguard
+	}
+	effect = {
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_removing_from_kingsguard }
+		save_temporary_scope_as = character
+		agot_remove_kingsguard_effect = {
+			KINGSGUARD = scope:character
+		}
+		add_character_modifier = carnx_agot_former_kingsguard_modifier
+	}
+}
+
+carnx_agot_on_slave_freed_nightswatch = {
+	trigger = {
+		has_character_modifier = carnx_agot_former_nightswatch_modifier
+	}
+	effect = {
+		remove_character_modifier = carnx_agot_former_nightswatch_modifier
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_sending_to_nightswatch }
+		save_temporary_scope_as = character
+		agot_send_to_nightswatch_effect = {
+			ACTOR = scope:character
+			NIGHTSWATCH_CANDIDATE = scope:character
+		}
+		add_character_flag = {
+			flag = carnx_block_add_courtier
+			days = 1
+		}
+	}
+}
+
+carnx_agot_on_slave_freed_silent_sister = {
+	trigger = {
+		has_character_modifier = carnx_agot_former_silent_sister_modifier
+	}
+	effect = {
+		remove_character_modifier = carnx_agot_former_silent_sister_modifier
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_sending_to_silent_sisters }
+		save_temporary_scope_as = character
+		agot_send_to_silent_sisters_effect = {
+			ACTOR = scope:character
+			SILENT_SISTER_CANDIDATE = scope:character
+		}
+		add_character_flag = {
+			flag = carnx_block_add_courtier
+			days = 1
+		}
+	}
+}
+
+carnx_agot_on_slave_freed_kingsguard = {
+	trigger = {
+		has_character_modifier = carnx_agot_former_kingsguard_modifier
+	}
+	effect = {
+		remove_character_modifier = carnx_agot_former_kingsguard_modifier
+		add_character_modifier = training_for_kingsguard
+		carnx_debug_log_effect = { MSG = carnx_debug_msg_sending_to_kingsguard_ruler }
+		save_temporary_scope_as = character
+		random_ruler = {
+			limit = {
+				primary_title = {
+					has_variable = kingsguard
+				}
+			}
+			add_courtier = scope:character
+		}
+		add_character_flag = {
+			flag = carnx_block_add_courtier
+			days = 1
+		}
+	}
+}

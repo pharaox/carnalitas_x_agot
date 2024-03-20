@@ -1,0 +1,15 @@
+﻿carnx_agot_former_nightswatch_modifier = {
+	icon = piety_mixed
+	prowess = 1
+}
+
+carnx_agot_former_silent_sister_modifier = {
+	icon = piety_mixed
+	diplomacy = -2
+	learning = 1
+}
+
+carnx_agot_former_kingsguard_modifier = {
+	icon = prestige_mixed
+	prowess = 2
+}
