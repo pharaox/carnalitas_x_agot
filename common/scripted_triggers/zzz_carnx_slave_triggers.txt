@@ -133,5 +133,8 @@ carnx_can_be_slave_owner_trigger = {
 	NOR = {
 		has_trait = nightswatch
 		has_trait = silent_sister
+		has_trait = maester
+		has_trait = septon
+		has_trait = kingsguard
 	}
 }
