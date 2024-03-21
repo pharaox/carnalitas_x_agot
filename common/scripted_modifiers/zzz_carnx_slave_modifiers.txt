@@ -462,7 +462,7 @@ carnx_slavery_modifier = {
 				$ACTION$ = flag:accept_gift
 			}
 			add = {
-				value = -50
+				value = -100
 				multiply = carnx_ai_honor_impact_multiplier
 			}
 			desc = carnx_agot_slavery_thralls_reason
