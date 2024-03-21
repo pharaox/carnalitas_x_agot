@@ -1,0 +1,75 @@
+﻿slave = { # Chattel Slave
+	opposites = {
+		former_slave
+	}
+
+	diplomacy = -3
+	general_opinion = -10
+	same_opinion = 10
+	monthly_prestige_gain_mult = -0.75
+	hostile_scheme_power_mult = -0.2
+
+	flag = can_not_marry
+	flag = can_not_be_granted_titles
+	flag = can_not_leave_court_voluntarily
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+
+	inherit_chance = 100
+	parent_inheritance_sex = female
+
+	shown_in_ruler_designer = no
+
+	# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures
+	name = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_slave
+			}
+			triggered_desc = {
+				trigger = {
+					any_relation = {
+						type = slave_owner
+						culture = {
+							carnx_agot_is_slavery_thralls_trigger = yes
+						}
+					}
+				}
+				desc = trait_carnx_agot_thrall
+			}
+			desc = trait_slave
+		}
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_slave_desc
+			}
+			# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures
+			triggered_desc = {
+				trigger = {
+					any_relation = {
+						type = slave_owner
+						culture = {
+							carnx_agot_is_slavery_thralls_trigger = yes
+						}
+					}
+				}
+				desc = trait_carnx_agot_thrall_character_desc
+			}
+			desc = trait_slave_character_desc
+		}
+	}
+
+	compatibility = {
+		slave = @pos_compat_medium
+		former_slave = @pos_compat_medium
+	}
+}
