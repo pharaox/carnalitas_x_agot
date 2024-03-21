@@ -136,5 +136,9 @@ carnx_can_be_slave_owner_trigger = {
 		has_trait = maester
 		has_trait = septon
 		has_trait = kingsguard
+
+		has_title = title:b_ruins
+		has_title = title:b_more_ruin
+		has_title = title:b_the_most_ruin
 	}
 }
