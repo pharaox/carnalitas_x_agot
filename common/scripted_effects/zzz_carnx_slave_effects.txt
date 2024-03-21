@@ -127,5 +127,10 @@ carnx_apply_slavery_consequences_effect = {
 				value = major_prestige_loss
 			}
 		}
+		stress_impact = {
+			honorable = medium_stress_impact_gain # 40
+			just = medium_stress_impact_gain # 40
+			arbitrary = minor_stress_impact_loss # -15
+		}
 	}
 }
