@@ -62,9 +62,6 @@ carnx_agot_is_slavery_capital_crime_trigger = {
 	# Slavery must be forbidden by law to be considered a capital crime
 	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
 
-	# Slavery must be criminal in faith to be considered a capital crime
-	carnx_is_slavery_crime_trigger = { CHARACTER = $CHARACTER$ }
-
 	# Cultures that embrace slavery or keep thralls (Ironborn)
 	# do not consider any action a capital crime
 	trigger_if = {
@@ -87,9 +84,6 @@ carnx_agot_is_slavery_capital_crime_trigger = {
 carnx_agot_is_slavery_crime_trigger = {
 	# Slavery must be forbidden by law to be considered a crime
 	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
-
-	# Slavery must not be accepted in faith to be considered a crime
-	NOT = { carnx_is_slavery_accepted_trigger = { CHARACTER = $CHARACTER$ } }
 
 	# Cultures that embrace slavery consider enslaving a crime
 	trigger_if = {

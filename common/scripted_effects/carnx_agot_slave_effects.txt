@@ -70,17 +70,11 @@ carnx_agot_free_illegal_slaves_effect = {
 				trigger_if = {
 					limit = { exists = liege }
 					liege = {
-						carnx_agot_is_slavery_crime_trigger = {
-							CHARACTER = scope:slave
-							ACTION = flag:none
-						}
+						carnx_agot_is_slavery_crime_trigger = { ACTION = flag:none }
 					}
 				}
 				trigger_else = {
-					carnx_agot_is_slavery_crime_trigger = {
-						CHARACTER = scope:slave
-						ACTION = flag:none
-					}
+					carnx_agot_is_slavery_crime_trigger = { ACTION = flag:none }
 				}
 			}
 		}
