@@ -142,3 +142,31 @@ carnx_can_be_slave_owner_trigger = {
 		has_title = title:b_the_most_ruin
 	}
 }
+
+carnx_is_slavery_always_forbidden_trigger = {
+	OR = {
+		# Slavery is crime according to slavery laws and culture
+		trigger_if = {
+			limit = { exists = liege }
+			liege = {
+				carnx_agot_is_slavery_crime_trigger = { ACTION = $ACTION$ }
+			}
+		}
+		trigger_else = {
+			carnx_agot_is_slavery_crime_trigger = { ACTION = $ACTION$ }
+		}
+
+		# Trading or gifting slaves is forbidden for characters of Thralls cultures
+		AND = {
+			culture = {
+				carnx_agot_is_slavery_thralls_trigger = yes
+			}
+			OR = {
+				$ACTION$ = flag:buy
+				$ACTION$ = flag:sell
+				$ACTION$ = flag:offer_gift
+				$ACTION$ = flag:accept_gift
+			}
+		}
+	}
+}
