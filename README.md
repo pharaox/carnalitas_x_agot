@@ -2,7 +2,7 @@
 
 This is a [Carnalitas Slavery Reimagined](https://www.loverslab.com/files/file/25565-carnalitas-slavery-reimagined/) compatibility patch for [A Game of Thrones](https://steamcommunity.com/sharedfiles/filedetails/?id=2887120253). For an overview of features and other changes, see the README of the main mod.
 
-The latest version is compatible with CK3 1.12.x, Carnalitas 2.5, CSR 0.19.x, and AGOT 0.2.2.x.
+The latest version is compatible with CK3 1.12.x, Carnalitas 2.5, CSR 0.20.x, and AGOT 0.2.3.
 
 Note that since Carnalitas 2.5 itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/).
 
@@ -53,13 +53,12 @@ Starting with version 0.2.0, AGOT introduces its own slavery system. This system
 
 ### Slavery Realm Laws
 
-In AGOT, rulers can decide to either allow or forbid slavery via a realm law. Most Free Cities start with slavery allowed, while most other realms start with slavery forbidden. Every ruler can set their own slavery law, however in this mod it is assumed that rulers must abide by the slavery law of their liege if they have one.
+In AGOT, rulers can decide to either allow or forbid slavery via a realm law. Most Free Cities start with *Slavery Allowed*, while most other realms start with *Slavery Forbidden*. Every ruler can choose to allow or forbid slavery if they have no liege or their liege has allowed it, but must forbid slavery if their liege has forbidden it.
 
 If slavery is forbidden by a ruler's liege, slavery actions performed by this ruler may have different consequences depending on whether the violation is considered a capital crime, a non-capital crime, or neither by the liege.
 
-* If owning slaves of a certain faith is a crime in the liege's faith, enslaving such characters is considered a capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
-* If owning slaves of a certain faith is either crime or shunned in the liege's faith, performing slavery actions on such characters (except freeing or ransoming) is considered a non-capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
-* If owning slaves of a certain faith is accepted in the liege's faith, performing slavery actions on such characters (except freeing or ransoming) is still frowned upon, but not considered a crime.
+* Enslaving is considered a capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
+* Performing other slavery actions (except freeing or ransoming) is considered a non-capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
 
 If a ruler actually breaks the slavery law of their liege, this is punished by adding an opinion modifier to the liege with 3 different levels of harshness, depending on the severity of the violation:
 
@@ -67,9 +66,25 @@ If a ruler actually breaks the slavery law of their liege, this is punished by a
 * If it is a non-capital crime, the opinion modifier has only an imprisonment reason.
 * If it is neither, the opinion modifier has no punishment reasons.
 
+In general, AI rulers are quite unwilling to break the slavery laws of their liege (or their own if they have no liege) if the violation is considered a crime. They do not initiate slavery interactions under these circumstances and are quite reluctant to accept them.
+
+With this mod, the AI willingness to pass slavery laws also takes into account slavery doctrines, cultural parameters, and attitudes, in addition to compassion, greed, and background. As a result, most AI rulers will now pass *Slavery Allowed* if compatible with their religion, culture, and attitude shortly after their liege passes it.
+
+Also, slaves may now be freed when the *Slavery Forbidden* law is passed:
+
+* If willingly by a ruler, all realm slaves that are considered criminal to own are freed.
+* If forcibly as a result of accepting the demands of the slave action, being defeated in a slavery revolt, or losing a *Free Slaves* war, all realm slaves are freed.
+
 ### Slavery Interactions
 
 AGOT introduces one new prisoner interaction, *Sell into Slavery*. It allows rulers to effectively kill prisoners in exchange for gold. This interaction is disabled as it is redundant, does not fit well with other CSR features, and would break the CSR balance by allowing rulers to make money out of almost every prisoner.
+
+### Slavery Wars
+
+AGOT introduces 2 new slavery war CBs: *Raid for Slaves* and *Free Slaves*. With this mod, the AI willingness to start these wars also takes into account slavery doctrines, cultural parameters, and attitudes, in addition to compassion, greed, and background. Also, winning such a war as an attacker has additional consequences:
+
+* If a *Slave Raid* war is won by the attacker, a few (2-5) characters are now actually captured and "marked for enslavement".
+* If a *Free Slaves* war is won by the attacker, all slaves in the defender's realm are freed.
 
 ### Slavery Traits
 
@@ -88,8 +103,8 @@ Although Carnalitas has religious doctrines that capture different attitudes to 
 
 To address these inconsistencies, this mod introduces 2 new cultural parameters that capture the above regional differences:
 
-* The *Slavery Embraced* parameter represents the attitudes to slavery that are prevalent in most of the Free Cities. Rulers of such cultures regard enslaving as a non-capital crime if it's normally regarded as a capital crime, and other slavery actions as non-criminal. They are also somewhat more willing to engage in slavery. This parameter is added to the special traditions of Lyseni, Myrish, Pentoshi, Qohoric, Tyroshi, and Hartalari cultures.
-* The *Thralls* parameter represents the attitudes to slavery that are prevalent in the Iron Islands and north of the Wall. Rulers of such cultures regard trading and gifting slaves as a non-capital crime if it's normally regarded as such, and other slavery actions as non-criminal. Trading and gifting slaves also incurs a prestige penalty and AI rulers are quite reluctant to do it. This parameter is added to the special traditions of Ironborn and Wildling cultures.
+* The *Slavery Embraced* parameter represents the attitudes to slavery that are prevalent in most of the Free Cities. Rulers of such cultures regard enslaving as a non-capital crime, and other slavery actions as non-criminal. They are also somewhat more willing to engage in slavery. This parameter is added to the special traditions of Lyseni, Myrish, Pentoshi, Qohoric, Tyroshi, and Hartalari cultures.
+* The *Thralls* parameter represents the attitudes to slavery that are prevalent in the Iron Islands and north of the Wall. Rulers of such cultures regard trading and gifting slaves as a non-capital crime, and other slavery actions as non-criminal. Trading and gifting slaves also incurs a prestige penalty and AI rulers are therefore very reluctant to do it. This parameter is added to the special traditions of Ironborn and Wildling cultures.
 
 ## Links
 
