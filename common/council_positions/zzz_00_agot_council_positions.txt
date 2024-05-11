@@ -9,7 +9,10 @@
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		has_trait = nightswatch
+		OR = {
+			has_trait = nightswatch
+			has_trait = nightswatch_historical # Execution order fix
+		}
 		NOT = { carnx_is_slave_trigger = yes }
 	}
 

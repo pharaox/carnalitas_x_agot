@@ -176,10 +176,24 @@ maester_court_position = {
 		scope:employee = {
 			is_imprisoned = no
 			OR = {
-			has_trait = maester # AGOT Added
-			# has_trait = archmaester
+				has_trait_xp = {
+					trait = maester
+					value = 100
+				}
+				has_trait = disgraced_maester
+				has_character_flag = former_acolyte
 			}
 			NOT = { carnx_is_slave_trigger = yes }
+		}
+		scope:liege = {
+			trigger_if = {
+				limit = {
+					primary_title = title:e_the_iron_throne
+				}
+				scope:employee = {
+					has_inactive_trait = grandmaester
+				}
+			}
 		}
 	}
 
@@ -284,20 +298,27 @@ maester_court_position = {
 	}
 
 	search_for_courtier = {
-		send_interface_toast = {
-			title = decision_employ_maester
-			custom_tooltip = decision_employ_maester_tooltip
-		}
-		hidden_effect = {
-			add_character_flag = {
-				flag = recently_employed_maester
-				days = 20
+		if = {
+			limit = {
+				NOT = {
+					primary_title = title:e_the_iron_throne
+				}
 			}
-		}
+			send_interface_toast = {
+				title = decision_employ_maester
+				custom_tooltip = decision_employ_maester_tooltip
+			}
+			hidden_effect = {
+				add_character_flag = {
+					flag = recently_employed_maester
+					days = 20
+				}
+			}
 
-		trigger_event = {
-			id = agot_maester.0001
-			days = 14
+			trigger_event = {
+				id = agot_maester.0001
+				days = 14
+			}
 		}
 	}
 
@@ -1224,11 +1245,11 @@ harbormaster_court_position = {
 			any_held_county = {
 				any_county_province = {
 					has_holding_type = city_holding
-					is_coastal = yes
 					OR = {
 						has_building = city_05
 						has_building = city_04
 					}
+					has_building_or_higher = common_tradeport_01
 				}
 			}
 		}

@@ -55,6 +55,8 @@
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_chancellor_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		#AGOT Disabled
+		# NOT = { this = character:528 }
 	}
 
 	on_get_position = {
@@ -130,6 +132,8 @@ councillor_steward = {
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		#AGOT Disabled
+		# NOT = { this = character:528 }
 	}
 
 	on_get_position = {
@@ -200,6 +204,8 @@ councillor_marshal = {
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		#AGOT Disabled
+		# NOT = { this = character:528 }
 	}
 
 	on_get_position = {
@@ -262,6 +268,8 @@ councillor_spymaster = {
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_spymaster_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		#AGOT Disabled
+		# NOT = { this = character:528 }
 	}
 
 	on_get_position = {
@@ -286,7 +294,16 @@ councillor_spymaster = {
 councillor_court_chaplain = {
 	skill = learning
 
-	auto_fill = yes
+	#AGOT Modified
+	#auto_fill = yes
+	auto_fill = {
+		NAND = {
+			has_title = title:e_the_iron_throne
+			exists = title:k_the_most_devout.holder
+			exists = faith.religious_head
+			faith.religious_head = title:k_the_most_devout.holder
+		}
+	}
 	fill_from_pool = yes
 
 	can_fire = {
@@ -338,17 +355,6 @@ councillor_court_chaplain = {
 	}
 
 	inherit = no
-	fill_from_pool = yes
-	#AGOT Added
-	auto_fill  = {
-		trigger_if = {
-			limit = { has_variable = setting_up_high_septon }
-			always = no
-		}
-		trigger_else = {
-			always = yes
-		}
-	}
 
 	name = {
 		first_valid = {
@@ -478,6 +484,9 @@ councillor_court_chaplain = {
 	pool_character_config = pool_court_chaplain
 
 	valid_character = {
+		#AGOT Modified 
+		#exists = root.liege_or_court_owner
+		#can_be_court_chaplain_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		OR = {
 			AND = {
 				exists = root.liege_or_court_owner
@@ -485,6 +494,11 @@ councillor_court_chaplain = {
 			}
 			AND = {
 				has_title = title:k_the_most_devout
+				root.liege_or_court_owner ?= {
+					has_title = title:e_the_iron_throne
+					exists = faith.religious_head
+					faith.religious_head = prev
+				}
 			}
 		}
 	}

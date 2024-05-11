@@ -111,13 +111,20 @@ release_from_prison_interaction = {
 						limit = {
 							agot_nw_can_banish = { BANISHER = scope:actor BANISHEE = scope:recipient }
 						}
+
+						if = {
+							limit = {
+								has_trait = maester
+							}
+							agot_expel_appropriate_maester_effect = yes
+						}
 						agot_send_to_nightswatch_effect = {
 							ACTOR = scope:actor
 							NIGHTSWATCH_CANDIDATE = scope:recipient
 						}
 					}
 					else = {
-					banish = yes
+						agot_banish_effect = { BANISHER = scope:actor }
 					}
 					if = {
 						limit = {
@@ -159,6 +166,8 @@ release_from_prison_interaction = {
 							has_any_artifact = yes
 						}
 						every_character_artifact = {
+							#AGOT Modified
+							limit = { NOT = { has_variable = maesterwork } }
 							set_owner = {
 								target = scope:actor
 								history = {
@@ -193,13 +202,19 @@ release_from_prison_interaction = {
 						limit = {
 							agot_nw_can_banish = { BANISHER = scope:actor BANISHEE = scope:recipient }
 						}
+						if = {
+							limit = {
+								has_trait = maester
+							}
+							agot_expel_appropriate_maester_effect = yes
+						}
 						agot_send_to_nightswatch_effect = {
 							ACTOR = scope:actor
 							NIGHTSWATCH_CANDIDATE = scope:recipient
 						}
 					}
 					else = {
-						banish = yes
+						agot_banish_effect = { BANISHER = scope:actor }
 					}
 					add_opinion = {
 						modifier = banished_me
@@ -229,6 +244,12 @@ release_from_prison_interaction = {
 						limit = {
 							agot_nw_can_banish = { BANISHER = scope:actor BANISHEE = scope:recipient }
 						}
+						if = {
+							limit = {
+								has_trait = maester
+							}
+							agot_expel_appropriate_maester_effect = yes
+						}
 						agot_send_to_nightswatch_effect = {
 							ACTOR = scope:actor
 							NIGHTSWATCH_CANDIDATE = scope:recipient
@@ -248,6 +269,12 @@ release_from_prison_interaction = {
 						scope:recipient = {
 							is_landed = yes
 						}
+					}
+					if = {
+						limit = {
+							has_trait = maester
+						}
+						agot_expel_appropriate_maester_effect = yes
 					}
 					agot_sent_to_essos_effect = {
 						ACTOR = scope:actor
@@ -293,6 +320,7 @@ release_from_prison_interaction = {
 							has_any_artifact = yes
 						}
 						every_character_artifact = {
+							limit = { NOT = { has_variable = maesterwork } }
 							set_owner = {
 								target = scope:actor
 								history = {
@@ -321,6 +349,12 @@ release_from_prison_interaction = {
 							}
 						}
 					}
+					if = {
+						limit = {
+							has_trait = maester
+						}
+						agot_expel_appropriate_maester_effect = yes
+					}
 					agot_sent_to_essos_effect = {
 						ACTOR = scope:actor
 						TARGET = scope:recipient
@@ -346,6 +380,12 @@ release_from_prison_interaction = {
 							this.gold > 0
 						}
 						pay_short_term_gold = { target = scope:actor gold = this.gold }
+					}
+					if = {
+						limit = {
+							has_trait = maester
+						}
+						agot_expel_appropriate_maester_effect = yes
 					}
 					agot_sent_to_essos_effect = {
 						ACTOR = scope:actor
@@ -917,7 +957,8 @@ release_from_prison_interaction = {
 					}
 				}
 			}
-			#AGOT Disabled, can attempt to banish anyone
+			#AGOT Modified, can attempt to banish anyone
+			# if they can be sent to NW, or are in the actor's realm or in the pool
 			# trigger_if = {
 			# 	limit = {
 			# 		scope:recipient = {
@@ -933,6 +974,15 @@ release_from_prison_interaction = {
 			# 		is_courtier_of = scope:actor
 			# 	}
 			# }
+			OR = {
+				agot_nw_can_banish = { BANISHER = scope:actor BANISHEE = scope:recipient }
+				scope:recipient = {
+					OR = {
+						target_is_liege_or_above = scope:actor
+						is_pool_character = yes
+					}
+				}
+			}
 			custom_description = {
 				text = "release_banish_invalid_take_vows"
 				object = scope:recipient
@@ -1295,6 +1345,12 @@ release_from_prison_interaction = {
 					}
 				}
 			}
+			scope:recipient = {
+				OR = {
+					target_is_liege_or_above = scope:actor
+					is_pool_character = yes
+				}
+			}
 			custom_description = {
 				text = "release_banish_invalid_take_vows"
 				object = scope:recipient
@@ -1311,12 +1367,14 @@ release_from_prison_interaction = {
 			scope:recipient = {
 				NOT = { carnx_is_slave_trigger = yes }
 			}
+
 			scope:actor = {
 				NOR = {
 					capital_province = {
 						geographical_region = world_essos
 					}
 					has_trait = nightswatch
+					culture = { agot_is_wildling_culture = yes }
 				}
 			}
 
@@ -1362,7 +1420,7 @@ release_from_prison_interaction = {
 			}
 			#AGOT Modified, less likely to convert
 			#add = -20
-			add = 50
+			add = -50
 			desc = "CONVERSION_NEGATIVE_REASON"
 		}
 		modifier = {

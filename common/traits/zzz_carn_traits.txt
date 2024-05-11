@@ -1,4 +1,6 @@
-﻿slave = { # Chattel Slave
+﻿@pos_compat_medium = 15
+
+slave = { # Chattel Slave
 	opposites = {
 		former_slave
 	}
