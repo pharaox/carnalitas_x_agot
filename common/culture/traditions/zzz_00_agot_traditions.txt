@@ -30,7 +30,14 @@
 
 	province_modifier = {
 		mountains_supply_limit_mult = 0.25
-		forest_supply_limit_mult = 0.25
+		majorroad_mountains_supply_limit_mult = 0.25
+		minorroad_mountains_supply_limit_mult = 0.25
+		taiga_supply_limit_mult = 0.25
+		majorroad_taiga_supply_limit_mult = 0.25
+		minorroad_taiga_supply_limit_mult = 0.25
+		glacier_supply_limit_mult = 0.25
+		majorroad_glacier_supply_limit_mult = 0.25
+		minorroad_glacier_supply_limit_mult = 0.25
 	}
 	character_modifier = {
 		diplomatic_range_mult = -0.50
