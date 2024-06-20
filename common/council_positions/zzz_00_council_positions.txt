@@ -303,6 +303,12 @@ councillor_court_chaplain = {
 			exists = faith.religious_head
 			faith.religious_head = title:k_the_most_devout.holder
 		}
+		NOR = {
+			has_government = nights_watch_government
+			any_liege_or_above = {
+				has_government = nights_watch_government
+			}
+		}
 	}
 	fill_from_pool = yes
 
@@ -610,7 +616,12 @@ councillor_court_chaplain = {
 
 	#AGOT Added
 	valid_position = {
-		NOT = { has_government = nights_watch_government }
+		NOR = {
+			has_government = nights_watch_government
+			any_liege_or_above = {
+				has_government = nights_watch_government
+			}
+		}
 	}
 }
 
