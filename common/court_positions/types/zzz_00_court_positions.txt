@@ -461,6 +461,8 @@ cultural_emissary_court_position = {
 		dynasty = {
 			has_dynasty_perk = ep1_culture_legacy_4
 		}
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	is_shown_character = {
@@ -663,6 +665,8 @@ keeper_of_swans_court_position = {
 		#AGOT  Modified, I will not elaborate
 		#has_title = title:k_england #This has only been a thing in England
 		dynasty = dynasty:dynn_Swann
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -1364,6 +1368,8 @@ court_gardener_court_position = {
 	# Is this an available position for this court? (root is court owner)
 	is_shown = {
 		culture = { has_cultural_parameter = can_appoint_court_gardener }
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	is_shown_character = {
@@ -1582,6 +1588,8 @@ lady_in_waiting_court_position = {
 			is_married = yes
 			is_female = yes
 		}
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -2681,6 +2689,8 @@ wet_nurse_court_position = {
 	is_shown = {
 		is_landed = yes
 		has_bp2_dlc_trigger = yes
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -3318,6 +3328,8 @@ food_taster_court_position = {
 
 	is_shown = {
 		has_ep1_court_positions_dlc_trigger = yes
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -3774,12 +3786,14 @@ master_of_hunt_court_position = {
 		add = court_position_aptitude_high_penalty_value
 	}
 
+	#AGOT Added, not available for NW
 	# CSR: Adopted from Unofficial Patch
 	# Is this an available position for this court? (root is court owner)
 	is_shown = {
 		culture = { # If culture is vegetarian they are denied hunting... so no master of hunt !
 			NOT = { has_cultural_parameter = cannot_hunt }
 		}
+		NOT = { has_trait = nightswatch }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -4720,6 +4734,11 @@ cupbearer_court_position = {
 		add = court_position_aptitude_high_penalty_value
 	}
 
+	#AGOT Added, not available for NW
+	is_shown = {
+		NOT = { has_trait = nightswatch }
+	}
+
 	# Is this an available position for this court? (root is court owner)
 	valid_position = {
 		highest_held_title_tier >= tier_kingdom
@@ -4940,6 +4959,8 @@ chief_eunuch_court_position = {
 		culture = { # Culture that has eunuchs
 			has_cultural_parameter = can_appoint_chief_eunuch
 		}
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -5174,6 +5195,11 @@ court_jester_court_position = {
 				desc = court_position_rude_trait
 			}
 		}
+	}
+
+	#AGOT Added, not available for NW
+	is_shown = {
+		NOT = { has_trait = nightswatch }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -5431,6 +5457,8 @@ court_poet_court_position = {
 
 	is_shown = {
 		has_ep1_court_positions_dlc_trigger = yes
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -5689,6 +5717,8 @@ court_musician_court_position = {
 
 	is_shown = {
 		has_ep1_court_positions_dlc_trigger = yes
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -6804,6 +6834,8 @@ court_artificer_court_position = {
 	is_shown = {
 		has_royal_court = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -6994,6 +7026,8 @@ court_cave_hermit_position = {
 
 	is_shown = {
 		has_variable = encountered_recruitable_hermit #you need to have encountered a Court Hermit before you come up with this yourself
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	opinion = {
@@ -7432,6 +7466,8 @@ master_assassin_court_position = {
 		faith = {
 			has_doctrine = tenet_fp3_fedayeen
 		}
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	valid_position = {
@@ -7758,6 +7794,8 @@ court_scholar_court_position = {
 	is_shown = {
 		has_fp3_dlc_trigger = yes
 		culture = { has_cultural_parameter = can_appoint_court_scholar }
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	# Only Kingdoms+ can attract prominent enough scholars
@@ -7935,6 +7973,8 @@ chronicler_court_position = {
 
 	is_shown = {
 		has_dlc_feature = legends
+		#AGOT Added, not available for NW
+		NOT = { has_trait = nightswatch }
 	}
 
 	opinion = {

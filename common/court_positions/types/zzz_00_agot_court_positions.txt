@@ -216,7 +216,6 @@ maester_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -460,7 +459,6 @@ household_guard_court_position = {
 	revoke_cost = {
 		prestige =  {
 			value = major_court_position_prestige_revoke_cost
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -696,7 +694,6 @@ septon_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -895,7 +892,6 @@ septa_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -1116,7 +1112,6 @@ gaoler_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -1295,7 +1290,6 @@ harbormaster_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -1502,7 +1496,6 @@ warden_of_the_north_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -1674,7 +1667,6 @@ warden_of_the_east_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -1848,7 +1840,6 @@ warden_of_the_west_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -2021,7 +2012,6 @@ warden_of_the_south_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -2255,7 +2245,6 @@ master_at_arms_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
@@ -2487,7 +2476,6 @@ court_smith_court_position = {
 				}
 				multiply = 0
 			}
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this

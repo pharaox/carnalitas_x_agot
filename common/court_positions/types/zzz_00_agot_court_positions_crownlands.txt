@@ -97,7 +97,6 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	revoke_cost = {
 		prestige =  {
 			value = major_court_position_prestige_revoke_cost
-			# CSR: Set revoke cost for AI to 0 as in all other court positions
 			if = {
 				limit = {
 					exists = this
