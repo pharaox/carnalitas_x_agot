@@ -380,6 +380,18 @@ carnx_lacking_court_positions_modifier = {
 			}
 			desc = carnx_lacking_court_smith_reason
 		}
+		modifier = {
+			carnx_has_max_aptitude_difference_trigger = {
+				NAME = head_dragonkeeper
+				RULER = $RULER$
+				SLAVE = $SLAVE$
+			}
+			add = {
+				value = scope:max_aptitude_difference
+				multiply = $SCALE$
+			}
+			desc = carnx_lacking_head_dragonkeeper_reason
+		}
 	}
 }
 

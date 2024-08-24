@@ -12,8 +12,7 @@
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-				tier = tier_county
+			any_held_county = {
 				title_province ?= { geographical_region = world_westeros_beyond_the_wall }
 			}
 		}
@@ -142,8 +141,7 @@ agot_tradition_firstman = {
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-				tier = tier_county
+			any_held_county = {
 				title_province ?= { geographical_region =  world_westeros_the_north }
 			}
 		}
@@ -236,8 +234,7 @@ agot_tradition_ironborn = {
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-				tier = tier_county
+			any_held_county = {
 				title_province ?= { geographical_region = world_westeros_the_iron_islands }
 			}
 		}
@@ -351,8 +348,7 @@ agot_tradition_lyseni = {
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-			tier = tier_county
+			any_held_county = {
 			title_province = { geographical_region =  world_essos_lys }
 			}
 		}
@@ -518,8 +514,7 @@ agot_tradition_tyroshi = {
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-			tier = tier_county
+			any_held_county = {
 			title_province = { geographical_region =  world_essos_tyrosh }
 			}
 		}
@@ -565,9 +560,8 @@ agot_tradition_hartalari = { #AGOT when geographical region is in for disputed l
 
 	can_pick = {
 		scope:character = {
-			any_held_title = {
-			tier = tier_county
-			# title_province = { geographical_region =  world_essos_disputed_lands } # AGOT TODO
+			any_held_county = {
+				# title_province = { geographical_region =  world_essos_disputed_lands } # AGOT TODO
 			}
 		}
 	}

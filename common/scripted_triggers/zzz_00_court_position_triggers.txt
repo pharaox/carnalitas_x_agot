@@ -34,6 +34,7 @@ court_position_does_not_already_have_a_job_trigger = {
 			has_court_position = gaoler_court_position
 			has_court_position = harbormaster_court_position
 			has_court_position = court_smith_court_position
+			has_court_position = head_dragonkeeper_court_position
 			#has_court_position = goldcloaks_court_position
 		}
 	}

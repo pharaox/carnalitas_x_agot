@@ -190,7 +190,7 @@
 				divide = 2
 			}
 		}
-
+		#opinions?
 	}
 	auto_accept = yes
 }

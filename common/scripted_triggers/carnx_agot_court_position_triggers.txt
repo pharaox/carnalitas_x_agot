@@ -23,3 +23,8 @@ carnx_can_be_court_smith_trigger = {
 	is_capable_adult = yes
 	NOT = { is_spouse_of = $LIEGE$ }
 }
+
+carnx_can_be_head_dragonkeeper_trigger = {
+	is_capable_adult = yes
+	exists = $LIEGE$
+}

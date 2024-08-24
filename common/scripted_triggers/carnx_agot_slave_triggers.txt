@@ -58,6 +58,14 @@ carnx_can_serve_as_court_smith_trigger = {
 	}
 }
 
+carnx_can_serve_as_head_dragonkeeper_trigger = {
+	carnx_can_serve_as_court_position_trigger = {
+		TYPE = head_dragonkeeper_court_position
+		NAME = head_dragonkeeper
+		LIEGE = $RULER$
+	}
+}
+
 carnx_agot_is_slavery_capital_crime_trigger = {
 	# Slavery must be forbidden by law to be considered a capital crime
 	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }

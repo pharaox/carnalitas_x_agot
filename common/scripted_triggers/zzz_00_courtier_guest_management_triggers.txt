@@ -187,6 +187,7 @@ can_recruit_character_to_court_trigger = {
 			agot_is_available_for_anything = no
 			has_trait = kingsguard
 			has_trait = nightswatch
+			has_trait = dragon
 			trigger_if = {
 				limit = { has_variable = forced_engagement }
 				var:forced_engagement = scope:recruiter

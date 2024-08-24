@@ -28,7 +28,6 @@
 }
 
 councillor_admiral = {
-
 	skill = martial
 
 	name = {
@@ -60,9 +59,7 @@ councillor_admiral = {
 
 	valid_position = {
 		any_sub_realm_county = {
-			any_county_province = {
-				is_coastal = yes
-			}
+			is_coastal_county = yes
 		}
 	}
 
@@ -115,7 +112,6 @@ councillor_admiral = {
 }
 
 councillor_castellan = {
-
 	name = {
 		first_valid = {
 			triggered_desc = {

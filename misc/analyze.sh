@@ -159,6 +159,10 @@ echo "Court Smith court position received: $(grep -a "Court Smith court position
 echo "Court Smith court position revoked: $(grep -a "Court Smith court position revoked" debug.log | wc -l)"
 echo "Court Smith court position invalidated: $(grep -a "Court Smith court position invalidated" debug.log | wc -l)"
 echo
+echo "Head Dragonkeeper court position received: $(grep -a "Head Dragonkeeper court position received" debug.log | wc -l)"
+echo "Head Dragonkeeper court position revoked: $(grep -a "Head Dragonkeeper court position revoked" debug.log | wc -l)"
+echo "Head Dragonkeeper court position invalidated: $(grep -a "Head Dragonkeeper court position invalidated" debug.log | wc -l)"
+echo
 
 # Maintenance events
 echo "Moving slave to owner's court: $(grep -a "Moving slave to owner's court" debug.log | wc -l)"

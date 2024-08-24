@@ -3060,6 +3060,16 @@ court_tutor_court_position = {
 				desc = court_position_reclusive_trait
 			}
 		}
+		# AGOT Added
+		if = {
+			limit = {
+				has_trait = inquisitive
+			}
+			add = {
+				value = 10
+				desc = court_position_inquistive_trait
+			}
+		}
 		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_low_penalty_value
 	}
@@ -6539,15 +6549,6 @@ executioner_court_position = {
 			add = {
 				value = 20
 				desc = court_position_callous_trait
-			}
-		}
-		if = {
-			limit = {
-					has_trait = ruthless
-				}
-			add = {
-				value = 20
-				desc = court_position_ruthless_trait
 			}
 		}
 	}

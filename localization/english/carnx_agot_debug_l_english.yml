@@ -21,6 +21,9 @@
  carnx_debug_msg_court_smith_received: "$carnx_debug_prefix$: Court Smith court position received"
  carnx_debug_msg_court_smith_revoked: "$carnx_debug_prefix$: Court Smith Guard court position revoked"
  carnx_debug_msg_court_smith_invalidated: "$carnx_debug_prefix$: Court Smith court position invalidated"
+ carnx_debug_msg_head_dragonkeeper_received: "$carnx_debug_prefix$: Head Dragonkeeper court position received"
+ carnx_debug_msg_head_dragonkeeper_revoked: "$carnx_debug_prefix$: Head Dragonkeeper Guard court position revoked"
+ carnx_debug_msg_head_dragonkeeper_invalidated: "$carnx_debug_prefix$: Head Dragonkeeper court position invalidated"
 
  # Adding courtiers
  carnx_debug_msg_adding_courtier_nightswatch: "$carnx_debug_prefix$: Adding slave courtier nightswatch"

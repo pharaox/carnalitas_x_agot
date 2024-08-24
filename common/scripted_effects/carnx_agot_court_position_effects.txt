@@ -12,6 +12,7 @@
 # warden_of_the_south_court_position - No [vassal] [ceremonial] [title:IT]
 # master_at_arms_court_position - Yes* [ceremonial]
 # court_smith_court_position - Yes
+# head_dragonkeeper_court_position  Yes
 # goldcloaks_court_position - No [title:KL]
 
 # CSR Court Positions
@@ -101,4 +102,21 @@ carnx_agot_court_smith_title_revoked_effect = {
 carnx_agot_court_smith_title_invalidated_effect = {
 	agot_court_smith_title_invalidated_effect = yes
 	carnx_debug_log_title_invalidated_slave_effect = { NAME = court_smith }
+}
+
+# HEAD DRAGONKEEPER
+
+carnx_agot_head_dragonkeeper_title_accepted_effect = {
+	agot_head_dragonkeeper_title_accepted_effect = yes
+	carnx_debug_log_title_received_slave_effect = { NAME = head_dragonkeeper }
+}
+
+carnx_agot_head_dragonkeeper_title_revoked_effect = {
+	agot_head_dragonkeeper_title_revoked_effect = yes
+	carnx_debug_log_title_revoked_slave_effect = { NAME = head_dragonkeeper }
+}
+
+carnx_agot_head_dragonkeeper_title_invalidated_effect = {
+	agot_head_dragonkeeper_title_invalidated_effect = yes
+	carnx_debug_log_title_invalidated_slave_effect = { NAME = head_dragonkeeper }
 }

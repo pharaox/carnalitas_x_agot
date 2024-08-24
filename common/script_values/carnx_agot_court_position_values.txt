@@ -60,6 +60,18 @@ carnx_court_position_court_smith_salary = {
 	}
 }
 
+carnx_court_position_head_dragonkeeper_salary = {
+	value = court_position_physician_salary
+	if = {
+		limit = {
+			scope:liege = {
+				carnx_employs_slave_as_court_position_trigger = { TYPE = head_dragonkeeper_court_position }
+			}
+		}
+		multiply = carnx_court_position_salary_slave_multiplier
+	}
+}
+
 # Aptitude differences
 
 carnx_household_guard_aptitude_difference_value = {
@@ -117,6 +129,17 @@ carnx_court_smith_aptitude_difference_value = {
 	}
 }
 
+carnx_head_dragonkeeper_aptitude_difference_value = {
+	value = 0
+	if = {
+		limit = {
+			carnx_can_serve_as_head_dragonkeeper_trigger = { RULER = scope:liege }
+		}
+		value = aptitude:head_dragonkeeper_court_position
+		subtract = carnx_head_dragonkeeper_aptitude_threshold
+	}
+}
+
 carnx_agot_max_aptitude_difference_value = {
 	value = 0
 	min = {
@@ -129,6 +152,9 @@ carnx_agot_max_aptitude_difference_value = {
 					value = carnx_master_at_arms_aptitude_difference_value
 					min = {
 						value = carnx_court_smith_aptitude_difference_value
+						min = {
+							value = carnx_head_dragonkeeper_aptitude_difference_value
+						}
 					}
 				}
 			}

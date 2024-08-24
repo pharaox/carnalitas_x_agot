@@ -1,4 +1,5 @@
 ﻿@slavery_law_cooldown_years = 10
+@dragonpit_law_cooldown_years = 5
 
 slavery_laws = {
 	default = slavery_disallowed_law
@@ -103,4 +104,159 @@ slavery_laws = {
 			}
 		}
 	}
+}
+dragonpit_laws = {
+	default = dragonpit_close_family_law
+	cumulative = no
+	flag = all_realm_law
+	flag = agot_realm_law
+
+	dragonpit_close_family_law = {
+		flag = dragonpit_close_family
+
+		can_have = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+
+		should_start_with = {
+			 always = yes
+		}
+
+		can_pass = {
+			custom_description = {
+				subject = root
+				text = "has_dragonpit_law_cooldown"
+				NOT = { has_variable = dragonpit_law_cooldown }
+			}
+		}
+
+		pass_cost = {
+			prestige = increase_crown_authority_prestige_cost
+		}
+
+		on_pass = {
+			set_variable = {
+				name = dragonpit_law_cooldown
+				years = @dragonpit_law_cooldown_years
+			}
+		}
+
+		ai_will_do = {
+			value = 25
+		}
+	}
+
+	dragonpit_house_law = {
+		flag = dragonpit_house
+		can_have = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+		can_pass = {
+			custom_description = {
+				subject = root
+				text = "has_dragonpit_law_cooldown"
+				NOT = { has_variable = dragonpit_law_cooldown }
+			}
+		}
+
+		pass_cost = {
+			prestige = increase_crown_authority_prestige_cost
+		}
+
+		on_pass = {
+			set_variable = {
+				name = dragonpit_law_cooldown
+				years = @dragonpit_law_cooldown_years
+			}
+		}
+
+		can_keep = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+
+		ai_will_do = {
+			value = 0
+		}
+	}
+
+	dragonpit_dynasty_law = {
+		flag = dragonpit_dynasty
+		can_have = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+		can_pass = {
+			custom_description = {
+				subject = root
+				text = "has_dragonpit_law_cooldown"
+				NOT = { has_variable = dragonpit_law_cooldown }
+			}
+		}
+
+		pass_cost = {
+			prestige = increase_crown_authority_prestige_cost
+		}
+
+		on_pass = {
+			set_variable = {
+				name = dragonpit_law_cooldown
+				years = @dragonpit_law_cooldown_years
+			}
+		}
+
+		can_keep = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+
+		ai_will_do = {
+			value = 0
+		}
+	}
+
+	dragonpit_everyone_law = {
+		flag = dragonpit_everyone
+		can_have = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+		can_pass = {
+			custom_description = {
+				subject = root
+				text = "has_dragonpit_law_cooldown"
+				NOT = { has_variable = dragonpit_law_cooldown }
+			}
+		}
+
+		pass_cost = {
+			prestige = increase_crown_authority_prestige_cost
+		}
+
+		on_pass = {
+			set_variable = {
+				name = dragonpit_law_cooldown
+				years = @dragonpit_law_cooldown_years
+			}
+		}
+
+		can_keep = {
+			any_held_title = {
+				has_variable = has_dragonkeeper_order
+			}
+		}
+
+		ai_will_do = {
+			value = 0
+		}
+	}
+
 }

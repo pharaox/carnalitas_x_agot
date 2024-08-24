@@ -8,6 +8,7 @@
  carnx_lacking_harbormaster_reason: "[recipient.GetShortUIName|U] is lacking a good $harbormaster_court_position$: $VALUE|=+0$"
  carnx_lacking_master_at_arms_reason: "[recipient.GetShortUIName|U] is lacking a good $master_at_arms_court_position$: $VALUE|=+0$"
  carnx_lacking_court_smith_reason: "[recipient.GetShortUIName|U] is lacking a good $court_smith_court_position$: $VALUE|=+0$"
+ carnx_lacking_head_dragonkeeper_reason: "[recipient.GetShortUIName|U] is lacking a good $head_dragonkeeper_court_position$: $VALUE|=+0$"
 
  # Modifier reasons
  carnx_agot_slavery_capital_crime_reason: "Slavery is considered a capital [crime|E] by [recipient.GetShortUIName|U]'s liege realm [laws|E]: $VALUE|=+0$"
