@@ -1,4 +1,72 @@
-﻿carnx_is_slave_employment_enabled_trigger = {
+﻿carnx_can_interact_with_trigger = {
+	NOT = { this = $PARTY$ }
+	highest_held_title_tier >= tier_county
+	is_busy_in_events_localised = yes
+	in_diplomatic_range = $PARTY$
+	NOT = { is_at_war_with = $PARTY$ }
+	is_imprisoned = no
+
+	# Non-humans can't be targeted by interactions
+	is_human = yes
+
+	# The AGOT merchant can't be targeted by interactions
+	trigger_if = {
+		limit = {
+			exists = scope:actor
+			exists = global_var:agot_artifact_keeper
+		}
+		custom_description = {
+			text = "carnx_agot_cant_interact_with_merchant"
+			NOT = { this = global_var:agot_artifact_keeper }
+		}
+	}
+
+	# Wildlings can only interact with wildlings, and vice versa
+	trigger_if = {
+		limit = {
+			culture = { agot_is_wildling_culture = yes }
+		}
+		custom_description = {
+			text = "carnx_agot_wildlings_cant_interact_with_non_wildlings"
+			$PARTY$ = {
+				culture = { agot_is_wildling_culture = yes }
+			}
+		}
+	}
+	trigger_else = {
+		custom_description = {
+			text = "carnx_agot_non_wildlings_cant_interact_with_wildlings"
+			$PARTY$ = {
+				culture = { agot_is_wildling_culture = no }
+			}
+		}
+	}
+}
+
+carnx_can_start_interaction_trigger = {
+	trigger_if = {
+		limit = {
+			NOT = { has_character_flag = carnx_slave_0001_seller }
+		}
+		highest_held_title_tier >= tier_county
+	}
+	is_busy_in_events_localised = yes
+	is_imprisoned = no
+
+	# Non-humans can't be targeted by interactions
+	is_human = yes
+
+	# The AGOT merchant can't initiate interactions
+	trigger_if = {
+		limit = {
+			exists = scope:actor
+			exists = global_var:agot_artifact_keeper
+		}
+		NOT = { this = global_var:agot_artifact_keeper }
+	}
+}
+
+carnx_is_slave_employment_enabled_trigger = {
 	OR = {
 		faith = { has_doctrine_parameter = carnx_slave_employment_active }
 		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
@@ -130,6 +198,7 @@ carnx_is_declining_to_free_illegal_slaves_crime_trigger = {
 }
 
 carnx_can_be_slave_owner_trigger = {
+	is_human = yes
 	NOR = {
 		has_trait = nightswatch
 		has_trait = silent_sister
@@ -140,6 +209,14 @@ carnx_can_be_slave_owner_trigger = {
 		has_title = title:b_ruins
 		has_title = title:b_more_ruin
 		has_title = title:b_the_most_ruin
+	}
+}
+
+carnx_can_be_enslaved_trigger = {
+	is_human = yes
+	NOR = {
+		has_character_flag = carn_cannot_be_enslaved
+		has_trait_with_flag = carn_cannot_be_enslaved
 	}
 }
 

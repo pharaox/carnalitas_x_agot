@@ -1,0 +1,14 @@
+﻿carnx_agot_cant_interact_with_merchant = {
+	first_not = carnx_agot_cant_interact_with_merchant
+	third_not = carnx_agot_cant_interact_with_merchant
+}
+
+carnx_agot_wildlings_cant_interact_with_non_wildlings = {
+	first_not = carnx_agot_wildlings_cant_interact_with_non_wildlings
+	third_not = carnx_agot_wildlings_cant_interact_with_non_wildlings
+}
+
+carnx_agot_non_wildlings_cant_interact_with_wildlings = {
+	first_not = carnx_agot_non_wildlings_cant_interact_with_wildlings
+	third_not = carnx_agot_non_wildlings_cant_interact_with_wildlings
+}

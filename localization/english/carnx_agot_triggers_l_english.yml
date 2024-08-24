@@ -1,0 +1,4 @@
+﻿l_english:
+ carnx_agot_cant_interact_with_merchant: "[CHARACTER.GetShortUIName] is the $agot_artifact_keeper_head_text$"
+ carnx_agot_wildlings_cant_interact_with_non_wildlings: "[CHARACTER.GetShortUIName] is a wildling"
+ carnx_agot_non_wildlings_cant_interact_with_wildlings: "[CHARACTER.GetShortUIName] is not a wildling"
