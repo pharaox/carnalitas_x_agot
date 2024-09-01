@@ -114,7 +114,21 @@ release_from_prison_interaction = {
 
 						if = {
 							limit = {
-								has_trait = maester
+								OR = {
+									AND = {
+										scope:actor = {
+											has_banish_reason = scope:recipient
+										}
+										has_trait_xp = {
+											trait = maester
+											value = 100
+										}
+									}
+									has_trait_xp = {
+										trait = maester
+										value < 100
+									}
+								}
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -204,7 +218,21 @@ release_from_prison_interaction = {
 						}
 						if = {
 							limit = {
-								has_trait = maester
+								OR = {
+									AND = {
+										scope:actor = {
+											has_banish_reason = scope:recipient
+										}
+										has_trait_xp = {
+											trait = maester
+											value = 100
+										}
+									}
+									has_trait_xp = {
+										trait = maester
+										value < 100
+									}
+								}
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -246,7 +274,21 @@ release_from_prison_interaction = {
 						}
 						if = {
 							limit = {
-								has_trait = maester
+								OR = {
+									AND = {
+										scope:actor = {
+											has_banish_reason = scope:recipient
+										}
+										has_trait_xp = {
+											trait = maester
+											value = 100
+										}
+									}
+									has_trait_xp = {
+										trait = maester
+										value < 100
+									}
+								}
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -272,7 +314,21 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							has_trait = maester
+							OR = {
+								AND = {
+									scope:actor = {
+										has_banish_reason = scope:recipient
+									}
+									has_trait_xp = {
+										trait = maester
+										value = 100
+									}
+								}
+								has_trait_xp = {
+									trait = maester
+									value < 100
+								}
+							}
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
@@ -351,7 +407,21 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							has_trait = maester
+							OR = {
+								AND = {
+									scope:actor = {
+										has_banish_reason = scope:recipient
+									}
+									has_trait_xp = {
+										trait = maester
+										value = 100
+									}
+								}
+								has_trait_xp = {
+									trait = maester
+									value < 100
+								}
+							}
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
@@ -383,7 +453,21 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							has_trait = maester
+							OR = {
+								AND = {
+									scope:actor = {
+										has_banish_reason = scope:recipient
+									}
+									has_trait_xp = {
+										trait = maester
+										value = 100
+									}
+								}
+								has_trait_xp = {
+									trait = maester
+									value < 100
+								}
+							}
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
