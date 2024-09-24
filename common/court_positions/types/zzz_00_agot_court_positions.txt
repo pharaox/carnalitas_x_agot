@@ -1394,37 +1394,47 @@ harbormaster_court_position = {
 			limit = {
 				has_trait = greedy
 			}
-			add = 15
-			desc = court_position_greedy_trait
+			add = {
+				value = 15
+				desc = court_position_greedy_trait
+			}
 		}
 		if = {
 			limit = {
 				has_trait = arbitrary
 			}
-			add = -10
-			desc = court_position_arbitrary_trait
+			add = {
+				value = -10
+				desc = court_position_arbitrary_trait
+			}
 		}
 		if = {
 			limit = {
 				has_trait = just
 			}
-			add = 5
-			desc = court_position_just_trait
+			add = {
+				value = 5
+				desc = court_position_just_trait
+			}
 		}
 		#Paranoid will search more ships, slowing down, Trusting will unwittingly help smugglers
 		if = {
 			limit = {
 				has_trait = paranoid
 			}
-			add = -5
-			desc = court_position_paranoid_trait
+			add = {
+				value = -5
+				desc = court_position_paranoid_trait
+			}
 		}
 		if = {
 			limit = {
 				has_trait = trusting
 			}
-			add = -10
-			desc = court_position_trusting_trait
+			add = {
+				value = -10
+				desc = court_position_trusting_trait
+			}
 		}
 	}
 
@@ -1582,8 +1592,10 @@ warden_of_the_north_court_position = {
 			limit = {
 				has_trait = just
 			}
-			add = 10
-			desc = court_position_just_trait
+			add = {
+				value = 10
+				desc = court_position_just_trait
+			}
 		}
 	}
 
@@ -1753,8 +1765,10 @@ warden_of_the_east_court_position = {
 			limit = {
 				has_trait = just
 			}
-			add = 10
-			desc = court_position_just_trait
+			add = {
+				value = 10
+				desc = court_position_just_trait
+			}
 		}
 	}
 
@@ -1926,8 +1940,10 @@ warden_of_the_west_court_position = {
 			limit = {
 				has_trait = just
 			}
-			add = 10
-			desc = court_position_just_trait
+			add = {
+				value = 10
+				desc = court_position_just_trait
+			}
 		}
 	}
 
@@ -2098,8 +2114,10 @@ warden_of_the_south_court_position = {
 			limit = {
 				has_trait = just
 			}
-			add = 10
-			desc = court_position_just_trait
+			add = {
+				value = 10
+				desc = court_position_just_trait
+			}
 		}
 	}
 
@@ -2679,7 +2697,7 @@ head_dragonkeeper_court_position = {
 			}
 			add = {
 				value = 10
-				desc = "Professional Dragonkeeper Training"
+				desc = court_position_professional_dragonkeeper_training
 			}
 		}
 		if = {
@@ -2691,7 +2709,7 @@ head_dragonkeeper_court_position = {
 			}
 			add = {
 				value = 5
-				desc = "Standarized Dragonkeeper Training"
+				desc = court_position_standarized_dragonkeeper_training
 			}
 		}
 		if = {
@@ -2721,7 +2739,10 @@ head_dragonkeeper_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			NOT = { is_imprisoned = yes }
+			NOR = { 
+				is_imprisoned = yes
+				is_landed = yes
+			}
 			trigger_if = {
 				limit = { NOT = { has_court_position = head_dragonkeeper_court_position } }
 				court_position_does_not_already_have_a_job_trigger = yes # This positions is considered a job, and cannot be held at the same tims as another similar position

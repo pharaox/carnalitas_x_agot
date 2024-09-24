@@ -20,7 +20,7 @@ astapori = {
 		ghiscari_coa_gfx 
 	}
 	building_gfx = { 
-		#ghis_building_gfx
+		ghis_building_gfx
 		mena_building_gfx 
 	}
 	clothing_gfx = {
