@@ -259,6 +259,18 @@ maester_court_position = {
 					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
 				}
 			}
+			if = {
+				limit = {
+					scope:liege = {
+						is_landless_adventurer = yes
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = agot_laamp_cost_reduction
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
 		}
 		round = no
 	}
@@ -441,25 +453,23 @@ household_guard_court_position = {
 	}
 
 	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
 		has_ep1_court_positions_dlc_trigger = yes
 	}
 
 	is_shown_character = {
 		scope:employee = {
 			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
-			OR = {
-				is_courtier_of = scope:liege
-				is_knight_of = scope:liege
-			}
+			is_courtier_of = scope:liege
 		}
 	}
 
 	valid_character = {
 		scope:employee = {
-			is_imprisoned = no
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			trigger_if = {
 				limit = { NOT = { has_court_position = household_guard_court_position } }
-				court_position_does_not_already_have_a_job_trigger = yes # This positions is considered a job, and cannot be held at the same tims as another similar position
+				court_position_does_not_already_have_a_job_trigger = yes # This positions is considered a job, and cannot be held at the same time as another similar position
 			}
 			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
 		}
@@ -654,6 +664,7 @@ septon_court_position = {
 		NOT = {
 			faith = {religion_tag = faith_of_the_seven_religion }
 		}
+		NOT = { government_has_flag = government_is_landless_adventurer }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -678,7 +689,7 @@ septon_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			is_imprisoned = no
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			NOT = { carnx_is_slave_trigger = yes }
 		}
 	}
@@ -859,6 +870,7 @@ septa_court_position = {
 
 	is_shown = {
 		NOT = { has_government = nights_watch_government }
+		NOT = { government_has_flag = government_is_landless_adventurer }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -874,6 +886,7 @@ septa_court_position = {
 
 	valid_character = {
 		scope:employee = {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			is_courtier_of = scope:liege
 			has_trait = septon
 			is_male = no
@@ -946,21 +959,21 @@ septa_court_position = {
 	# These modifiers are employed based on what level the aptitude reaches (levels are defined as breakpoints)
 	scaling_employer_modifiers = {
 		terrible = {
-			learn_language_scheme_power_add = 4
+			learn_language_scheme_phase_duration_add = -4
 		}
 		poor = {
-			learn_language_scheme_power_add = 8
+			learn_language_scheme_phase_duration_add = -8
 		}
 		average = {
-			learn_language_scheme_power_add = 12
+			learn_language_scheme_phase_duration_add = -12
 			monthly_court_grandeur_change_mult = 0.05
 		}
 		good = {
-			learn_language_scheme_power_add = 16
+			learn_language_scheme_phase_duration_add = -16
 			monthly_court_grandeur_change_mult = 0.1
 		}
 		excellent = {
-			learn_language_scheme_power_add = 20
+			learn_language_scheme_phase_duration_add = -20
 			monthly_court_grandeur_change_mult = 0.15
 		}
 	}
@@ -1068,6 +1081,7 @@ gaoler_court_position = {
 	}
 
 	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
 		has_ep1_court_positions_dlc_trigger = yes
 	}
 
@@ -1092,6 +1106,7 @@ gaoler_court_position = {
 
 	valid_character = {
 		scope:employee = {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			NOT = { is_spouse_of = scope:liege }
 			is_ruler = no
 			trigger_if = {
@@ -1240,7 +1255,9 @@ harbormaster_court_position = {
 		value = carnx_ceremonial_court_position_opinion
 	}
 
-	is_shown = {}
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
 
 	valid_position = {
 		OR = {
@@ -1266,6 +1283,7 @@ harbormaster_court_position = {
 
 	valid_character = {
 		scope:employee ?= {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			NOT = { is_spouse_of = scope:liege }
 			trigger_if = {
 				limit = { NOT = { has_court_position = harbormaster_court_position } }
@@ -1489,6 +1507,7 @@ warden_of_the_north_court_position = {
 
 	valid_character = {
 		scope:employee ?= {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			OR = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
@@ -1656,7 +1675,7 @@ warden_of_the_east_court_position = {
 
 	is_shown_character = {
 		scope:employee ?= {
-			is_imprisoned = no
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 		}
 	}
 
@@ -1837,6 +1856,7 @@ warden_of_the_west_court_position = {
 
 	valid_character = {
 		scope:employee ?= {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			OR = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
@@ -2011,6 +2031,7 @@ warden_of_the_south_court_position = {
 
 	valid_character = {
 		scope:employee ?= {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			OR = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
@@ -2219,6 +2240,7 @@ master_at_arms_court_position = {
 	}
 
 	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
 		culture = {
 			has_innovation = innovation_agot_sword_bound
 		}
@@ -2239,6 +2261,7 @@ master_at_arms_court_position = {
 
 	valid_character = {
 		scope:employee = {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			OR = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
@@ -2463,6 +2486,10 @@ court_smith_court_position = {
 	# Is this an available position for this court? (root is court owner)
 	valid_position = { }
 
+	is_shown = {
+		NOT = { government_has_flag = government_is_landless_adventurer }
+	}
+
 	is_shown_character = {
 		scope:employee = {
 			is_courtier_of = scope:liege
@@ -2472,6 +2499,7 @@ court_smith_court_position = {
 
 	valid_character = {
 		scope:employee = {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			custom_tooltip = {
 				text = IS_NOT_THE_SPOUSE_OF_CHARACTER_COURT_POSITION
 				NOT = { is_spouse_of = scope:liege }
@@ -2739,6 +2767,7 @@ head_dragonkeeper_court_position = {
 
 	valid_character = {
 		scope:employee = {
+			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
 			NOR = { 
 				is_imprisoned = yes
 				is_landed = yes
@@ -2803,43 +2832,33 @@ head_dragonkeeper_court_position = {
 	# These modifiers are employed based on what level the aptitude reaches (levels are defined as breakpoints)
 	scaling_employer_modifiers = {
 		terrible = {
-			#monthly_court_grandeur_change_mult = 0.10
-			# Dragon stuff (for ease of balancing)
-			steal_back_artifact_scheme_resistance_mult = 0.05
-			bond_with_dragon_scheme_scheme_power_mult = 0.01
+			steal_back_artifact_enemy_scheme_phase_duration_add = -1
+			bond_with_dragon_scheme_scheme_phase_duration_add = -1
 
 		}
 		poor = {
 			court_grandeur_baseline_add = 1
-			#monthly_court_grandeur_change_mult = 0.10
-			# Dragon stuff (for ease of balancing)
-			steal_back_artifact_scheme_resistance_mult = 0.1
-			deepen_bond_with_dragon_scheme_scheme_power_mult = 0.01
-			bond_with_dragon_scheme_scheme_power_mult = 0.02
+			steal_back_artifact_enemy_scheme_phase_duration_add = -2
+			bond_with_dragon_scheme_scheme_phase_duration_add = -2
+			deepen_bond_with_dragon_scheme_scheme_phase_duration_add = -2
 		}
 		average = {
 			court_grandeur_baseline_add = 1
-			#monthly_court_grandeur_change_mult = 0.15
-			# Dragon stuff (for ease of balancing)
-			steal_back_artifact_scheme_resistance_mult = 0.15
-			deepen_bond_with_dragon_scheme_scheme_power_mult = 0.02
-			bond_with_dragon_scheme_scheme_power_mult = 0.05
+			steal_back_artifact_enemy_scheme_phase_duration_add = -5
+			bond_with_dragon_scheme_scheme_phase_duration_add = -4
+			deepen_bond_with_dragon_scheme_scheme_phase_duration_add = -5
 		}
 		good = {
 			court_grandeur_baseline_add = 2
-			#monthly_court_grandeur_change_mult = 0.20
-			# Dragon stuff (for ease of balancing)
-			steal_back_artifact_scheme_resistance_mult = 0.20
-			deepen_bond_with_dragon_scheme_scheme_power_mult = 0.05
-			bond_with_dragon_scheme_scheme_power_mult = 0.10
+			steal_back_artifact_enemy_scheme_phase_duration_add = -7
+			bond_with_dragon_scheme_scheme_phase_duration_add = -6
+			deepen_bond_with_dragon_scheme_scheme_phase_duration_add = -7
 		}
 		excellent = {
 			court_grandeur_baseline_add = 3
-			#monthly_court_grandeur_change_mult = 0.25
-			# Dragon stuff (for ease of balancing)
-			steal_back_artifact_scheme_resistance_mult = 0.25
-			deepen_bond_with_dragon_scheme_scheme_power_mult = 0.10
-			bond_with_dragon_scheme_scheme_power_mult = 0.15
+			steal_back_artifact_enemy_scheme_phase_duration_add = -10
+			bond_with_dragon_scheme_scheme_phase_duration_add = -8
+			deepen_bond_with_dragon_scheme_scheme_phase_duration_add = -10
 		}
 	}
 

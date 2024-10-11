@@ -6,7 +6,7 @@
 	# CSR
 	modifier = {
 		add = 100
-		has_trait = eunuch
+		is_eunuch_trigger = yes
 	}
 }
 
@@ -21,6 +21,6 @@ agot_portrait_westerosi_beards_clothes_modifier = {
 	# CSR
 	modifier = {
 		add = -70
-		has_trait = eunuch
+		is_eunuch_trigger = yes
 	}
 }

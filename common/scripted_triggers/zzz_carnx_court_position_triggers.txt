@@ -26,7 +26,7 @@ carnx_can_be_slave_eunuch_trigger = {
 		intrigue >= low_skill_rating
 	}
 	is_male = yes
-	has_trait = eunuch
+	is_eunuch_trigger = yes
 	NOT = { has_trait = carnx_agot_unsullied }
 	exists = $LIEGE$
 }

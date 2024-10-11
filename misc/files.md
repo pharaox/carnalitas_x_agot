@@ -37,8 +37,6 @@
 * `common/script_values/agot_00_war_values.txt`
   * `slave_raid_ai_score_value`
   * `free_slaves_ai_score_value`
-* `common/script_values/00_war_values.txt`
-  * `raid_base_capture_chance`
 * `common/scripted_effects/00_agot_slavery_base_effects.txt`
   * `end_realm_slavery_effect`
   * `forcibly_end_realm_slavery_effect`
@@ -48,11 +46,12 @@
 * `common/scripted_modifiers/00_agot_portrait_modifiers.txt`
   * `agot_portrait_clean_shaven_clothing_modifier`
   * `agot_portrait_westerosi_beards_clothes_modifier`
-* `common/scripted_modifiers/00_hostile_scheme_scripted_modifiers.txt`
-  * `hostile_murder_agent_base_join_chance_modifier`
 * `common/scripted_modifiers/00_portrait_modifiers.txt`
   * `portrait_western_beards_clothes_modifier`
   * `portrait_mena_beards_clothes_modifier`
+* `common/scripted_modifiers/00_scheme_scripted_modifiers.txt`
+  * `ai_agent_join_chance_hostile_taboo_modifier`
+  * `ai_agent_join_chance_hostile_grievous_modifier`
 * `common/scripted_triggers/00_court_position_triggers.txt`
   * `court_position_does_not_already_have_a_job_trigger`
 * `common/scripted_triggers/00_courtier_guest_management_triggers.txt`

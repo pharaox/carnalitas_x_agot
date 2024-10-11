@@ -88,8 +88,12 @@
 		open_terrain_expert = {}
 		rough_terrain_expert = {}
 	}
+	random_traits_list = {
+		count = 1
+		eunuch_1 = {}
+		beardless_eunuch = {}
+	}
 	trait = brave
-	trait = eunuch
 	trait = loyal
 	trait = carnx_agot_unsullied
 	dynasty = none

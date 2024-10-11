@@ -14,13 +14,12 @@ common/culture/cultures/00_agot_cul_ghiscari.txt
 common/culture/traditions/00_agot_traditions.txt
 common/laws/02_agot_realm_laws.txt
 common/on_action/child_birth_on_actions.txt
-common/script_values/00_war_values.txt
 common/script_values/agot_00_war_values.txt
 common/scripted_effects/00_agot_slavery_base_effects.txt
 common/scripted_effects/00_prison_effects.txt
 common/scripted_modifiers/00_agot_portrait_modifiers.txt
-common/scripted_modifiers/00_hostile_scheme_scripted_modifiers.txt
 common/scripted_modifiers/00_portrait_modifiers.txt
+common/scripted_modifiers/00_scheme_scripted_modifiers.txt
 common/scripted_triggers/00_court_position_triggers.txt
 common/scripted_triggers/00_courtier_guest_management_triggers.txt
 common/scripted_triggers/00_war_and_peace_triggers.txt

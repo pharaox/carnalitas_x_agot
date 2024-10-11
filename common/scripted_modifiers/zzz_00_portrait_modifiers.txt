@@ -9,7 +9,7 @@
 	# CSR
 	modifier = {
 		add = -70
-		has_trait = eunuch
+		is_eunuch_trigger = yes
 	}
 }
 
@@ -24,7 +24,7 @@ portrait_mena_beards_clothes_modifier = {
 	# CSR
 	modifier = {
 		add = -70
-		has_trait = eunuch
+		is_eunuch_trigger = yes
 	}
 }
 
