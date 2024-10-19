@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.4.3
+
+### Compatibility
+
+* Removed "Slavery" interaction category to prevent crashes with other mods that add interaction categories. Slavery interactions are now "Uncategorized".
+
 ## Version 0.4.2
 
 * Adapted to AGOT 0.3.3.2.
