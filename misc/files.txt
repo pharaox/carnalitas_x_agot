@@ -1,4 +1,3 @@
-common/character_interaction_categories/01_agot_mega_wars_character_interaction_categories.txt
 common/character_interactions/00_agot_prison_interactions.txt
 common/character_interactions/00_agot_silent_sisters_interactions.txt
 common/character_interactions/00_perk_interactions.txt

@@ -4,8 +4,6 @@
 
 ### Explicit
 
-* `common/character_interaction_categories/01_agot_mega_wars_character_interaction_categories.txt`
-  * Entire file
 * `common/character_interactions/00_agot_prison_interactions.txt`
   * `sell_prisoner_into_slavery_interaction`
 * `common/character_interactions/00_agot_silent_sisters_interactions.txt`
