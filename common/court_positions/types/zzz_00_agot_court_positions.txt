@@ -869,13 +869,13 @@ septa_court_position = {
 	}
 
 	is_shown = {
-		NOT = { has_government = nights_watch_government }
+		NOT = { government_has_flag = government_is_nw }
 		NOT = { government_has_flag = government_is_landless_adventurer }
 	}
 
 	# Is this an available position for this court? (root is court owner)
 	valid_position = { # Septas for all westerosi
-		NOT = { has_government = nights_watch_government }
+		NOT = { government_has_flag = government_is_nw }
 		OR = {
 			faith = { religion_tag = faith_of_the_seven_religion }
 			capital_county ?= {
@@ -2768,7 +2768,7 @@ head_dragonkeeper_court_position = {
 	valid_character = {
 		scope:employee = {
 			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
-			NOR = { 
+			NOR = {
 				is_imprisoned = yes
 				is_landed = yes
 			}

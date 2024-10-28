@@ -4,7 +4,7 @@
 	tooltip = game_concept_personal_steward_desc
 
 	valid_position = {
-		has_government = nights_watch_government
+		government_has_flag = government_is_nw
 	}
 
 	valid_character = {
@@ -135,7 +135,7 @@ councillor_castellan = {
 				trigger = {
 					scope:councillor_liege = {
 						NOR = {
-							has_government = nights_watch_government
+							government_has_flag = government_is_nw
 						}
 					}
 				}
@@ -144,7 +144,7 @@ councillor_castellan = {
 			triggered_desc = {
 				trigger = {
 					scope:councillor_liege = {
-						has_government = nights_watch_government
+						government_has_flag = government_is_nw
 					}
 				}
 				desc = agot_councillor_castellan_nights_watch

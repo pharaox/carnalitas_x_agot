@@ -11,7 +11,7 @@ on_title_gain = {
 
 carnx_agot_on_title_gain_nightswatch = {
 	trigger = {
-		has_government = nights_watch_government
+		government_has_flag = government_is_nw
 	}
 	effect = {
 		every_relation = {

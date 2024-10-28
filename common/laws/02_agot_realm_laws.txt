@@ -60,7 +60,7 @@ slavery_laws = {
 				text = "has_slavery_law_cooldown"
 				NOT = { has_variable = slavery_law_cooldown }
 				#Hiding this in here since NW shouldn't ever see it anyway
-				NOT = { has_government = nights_watch_government }
+				NOT = { government_has_flag = government_is_nw }
 			}
 
 			# CSR: Barons can't pass slavery laws

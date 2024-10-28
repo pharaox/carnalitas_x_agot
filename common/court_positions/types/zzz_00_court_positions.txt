@@ -332,7 +332,7 @@ court_physician_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -390,7 +390,7 @@ court_physician_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -472,7 +472,7 @@ court_physician_court_position = {
         # Always have this position if you can, regardless of monetary situation
 		add = court_position_candidate_score_base_value
 		add = court_position_candidate_aptitude_value
-		
+
 		# No debt considerations for Physicians, they are too important
 		# AI is less likely to fire the court physician, unless they have a better candidate.
 		if = {
@@ -721,7 +721,7 @@ charioteer_court_position = {
 				desc = trait_education_martial_prowess
 			}
 		}
-		
+
 		# Estate - Owner bonus from stables
 		if = {
 			limit = {
@@ -784,7 +784,7 @@ charioteer_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = charioteer
 						LIEGE = root
@@ -810,7 +810,7 @@ charioteer_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -871,7 +871,7 @@ charioteer_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -967,6 +967,7 @@ charioteer_court_position = {
 				}
 				add = 50
 			}
+			#AGOT Disabled
 			#if = { # Emperor should always have one
 			#	limit = {
 			#		has_title = title:e_byzantium
@@ -982,7 +983,7 @@ charioteer_court_position = {
 		}
 		add = court_position_debt_considerations_value
 	}
-	
+
 	sort_order = 210
 }
 
@@ -1104,7 +1105,7 @@ bookmaker_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = bookmaker
 						LIEGE = root
@@ -1130,7 +1131,7 @@ bookmaker_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -1208,7 +1209,7 @@ bookmaker_court_position = {
 		}
 		add = court_position_debt_considerations_value
 	}
-	
+
 	sort_order = 205
 }
 
@@ -1424,10 +1425,11 @@ akolouthos_court_position = {
 	is_shown = {
 		has_ep1_court_positions_dlc_trigger = yes
 		has_ep3_dlc_trigger = yes
-		#AGOT Modified
-		#has_title = title:e_byzantium
-		## The Varangian Guard has been founded!
-		#title:e_byzantium = { has_variable = founded_varangian_guard }
+		primary_title.tier >= tier_empire
+		# The Varangian Guard has been founded!
+		#AGOT Disabled
+		#primary_title = { has_variable = founded_varangian_guard }
+		#AGOT Added
 		always = no
 	}
 
@@ -1450,7 +1452,7 @@ akolouthos_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = akolouthos
 						LIEGE = root
@@ -1476,7 +1478,7 @@ akolouthos_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -1500,7 +1502,7 @@ akolouthos_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = akolouthos
 						LIEGE = scope:liege
@@ -1542,7 +1544,7 @@ akolouthos_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -1725,7 +1727,7 @@ cultural_emissary_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 with obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cultural_emissary
 						LIEGE = root
@@ -1751,7 +1753,7 @@ cultural_emissary_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -1775,7 +1777,7 @@ cultural_emissary_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cultural_emissary
 						LIEGE = scope:liege
@@ -1800,7 +1802,7 @@ cultural_emissary_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -1968,7 +1970,7 @@ keeper_of_swans_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = keeper_of_swans
 						LIEGE = root
@@ -1994,7 +1996,7 @@ keeper_of_swans_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -2018,7 +2020,7 @@ keeper_of_swans_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = keeper_of_swans
 						LIEGE = scope:liege
@@ -2043,7 +2045,7 @@ keeper_of_swans_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -2239,7 +2241,7 @@ chief_qadi_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = chief_qadi
 						LIEGE = root
@@ -2265,7 +2267,7 @@ chief_qadi_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -2289,7 +2291,7 @@ chief_qadi_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = chief_qadi
 						LIEGE = scope:liege
@@ -2314,7 +2316,7 @@ chief_qadi_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -2496,7 +2498,7 @@ garuda_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = garuda
 						LIEGE = root
@@ -2522,7 +2524,7 @@ garuda_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -2546,7 +2548,7 @@ garuda_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = garuda
 						LIEGE = scope:liege
@@ -2571,7 +2573,7 @@ garuda_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -2760,8 +2762,6 @@ court_gardener_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			#AGOT Modified Use correct validity trigger (Unop)
-			#court_artificer_validity_trigger = { EMPLOYER = scope:liege }
 			court_gardener_validity_trigger = { EMPLOYER = scope:liege }
 		}
 	}
@@ -2771,7 +2771,7 @@ court_gardener_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_gardener
 						LIEGE = root
@@ -2797,7 +2797,7 @@ court_gardener_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -2821,7 +2821,7 @@ court_gardener_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_gardener
 						LIEGE = scope:liege
@@ -2846,7 +2846,7 @@ court_gardener_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -3034,7 +3034,7 @@ lady_in_waiting_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = lady_in_waiting
 						LIEGE = root
@@ -3060,7 +3060,7 @@ lady_in_waiting_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -3084,7 +3084,7 @@ lady_in_waiting_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = lady_in_waiting
 						LIEGE = scope:liege
@@ -3109,7 +3109,7 @@ lady_in_waiting_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -3404,7 +3404,7 @@ antiquarian_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = antiquarian
 						LIEGE = root
@@ -3430,7 +3430,7 @@ antiquarian_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -3454,7 +3454,7 @@ antiquarian_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = antiquarian
 						LIEGE = scope:liege
@@ -3479,7 +3479,7 @@ antiquarian_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -3913,7 +3913,9 @@ travel_leader_court_position = {
 				desc = court_position_reveler_1_trait
 			}
 		}
+		add = court_position_aptitude_traveling_friends_value
 		add = court_position_aptitude_eunuch_tradition_value
+		add = court_position_aptitude_family_business_value
 		# Bonus from court.8311
 		if = {
 			limit = { var:bonus_aptitude_role ?= flag:travel_leader }
@@ -3964,7 +3966,7 @@ travel_leader_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = travel_leader
 						LIEGE = scope:liege
@@ -3989,7 +3991,7 @@ travel_leader_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -4006,7 +4008,7 @@ travel_leader_court_position = {
 			value = minor_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = travel_leader
 						LIEGE = root
@@ -4242,6 +4244,7 @@ wet_nurse_court_position = {
 				desc = court_position_loyal_trait
 			}
 		}
+		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_traveling_friends_value
 		add = court_position_aptitude_high_penalty_value
 		# Bonus from court.8311
@@ -4293,7 +4296,7 @@ wet_nurse_court_position = {
 			value = minor_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = wet_nurse
 						LIEGE = root
@@ -4335,7 +4338,7 @@ wet_nurse_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = wet_nurse
 						LIEGE = scope:liege
@@ -4360,7 +4363,7 @@ wet_nurse_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -4726,7 +4729,7 @@ court_tutor_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_tutor
 						LIEGE = root
@@ -4752,7 +4755,7 @@ court_tutor_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -4776,7 +4779,7 @@ court_tutor_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_tutor
 						LIEGE = scope:liege
@@ -4814,7 +4817,7 @@ court_tutor_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -5029,7 +5032,7 @@ food_taster_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = food_taster
 						LIEGE = root
@@ -5055,7 +5058,7 @@ food_taster_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -5079,7 +5082,7 @@ food_taster_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = food_taster
 						LIEGE = scope:liege
@@ -5104,7 +5107,7 @@ food_taster_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -5268,7 +5271,8 @@ master_of_horse_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			master_of_horse_validity_trigger = { EMPLOYER = scope:liege } # CSR
+			#AGOT Modified Use correct validity trigger
+			master_of_horse_validity_trigger = { EMPLOYER = scope:liege }
 			#AGOT Added
 			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
 			trigger_if = {
@@ -5283,7 +5287,7 @@ master_of_horse_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = master_of_horse
 						LIEGE = root
@@ -5309,7 +5313,7 @@ master_of_horse_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -5333,7 +5337,7 @@ master_of_horse_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = master_of_horse
 						LIEGE = scope:liege
@@ -5358,7 +5362,7 @@ master_of_horse_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -5584,7 +5588,7 @@ master_of_hunt_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = master_of_hunt
 						LIEGE = root
@@ -5610,7 +5614,7 @@ master_of_hunt_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -5634,7 +5638,7 @@ master_of_hunt_court_position = {
 			}
 			# Halved with obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = master_of_hunt
 						LIEGE = scope:liege
@@ -5659,7 +5663,7 @@ master_of_hunt_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -5858,7 +5862,7 @@ royal_architect_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = royal_architect
 						LIEGE = root
@@ -5884,7 +5888,7 @@ royal_architect_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -5908,7 +5912,7 @@ royal_architect_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = royal_architect
 						LIEGE = scope:liege
@@ -5949,7 +5953,7 @@ royal_architect_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -6156,7 +6160,7 @@ high_almoner_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = high_almoner
 						LIEGE = root
@@ -6182,7 +6186,7 @@ high_almoner_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -6206,7 +6210,7 @@ high_almoner_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = high_almoner
 						LIEGE = scope:liege
@@ -6376,7 +6380,7 @@ seneschal_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = seneschal
 						LIEGE = root
@@ -6402,7 +6406,7 @@ seneschal_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -6426,7 +6430,7 @@ seneschal_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = seneschal
 						LIEGE = scope:liege
@@ -6451,7 +6455,7 @@ seneschal_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -6636,7 +6640,7 @@ cupbearer_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cupbearer
 						LIEGE = root
@@ -6662,7 +6666,7 @@ cupbearer_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -6686,7 +6690,7 @@ cupbearer_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cupbearer
 						LIEGE = scope:liege
@@ -6711,7 +6715,7 @@ cupbearer_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -6861,7 +6865,7 @@ chief_eunuch_court_position = {
 
 	valid_character = {
 		scope:employee = {
-			liege ?= scope:liege # 
+			liege ?= scope:liege #
 			chief_eunuch_validity_trigger = { EMPLOYER = scope:liege }
 		}
 	}
@@ -6871,7 +6875,7 @@ chief_eunuch_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = chief_eunuch
 						LIEGE = root
@@ -6897,7 +6901,7 @@ chief_eunuch_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -6921,7 +6925,7 @@ chief_eunuch_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = chief_eunuch
 						LIEGE = scope:liege
@@ -6946,7 +6950,7 @@ chief_eunuch_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -7154,7 +7158,7 @@ court_jester_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_jester
 						LIEGE = root
@@ -7180,7 +7184,7 @@ court_jester_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -7204,7 +7208,7 @@ court_jester_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_jester
 						LIEGE = scope:liege
@@ -7275,7 +7279,7 @@ court_jester_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -7478,7 +7482,7 @@ court_poet_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_poet
 						LIEGE = root
@@ -7504,7 +7508,7 @@ court_poet_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -7528,7 +7532,7 @@ court_poet_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_poet
 						LIEGE = scope:liege
@@ -7553,7 +7557,7 @@ court_poet_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -7730,7 +7734,7 @@ court_musician_court_position = {
 		}
 		add = court_position_aptitude_eunuch_tradition_value
 		add = court_position_aptitude_traveling_friends_value
-		
+
 		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_low_penalty_value
 		# Bonus from court.8311
@@ -7772,7 +7776,7 @@ court_musician_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_musician
 						LIEGE = root
@@ -7798,7 +7802,7 @@ court_musician_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -7847,7 +7851,7 @@ court_musician_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -8224,7 +8228,7 @@ bodyguard_court_position = {
 				desc = court_position_bodyguard_liege_modifier
 			}
 		}
-		
+
 		add = court_position_aptitude_eunuch_tradition_value
 		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_high_penalty_value
@@ -8264,7 +8268,7 @@ bodyguard_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = bodyguard
 						LIEGE = root
@@ -8290,7 +8294,7 @@ bodyguard_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -8314,7 +8318,7 @@ bodyguard_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = bodyguard
 						LIEGE = scope:liege
@@ -8355,7 +8359,7 @@ bodyguard_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -8646,7 +8650,7 @@ champion_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = champion
 						LIEGE = root
@@ -8672,7 +8676,7 @@ champion_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -8696,7 +8700,7 @@ champion_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = champion
 						LIEGE = scope:liege
@@ -8721,7 +8725,7 @@ champion_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -8914,7 +8918,7 @@ executioner_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = executioner
 						LIEGE = root
@@ -8940,7 +8944,7 @@ executioner_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -8964,7 +8968,7 @@ executioner_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = executioner
 						LIEGE = scope:liege
@@ -8989,7 +8993,7 @@ executioner_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -9196,7 +9200,7 @@ court_artificer_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_artificer
 						LIEGE = root
@@ -9222,7 +9226,7 @@ court_artificer_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -9246,7 +9250,7 @@ court_artificer_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_artificer
 						LIEGE = scope:liege
@@ -9271,7 +9275,7 @@ court_artificer_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -9476,7 +9480,7 @@ cave_hermit_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cave_hermit
 						LIEGE = root
@@ -9502,7 +9506,7 @@ cave_hermit_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -9528,7 +9532,7 @@ cave_hermit_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = cave_hermit
 						LIEGE = scope:liege
@@ -9570,7 +9574,7 @@ cave_hermit_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -9868,7 +9872,7 @@ master_assassin_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = master_assassin
 						LIEGE = root
@@ -9894,7 +9898,7 @@ master_assassin_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -9943,7 +9947,7 @@ master_assassin_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -10226,7 +10230,7 @@ court_scholar_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_scholar
 						LIEGE = root
@@ -10252,7 +10256,7 @@ court_scholar_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -10276,7 +10280,7 @@ court_scholar_court_position = {
 			}
 			# Halved via obligation hook
 			else_if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = court_scholar
 						LIEGE = scope:liege
@@ -10301,7 +10305,7 @@ court_scholar_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {
@@ -10515,7 +10519,7 @@ chronicler_court_position = {
 			value = major_court_position_prestige_revoke_cost
 			# Set to 0 via obligation hook
 			if = {
-				limit = { 
+				limit = {
 					court_position_obligation_hook_salary_trigger = {
 						POS = chronicler
 						LIEGE = root
@@ -10541,7 +10545,7 @@ chronicler_court_position = {
 			}
 			#Lowering for LAAMPS, to match Camp Officer revoke cost
 			if = {
-				limit = { 
+				limit = {
 					exists = this
 					is_landless_adventurer = yes
 				}
@@ -10590,7 +10594,7 @@ chronicler_court_position = {
 			}
 			#You're working with LAAMPS now
 			if = {
-				limit = { 
+				limit = {
 					scope:liege ?= { is_landless_adventurer = yes }
 				}
 				multiply = {

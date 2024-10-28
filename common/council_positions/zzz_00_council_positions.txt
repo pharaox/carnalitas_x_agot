@@ -16,7 +16,7 @@
 			triggered_desc = {
 				trigger = {
 					scope:councillor_liege = {
-						has_government = nights_watch_government
+						government_has_flag = government_is_nw
 					}
 				}
 				desc = agot_councillor_chancellor_nights_watch
@@ -104,7 +104,7 @@ councillor_steward = {
 			triggered_desc = {
 				trigger = {
 					scope:councillor_liege = {
-						has_government = nights_watch_government
+						government_has_flag = government_is_nw
 					}
 				}
 				desc = agot_councillor_steward_nights_watch
@@ -192,7 +192,7 @@ councillor_marshal = {
 			triggered_desc = {
 				trigger = {
 					scope:councillor_liege = {
-						has_government = nights_watch_government
+						government_has_flag = government_is_nw
 					}
 				}
 				desc = agot_councillor_marshal_nights_watch
@@ -367,9 +367,9 @@ councillor_court_chaplain = {
 			faith.religious_head = title:k_the_most_devout.holder
 		}
 		NOR = {
-			has_government = nights_watch_government
+			government_has_flag = government_is_nw
 			any_liege_or_above = {
-				has_government = nights_watch_government
+				government_has_flag = government_is_nw
 			}
 		}
 	}
@@ -384,7 +384,7 @@ councillor_court_chaplain = {
 		# 	}
 		# }
 		OR = {
-			has_government = nights_watch_government
+			government_has_flag = government_is_nw
 			has_variable = setting_up_high_septon
 			custom_description = {
 				text = "court_chaplain_cant_fire_doctrines"
@@ -409,7 +409,7 @@ councillor_court_chaplain = {
 		#	}
 		# }
 		OR = {
-			has_government = nights_watch_government
+			government_has_flag = government_is_nw
 			custom_description = {
 				text = "court_chaplain_cant_reassign_doctrines"
 				OR = {
@@ -559,7 +559,7 @@ councillor_court_chaplain = {
 	pool_character_config = pool_court_chaplain
 
 	valid_character = {
-		#AGOT Modified 
+		#AGOT Modified
 		#exists = root.liege_or_court_owner
 		#can_be_court_chaplain_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		OR = {
@@ -650,9 +650,9 @@ councillor_court_chaplain = {
 					}
 					5 = {
 						trigger = {
-							can_start_scheme = { 
-								type = learn_language 
-								target_character = liege 
+							can_start_scheme = {
+								type = learn_language
+								target_character = liege
 							}
 						}
 						start_scheme = {
@@ -689,9 +689,9 @@ councillor_court_chaplain = {
 	#AGOT Added
 	valid_position = {
 		NOR = {
-			has_government = nights_watch_government
+			government_has_flag = government_is_nw
 			any_liege_or_above = {
-				has_government = nights_watch_government
+				government_has_flag = government_is_nw
 			}
 		}
 	}
