@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.4.4
+
+* Adapted to AGOT 0.3.4.1.
+
 ## Version 0.4.3
 
 ### Compatibility
