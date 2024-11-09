@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.4.5
+
+* Adapted to AGOT 0.3.5.
+
 ## Version 0.4.4
 
 * Adapted to AGOT 0.3.4.1.
