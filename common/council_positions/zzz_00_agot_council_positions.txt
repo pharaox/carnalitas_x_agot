@@ -78,6 +78,12 @@ councillor_admiral = {
 		scale = council_scaled_by_liege_tier
 	}
 
+	modifier = {
+		name = councillor_admiral_modifier
+		monthly_influence = 1
+		scale = council_scaled_admin_value
+	}
+
 	council_owner_modifier = {
 		name = learn_on_the_job_modifier
 		martial = 1
@@ -164,6 +170,11 @@ councillor_castellan = {
 		scale = council_scaled_by_liege_tier
 	}
 
+	modifier = {
+		name = councillor_castellan_modifier
+		monthly_influence = 1
+		scale = council_scaled_admin_value
+	}
 
 	valid_character = {
 		exists = root.liege_or_court_owner
