@@ -1,10 +1,10 @@
 ﻿carnx_can_interact_with_trigger = {
 	NOT = { this = $PARTY$ }
-	highest_held_title_tier >= tier_county
 	is_busy_in_events_localised = yes
 	in_diplomatic_range = $PARTY$
 	NOT = { is_at_war_with = $PARTY$ }
 	is_imprisoned = no
+	NOT = { has_trait = slave }
 
 	# Non-humans can't be targeted by interactions
 	is_human = yes
@@ -44,12 +44,6 @@
 }
 
 carnx_can_start_interaction_trigger = {
-	trigger_if = {
-		limit = {
-			NOT = { has_character_flag = carnx_slave_0001_seller }
-		}
-		highest_held_title_tier >= tier_county
-	}
 	is_busy_in_events_localised = yes
 	is_imprisoned = no
 

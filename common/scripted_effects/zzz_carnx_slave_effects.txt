@@ -43,7 +43,15 @@ carnx_add_courtier_effect = {
 		}
 	}
 
-	add_courtier = $SLAVE$
+	if = {
+		limit = {
+			is_ruler = yes
+			$SLAVE$ = {
+				NOT = { is_courtier_of = prev }
+			}
+		}
+		add_courtier = $SLAVE$
+	}
 
 	# Restore original trait and culture
 	$SLAVE$ = {

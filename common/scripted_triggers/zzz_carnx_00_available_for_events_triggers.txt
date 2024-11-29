@@ -1,0 +1,38 @@
+﻿is_capable_adult = {
+	is_adult = yes
+	is_incapable = no
+	#AGOT Added
+	is_human = yes
+
+	# CSR: Prevent pool slaves and slave owners from being selected by pool character selectors
+	trigger_if = {
+		limit = {
+			is_pool_character = yes
+			exists = scope:base
+		}
+		carnx_is_slave_trigger = no
+		carnx_is_slave_owner_trigger = no
+	}
+}
+
+is_available = {
+	is_travelling = no
+	is_available_allow_travelling = yes
+	#AGOT Added
+	agot_is_available_for_anything = yes
+	#AGOT Added cause mutes should get less events really but we might change it later
+	NOT = { has_trait = mute }
+	# AGOT Added
+	is_human = yes
+	# Councillors performing tasks at a target court are not available
+	# even if the task is at their home court and they are not traveling
+	NOT = { has_variable = agot_councillor_target_court }
+	#AGOT Added - fake dead characters should not do anything
+	NOT = { agot_is_fake_dead = yes }
+
+	# CSR: Prevent pool slaves from being selected in events
+	trigger_if = {
+		limit = { is_pool_character = yes }
+		carnx_is_slave_trigger = no
+	}
+}

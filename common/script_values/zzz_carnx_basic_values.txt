@@ -1,5 +1,0 @@
-﻿# Multiplier for the slave base price
-# Reduced compared to vanilla as some slave prices in AGOT tend to become exorbitant
-carnx_slave_base_price_multiplier = {
-	value = 0.6
-}
