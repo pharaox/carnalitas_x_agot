@@ -30,6 +30,8 @@ release_from_prison_interaction = {
 	is_shown = {
 		scope:recipient = {
 			is_imprisoned_by = scope:actor
+			#AGOT Added
+			NOT = { has_character_flag = keep_imprisoned }
 		}
 	}
 
@@ -115,21 +117,7 @@ release_from_prison_interaction = {
 						add_character_flag = {flag = agot_betrothal_unwillingly_broken days = 1 }
 						if = {
 							limit = {
-								OR = {
-									AND = {
-										scope:actor = {
-											has_banish_reason = scope:recipient
-										}
-										has_trait_xp = {
-											trait = maester
-											value = 100
-										}
-									}
-									has_trait_xp = {
-										trait = maester
-										value < 100
-									}
-								}
+								agot_can_be_expelled_maester_trigger = yes
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -219,21 +207,7 @@ release_from_prison_interaction = {
 						}
 						if = {
 							limit = {
-								OR = {
-									AND = {
-										scope:actor = {
-											has_banish_reason = scope:recipient
-										}
-										has_trait_xp = {
-											trait = maester
-											value = 100
-										}
-									}
-									has_trait_xp = {
-										trait = maester
-										value < 100
-									}
-								}
+								agot_can_be_expelled_maester_trigger = yes
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -275,21 +249,7 @@ release_from_prison_interaction = {
 						}
 						if = {
 							limit = {
-								OR = {
-									AND = {
-										scope:actor = {
-											has_banish_reason = scope:recipient
-										}
-										has_trait_xp = {
-											trait = maester
-											value = 100
-										}
-									}
-									has_trait_xp = {
-										trait = maester
-										value < 100
-									}
-								}
+								agot_can_be_expelled_maester_trigger = yes
 							}
 							agot_expel_appropriate_maester_effect = yes
 						}
@@ -315,21 +275,7 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							OR = {
-								AND = {
-									scope:actor = {
-										has_banish_reason = scope:recipient
-									}
-									has_trait_xp = {
-										trait = maester
-										value = 100
-									}
-								}
-								has_trait_xp = {
-									trait = maester
-									value < 100
-								}
-							}
+							agot_can_be_expelled_maester_trigger = yes
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
@@ -408,21 +354,7 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							OR = {
-								AND = {
-									scope:actor = {
-										has_banish_reason = scope:recipient
-									}
-									has_trait_xp = {
-										trait = maester
-										value = 100
-									}
-								}
-								has_trait_xp = {
-									trait = maester
-									value < 100
-								}
-							}
+							agot_can_be_expelled_maester_trigger = yes
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
@@ -454,21 +386,7 @@ release_from_prison_interaction = {
 					}
 					if = {
 						limit = {
-							OR = {
-								AND = {
-									scope:actor = {
-										has_banish_reason = scope:recipient
-									}
-									has_trait_xp = {
-										trait = maester
-										value = 100
-									}
-								}
-								has_trait_xp = {
-									trait = maester
-									value < 100
-								}
-							}
+							agot_can_be_expelled_maester_trigger = yes
 						}
 						agot_expel_appropriate_maester_effect = yes
 					}
@@ -607,7 +525,7 @@ release_from_prison_interaction = {
 					#else_if = {
 					if = {
 						limit = {
-								scope:actor = { is_ai = yes }
+							scope:actor = { is_ai = yes }
 						}
 						debug_log = debug_ai_forced_vows_on_prison_release
 						debug_log_scopes = yes
