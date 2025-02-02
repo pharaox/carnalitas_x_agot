@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.5.1
+
+* Adapted to AGOT 0.3.8 and CSR 0.23.2.
+
 ## Version 0.5.0
 
 * Adapted to AGOT 0.3.5.1 and CSR 0.23.0.
