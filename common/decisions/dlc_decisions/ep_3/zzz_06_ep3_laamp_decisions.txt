@@ -19,7 +19,18 @@ visit_local_settlement_decision = {
 
 	is_valid_showing_failures_only = {
 		is_alive = yes
-		is_available_adult = yes
+		#AGOT MODIFIED
+		#is_available_adult = yes
+		trigger_if = {
+			limit = {
+				is_adult = no
+			}
+			is_landless_adventurer = yes
+			is_available_child = yes
+		}
+		trigger_else = {
+			is_available_adult = yes
+		}
 		has_contagious_deadly_disease_trigger = no
 		root.location = {
 			has_holding = yes
