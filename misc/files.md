@@ -14,6 +14,8 @@
   * `release_from_prison_interaction`
 * `common/character_interactions/00_religious_interactions.txt`
   * `ask_for_conversion_courtier_interaction`
+* `common/character_interactions/06_ep3_interactions.txt`
+  * `offer_eunuch_interaction`
 * `common/council_positions/00_agot_council_positions.txt`
   * Entire file
 * `common/council_positions/00_council_kingsguard.txt`
