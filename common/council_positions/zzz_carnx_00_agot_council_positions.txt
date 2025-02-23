@@ -5,6 +5,7 @@
 
 	valid_position = {
 		government_has_flag = government_is_nw
+		is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -61,11 +62,13 @@ councillor_admiral = {
 		any_sub_realm_county = {
 			is_coastal_county = yes
 		}
+		is_landless_nw_character = no
 	}
 
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_admiral_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 
@@ -176,9 +179,14 @@ councillor_castellan = {
 		scale = council_scaled_admin_value
 	}
 
+	valid_position = {
+		is_landless_nw_character = no
+	}
+
 	valid_character = {
 		exists = root.liege_or_court_owner
 		carnx_can_be_castellan_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {

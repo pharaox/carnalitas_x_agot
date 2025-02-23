@@ -1,5 +1,5 @@
 ﻿agot_tradition_wildling = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = martial
@@ -8,9 +8,6 @@
 	}
 
 	is_shown = {
-	}
-
-	can_pick = {
 		scope:character = {
 			any_held_county = {
 				title_province ?= { geographical_region = world_westeros_beyond_the_wall }
@@ -123,7 +120,7 @@
 }
 
 agot_tradition_firstman = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = steward
@@ -221,7 +218,7 @@ agot_tradition_firstman = {
 }
 
 agot_tradition_ironborn = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = martial
@@ -230,9 +227,6 @@ agot_tradition_ironborn = {
 	}
 
 	is_shown = {
-	}
-
-	can_pick = {
 		scope:character = {
 			any_held_county = {
 				title_province ?= { geographical_region = world_westeros_the_iron_islands }
@@ -338,7 +332,7 @@ agot_tradition_ironborn = {
 ### Essos
 
 agot_tradition_lyseni = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = steward
@@ -346,7 +340,7 @@ agot_tradition_lyseni = {
 		4 = crown.dds
 	}
 
-	can_pick = {
+	is_shown = {
 		scope:character = {
 			any_held_county = {
 			title_province = { geographical_region =  world_essos_lys }
@@ -383,7 +377,7 @@ agot_tradition_lyseni = {
 
 # AGOT Cultures TODO - Traditions not yet created for this culture
 agot_tradition_myrish = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = martial
@@ -391,7 +385,7 @@ agot_tradition_myrish = {
 		4 = king.dds
 	}
 
-	can_pick = {
+	is_shown = {
 		always = no
 	}
 
@@ -421,9 +415,9 @@ agot_tradition_myrish = {
 	}
 }
 
-#AGOT TODO - when Pentos is added in set to geographical_region
-agot_tradition_pentoshi = {
-	category = realm
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_norvoshi = {
+	category = regional
 
 	layers = {
 		0 = martial
@@ -431,7 +425,43 @@ agot_tradition_pentoshi = {
 		4 = king.dds
 	}
 
-	can_pick = {
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_holy_guard = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+#AGOT TODO - when Pentos is added in set to geographical_region
+agot_tradition_pentoshi = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
 		always = no
 	}
 
@@ -464,7 +494,7 @@ agot_tradition_pentoshi = {
 
 # AGOT Cultures TODO - Traditions not yet created for this culture
 agot_tradition_qohorik = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = martial
@@ -472,7 +502,7 @@ agot_tradition_qohorik = {
 		4 = king.dds
 	}
 
-	can_pick = {
+	is_shown = {
 		always = no
 	}
 
@@ -504,7 +534,7 @@ agot_tradition_qohorik = {
 
 # AGOT when Tyrosh is added in set to geographical_region
 agot_tradition_tyroshi = {
-	category = realm
+	category = regional
 
 	layers = {
 		0 = martial
@@ -512,7 +542,7 @@ agot_tradition_tyroshi = {
 		4 = council.dds
 	}
 
-	can_pick = {
+	is_shown = {
 		scope:character = {
 			any_held_county = {
 			title_province = { geographical_region =  world_essos_tyrosh }
@@ -549,8 +579,9 @@ agot_tradition_tyroshi = {
 	}
 }
 
-agot_tradition_hartalari = { #AGOT when geographical region is in for disputed land make restricted there
-	category = realm
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_volantene = {
+	category = regional
 
 	layers = {
 		0 = martial
@@ -558,10 +589,189 @@ agot_tradition_hartalari = { #AGOT when geographical region is in for disputed l
 		4 = king.dds
 	}
 
-	can_pick = {
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_triarchs_herd = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_astapori = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_unsullied = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_yunkish = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_collared_bows = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_meereenese = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_pit_warriors = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+# AGOT Cultures TODO - Traditions not yet created for this culture
+agot_tradition_ghiscari = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
+		always = no
+	}
+
+	parameters = {
+		unlock_maa_iron_legion = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
+	ai_will_do = {
+		value = 100
+	}
+}
+
+agot_tradition_hartalari = { #AGOT when geographical region is in for disputed land make restricted there
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = king.dds
+	}
+
+	is_shown = {
 		scope:character = {
 			any_held_county = {
-				# title_province = { geographical_region =  world_essos_disputed_lands } # AGOT TODO
+				title_province = { geographical_region =  world_essos_disputed_lands }
 			}
 		}
 	}
@@ -589,5 +799,111 @@ agot_tradition_hartalari = { #AGOT when geographical region is in for disputed l
 	}
 	ai_will_do = {
 		value = 100
+	}
+}
+
+agot_tradition_thenn = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mena
+		4 = fight.dds
+	}
+
+	is_shown = {
+		scope:character = {
+			any_held_county = {
+				title_province ?= { geographical_region = world_westeros_beyond_the_wall_thenn }
+			}
+		}
+	}
+
+	parameters = {
+		zealous_trait_more_common = yes
+		can_build_quarries_in_hills = yes
+		unlock_maa_bronze_raiders = yes
+		carnx_agot_slavery_thralls = yes # CSR
+	}
+
+	character_modifier = {
+		faith_conversion_piety_cost_mult = 0.2
+		martial_per_piety_level = 1
+		health = 0.25
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_spiritual_desc
+				}
+			}
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							scope:character = {
+								is_ai = no
+							}
+						}
+						NOT = {
+							any_ruler = {
+								count >= 5
+								culture = prev
+								primary_title.tier >= tier_county
+								is_at_war = yes
+							}
+						}
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = rulers_at_war_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						has_government = tribal_government
+					}
+				}
+			}
+			multiply = 0.25
+		}
+		if = {
+			limit = {
+				NOR = {
+					culture_pillar:heritage_andal = { is_in_list = traits }
+					culture_pillar:heritage_rhoynish = { is_in_list = traits }
+					culture_pillar:heritage_valyrian = { is_in_list = traits }
+					is_divergent_culture = yes
+				}
+			}
+			multiply = 0
+		}
 	}
 }

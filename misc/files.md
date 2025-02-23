@@ -30,7 +30,7 @@
   * Entire file
 * `common/culture/cultures/00_agot_cul_ghiscari.txt`
   * `astapori`
-* `common/culture/traditions/00_agot_traditions.txt`
+* `common/culture/traditions/00_agot_regional_traditions.txt`
   * Entire file
 * `common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt`
   * `visit_local_settlement_decision`

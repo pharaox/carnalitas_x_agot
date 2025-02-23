@@ -27,6 +27,8 @@
 
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		#AGOT Added
+		is_landless_nw_character = no
 	}
 
 	tooltip = game_concept_chancellor_desc
@@ -68,6 +70,8 @@
 		carnx_can_be_chancellor_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
+		#AGOT Added
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {
@@ -116,6 +120,8 @@ councillor_steward = {
 
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		#AGOT Added
+		is_landless_nw_character = no
 	}
 
 	modifier = {
@@ -156,6 +162,8 @@ councillor_steward = {
 		carnx_can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
+		#AGOT Added
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {
@@ -204,6 +212,8 @@ councillor_marshal = {
 
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		#AGOT Added
+		is_landless_nw_character = no
 	}
 
 	modifier = {
@@ -240,10 +250,38 @@ councillor_marshal = {
 	}
 
 	valid_character = {
-		exists = root.liege_or_court_owner
-		carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
-		#AGOT Disabled
-		# NOT = { this = character:528 }
+		#AGOT Modified
+		#exists = root.liege_or_court_owner
+		#can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		#NOT = { this = character:528 }
+		OR = {
+			AND = {
+				exists = root.liege_or_court_owner
+				carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+				NOT = { root.liege_or_court_owner = title:k_the_wall.holder }
+			}
+			AND = {
+				exists = root.liege_or_court_owner
+				carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+				root.liege_or_court_owner = title:k_the_wall.holder
+				title:k_the_wall.holder = { NOT = { has_character_flag = fr_assign_block } }
+				has_trait = nightswatch
+				has_trait = lifestyle_nw_ranger
+				is_landed = no
+				OR = {
+					root.liege_or_court_owner = {
+						NOT = {
+							any_vassal = {
+								has_character_flag = nw_ranger_title
+								is_alive = yes
+							}
+						}
+					}
+					has_character_flag = nw_ranger_title
+				}
+
+			}
+		}
 	}
 
 	on_get_position = {
@@ -284,6 +322,8 @@ councillor_spymaster = {
 
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		#AGOT Added
+		is_landless_nw_character = no
 	}
 
 	# Scaled modifiers.
@@ -325,6 +365,8 @@ councillor_spymaster = {
 		carnx_can_be_spymaster_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
+		#AGOT Added
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {
@@ -694,6 +736,7 @@ councillor_court_chaplain = {
 				government_has_flag = government_is_nw
 			}
 		}
+		is_landless_nw_character = no
 	}
 }
 
@@ -707,6 +750,8 @@ councillor_vizier = {
 
 	valid_position = {
 		has_diarchy_active_parameter = vizier_sits_in_the_council_instead_of_spouse
+		#AGOT Added
+		is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -723,6 +768,8 @@ councillor_vizier = {
 			}
 		}
 		NOT = { carnx_is_slave_trigger = yes }
+		#AGOT Added
+		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {

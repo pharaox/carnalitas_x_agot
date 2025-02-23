@@ -166,6 +166,7 @@ maester_court_position = {
 		culture = {
 			has_innovation = innovation_maesters
 		}
+		is_landless_nw_character = no
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -173,6 +174,7 @@ maester_court_position = {
 		culture = {
 			has_innovation = innovation_maesters
 		}
+		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -455,6 +457,7 @@ household_guard_court_position = {
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		has_ep1_court_positions_dlc_trigger = yes
+		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -462,6 +465,10 @@ household_guard_court_position = {
 			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
 			is_courtier_of = scope:liege
 		}
+	}
+
+	valid_position = {
+		is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -665,6 +672,7 @@ septon_court_position = {
 			faith = {religion_tag = faith_of_the_seven_religion }
 		}
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		is_landless_nw_character = no
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -675,6 +683,7 @@ septon_court_position = {
 		NOT = {
 			faith = {religion_tag = faith_of_the_seven_religion }
 		}
+		is_landless_nw_character = no
 	}
 
 
@@ -843,6 +852,105 @@ septa_court_position = {
 		}
 		if = {
 			limit = {
+				has_trait = compassionate
+			}
+			add = {
+				value = 20
+				desc = court_position_compassionate_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = diligent
+			}
+			add = {
+				value = 20
+				desc = court_position_diligent_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = zealous
+			}
+			add = {
+				value = 20
+				desc = court_position_zealous_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = patient
+			}
+			add = {
+				value = 10
+				desc = court_position_patient_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = shy
+			}
+			add = {
+				value = -10
+				desc = court_position_shy_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = intellect_good_3
+			}
+			add = {
+				value = 40
+				desc = court_position_intellect_good_3_trait
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = intellect_good_2
+			}
+			add = {
+				value = 20
+				desc = court_position_intellect_good_2_trait
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = intellect_good_1
+			}
+			add = {
+				value = 10
+				desc = court_position_intellect_good_1_trait
+			}
+		}
+		else_if = {
+			limit = {
+				has_trait = shrewd
+			}
+			add = {
+				value = 10
+				desc = court_position_shrewd_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = reclusive
+			}
+			add = {
+				value = -10
+				desc = court_position_reclusive_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = inquisitive
+			}
+			add = {
+				value = 10
+				desc = court_position_inquistive_trait
+			}
+		}
+		if = {
+			limit = {
 				diplomacy >= high_skill_rating
 				martial >= high_skill_rating
 				stewardship >= high_skill_rating
@@ -871,6 +979,7 @@ septa_court_position = {
 	is_shown = {
 		NOT = { government_has_flag = government_is_nw }
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		is_landless_nw_character = no
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -882,6 +991,7 @@ septa_court_position = {
 				title_province = { geographical_region = world_westeros_seven_kingdoms }
 			}
 		}
+		is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -1083,6 +1193,7 @@ gaoler_court_position = {
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		has_ep1_court_positions_dlc_trigger = yes
+		is_landless_nw_character = no
 	}
 
 	valid_position = {
@@ -1096,6 +1207,7 @@ gaoler_court_position = {
 				}
 				}
 			}
+		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -1257,6 +1369,7 @@ harbormaster_court_position = {
 
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		is_landless_nw_character = no
 	}
 
 	valid_position = {
@@ -2244,12 +2357,14 @@ master_at_arms_court_position = {
 		culture = {
 			has_innovation = innovation_agot_sword_bound
 		}
+		is_landless_nw_character = no
 	}
 
 	valid_position = {
 		culture = {
 			has_innovation = innovation_agot_sword_bound
 		}
+		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -2583,6 +2698,17 @@ court_smith_court_position = {
 				multiply = {
 					value = 0.5
 					desc = obligation_hook_salary
+				}
+			}
+			#Free for First Ranger - they mostly operate with Provisions
+			if = {
+				limit = {
+					scope:liege ?= { is_landless_nw_character = yes }
+				}
+				multiply = {
+					value = 0
+					desc = court_position_laamps_free
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
 				}
 			}
 		}
