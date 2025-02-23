@@ -71,5 +71,13 @@ court_position_does_not_already_have_a_job_trigger = {
 			has_court_position = court_smith_court_position
 			has_court_position = head_dragonkeeper_court_position
 		}
+		trigger_if = {
+			limit = { has_global_variable = essos_is_loaded } # Legacy of Valyria
+			NOR = {
+				has_court_position = zz_kingsguard_lord_commander_court_position
+				has_court_position = zz_kingsguard_court_position
+				has_court_position = zz_valyria_champion_of_the_fourteen_court_position
+			}
+		}
 	}
 }

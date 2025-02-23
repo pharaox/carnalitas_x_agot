@@ -329,6 +329,115 @@ agot_tradition_ironborn = {
 	}
 }
 
+agot_tradition_valyrian = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = mediterranean
+		4 = swords.dds
+	}
+
+	is_shown = {
+		scope:character = {
+			any_held_county = {
+				culture = { has_cultural_pillar = heritage_valyrian }
+			}
+		}
+	}
+
+	parameters = {
+		expensive_convert_to_local_culture = yes
+		harder_to_hybridize = yes
+		mystic_trait_more_common = yes
+		unlock_maa_dragonkeepers = yes
+		high_prowess_ignores_knight_restrictions = yes
+		less_likely_to_force_conversion = yes
+		carnx_agot_slavery_embraced = yes # CSR
+	}
+
+	character_modifier = {
+		ignore_negative_opinion_of_culture = yes
+		different_culture_opinion = 10
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_or_bureaucratic_desc
+				}
+			}
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							scope:character = {
+								is_ai = no
+							}
+						}
+						NOT = {
+							any_ruler = {
+								count >= 3
+								culture = prev
+								primary_title.tier >= tier_county
+								OR = {
+									has_trait = reaver
+								}
+							}
+						}
+					}
+					trigger_else = {
+						NOR = {
+							culture_pillar:heritage_first_man = { is_in_list = traits }
+							culture_pillar:heritage_rhoynish = { is_in_list = traits }
+							culture_pillar:heritage_ironborn = { is_in_list = traits }
+							culture_pillar:heritage_andal = { is_in_list = traits }
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = rulers_with_reaver_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				NOR = {
+					culture_pillar:heritage_first_man = { is_in_list = traits }
+					culture_pillar:heritage_rhoynish = { is_in_list = traits }
+					culture_pillar:heritage_ironborn = { is_in_list = traits }
+					culture_pillar:heritage_andal = { is_in_list = traits }
+					scope:character = {
+						has_government = tribal_government
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+
 ### Essos
 
 agot_tradition_lyseni = {
