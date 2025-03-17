@@ -229,7 +229,8 @@ visit_local_settlement_decision = {
 				#Add on monastery holding-specific effects
 				custom_tooltip = visit_local_settlement_monastery_holding_decision_tt
 			}
-			set_variable = ep3_laamp_decision_1000_is_visiting
+			#To prevent the character, for whatever reason, managing to not have the variable be removed when exiting VS
+			temporarily_lock_visit_settlement_effect = yes
 			trigger_event =  ep3_laamp_decision_event.1000
 
 			# Properly cleanup after ep3_laamp_decision_event.1000

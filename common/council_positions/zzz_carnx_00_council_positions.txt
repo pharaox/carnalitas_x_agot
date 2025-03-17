@@ -28,7 +28,7 @@
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		#AGOT Added
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	tooltip = game_concept_chancellor_desc
@@ -121,7 +121,7 @@ councillor_steward = {
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		#AGOT Added
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	modifier = {
@@ -213,7 +213,7 @@ councillor_marshal = {
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		#AGOT Added
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	modifier = {
@@ -323,7 +323,7 @@ councillor_spymaster = {
 	valid_position = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
 		#AGOT Added
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	# Scaled modifiers.
@@ -736,7 +736,6 @@ councillor_court_chaplain = {
 				government_has_flag = government_is_nw
 			}
 		}
-		is_landless_nw_character = no
 	}
 }
 
@@ -751,7 +750,7 @@ councillor_vizier = {
 	valid_position = {
 		has_diarchy_active_parameter = vizier_sits_in_the_council_instead_of_spouse
 		#AGOT Added
-		is_landless_nw_character = no
+		agot_is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -767,7 +766,10 @@ councillor_vizier = {
 				}
 			}
 		}
-		NOT = { carnx_is_slave_trigger = yes }
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
 		#AGOT Added
 		NOT = { has_character_flag = nw_ranger_title }
 	}

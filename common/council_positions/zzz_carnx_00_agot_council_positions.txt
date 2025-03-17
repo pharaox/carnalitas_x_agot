@@ -5,7 +5,7 @@
 
 	valid_position = {
 		government_has_flag = government_is_nw
-		is_landless_nw_character = no
+		agot_is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -14,7 +14,11 @@
 			has_trait = nightswatch
 			has_trait = nightswatch_historical # Execution order fix
 		}
-		NOT = { carnx_is_slave_trigger = yes }
+		NOT = { has_character_flag = nw_ranger_title }
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
 	}
 
 	on_get_position = {
@@ -62,7 +66,7 @@ councillor_admiral = {
 		any_sub_realm_county = {
 			is_coastal_county = yes
 		}
-		is_landless_nw_character = no
+		agot_is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -180,7 +184,7 @@ councillor_castellan = {
 	}
 
 	valid_position = {
-		is_landless_nw_character = no
+		agot_is_landless_nw_character = no
 	}
 
 	valid_character = {

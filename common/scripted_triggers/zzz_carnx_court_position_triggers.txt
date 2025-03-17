@@ -8,19 +8,28 @@
 # CSR Court Positions
 
 carnx_can_be_slave_captain_trigger = {
-	is_capable_adult = yes
+	custom_tooltip = {
+		text = none_is_capable_adult
+		is_capable_adult = yes
+	}
 	OR = {
 		martial >= low_skill_rating
 		prowess >= low_skill_rating
 	}
 	is_knight = yes
 	can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = $LIEGE$ }
-	number_of_commander_traits >= 1
+	custom_tooltip = {
+		text = none_has_at_least_one_commander_trait
+		number_of_commander_traits >= 1
+	}
 	has_trait = carnx_agot_unsullied
 }
 
 carnx_can_be_slave_eunuch_trigger = {
-	is_capable_adult = yes
+	custom_tooltip = {
+		text = none_is_capable_adult
+		is_capable_adult = yes
+	}
 	OR = {
 		stewardship >= low_skill_rating
 		intrigue >= low_skill_rating

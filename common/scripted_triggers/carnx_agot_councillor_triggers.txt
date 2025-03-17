@@ -1,9 +1,15 @@
 ﻿carnx_can_be_admiral_trigger = {
 	can_be_admiral_trigger = { COURT_OWNER = $COURT_OWNER$ }
 	OR = {
-		NOT = { carnx_is_slave_trigger = yes }
-		$COURT_OWNER$ = {
-			carnx_is_slave_employment_enabled_trigger = yes
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+		custom_tooltip = {
+			text = none_liege_can_employ_slaves
+			$COURT_OWNER$ = {
+				carnx_is_slave_employment_enabled_trigger = yes
+			}
 		}
 	}
 }
@@ -11,16 +17,25 @@
 carnx_can_be_castellan_trigger = {
 	can_be_steward_trigger = { COURT_OWNER = $COURT_OWNER$ }
 	OR = {
-		NOT = { carnx_is_slave_trigger = yes }
-		$COURT_OWNER$ = {
-			carnx_is_slave_employment_enabled_trigger = yes
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+		custom_tooltip = {
+			text = none_liege_can_employ_slaves
+			$COURT_OWNER$ = {
+				carnx_is_slave_employment_enabled_trigger = yes
+			}
 		}
 	}
 }
 
 carnx_can_be_kingsguard_trigger = {
 	can_be_kingsguard_trigger = { COURT_OWNER = $COURT_OWNER$ }
-	NOT = { carnx_is_slave_trigger = yes }
+	custom_tooltip = {
+		text = none_is_not_a_slave
+		carnx_is_slave_trigger = no
+	}
 }
 
 carnx_can_appoint_admiral_trigger = {
@@ -30,10 +45,10 @@ carnx_can_appoint_admiral_trigger = {
 			is_coastal = yes
 		}
 	}
-	is_landless_nw_character = no
+	agot_is_landless_nw_character = no
 }
 
 carnx_can_appoint_castellan_trigger = {
 	# valid_position
-	is_landless_nw_character = no
+	agot_is_landless_nw_character = no
 }

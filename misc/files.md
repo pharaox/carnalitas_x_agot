@@ -22,6 +22,8 @@
   * Entire file
 * `common/council_positions/00_council_positions.txt`
   * Entire file
+* `common/court_positions/types/00_admin_court_position.txt`
+  * Entire file
 * `common/court_positions/types/00_agot_court_positions.txt`
   * Entire file
 * `common/court_positions/types/00_agot_court_positions_crownlands.txt`

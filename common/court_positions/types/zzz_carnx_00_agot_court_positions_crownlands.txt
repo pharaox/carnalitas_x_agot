@@ -17,7 +17,10 @@
 
 goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	max_available_positions = 1
-	category = court_position_category_special
+	court_position_asset = {
+		animation = marshal
+		background = "gfx/interface/illustrations/event_scenes/alley_day.dds"
+	}
 	opinion = {
 		value = regular_court_position_opinion
 	}
@@ -92,7 +95,10 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 			}
 			is_male = yes
 			can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = scope:liege }
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 	revoke_cost = {
@@ -110,6 +116,7 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	salary = {
 		round = no
 		gold = medium_court_position_salary
+		prestige = major_court_position_prestige_salary
 	}
 	scaling_employer_modifiers = {
 		terrible = {
@@ -137,7 +144,6 @@ goldcloaks_court_position = { #Seneschal / Eunuch hybrid
 	custom_employer_modifier_description = goldcloaks_employer_custom_effect_description
 
 	modifier = {
-		monthly_prestige = major_court_position_prestige_salary
 	}
 	on_court_position_received = {
 		scope:liege = {

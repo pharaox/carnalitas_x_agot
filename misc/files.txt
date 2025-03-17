@@ -7,6 +7,7 @@ common/character_interactions/06_ep3_interactions.txt
 common/council_positions/00_agot_council_positions.txt
 common/council_positions/00_council_kingsguard.txt
 common/council_positions/00_council_positions.txt
+common/court_positions/types/00_admin_court_position.txt
 common/court_positions/types/00_agot_court_positions.txt
 common/court_positions/types/00_agot_court_positions_crownlands.txt
 common/court_positions/types/00_court_positions.txt

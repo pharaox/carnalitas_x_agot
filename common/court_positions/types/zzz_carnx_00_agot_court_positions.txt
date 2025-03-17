@@ -23,8 +23,10 @@
 # Maester
 maester_court_position = {
 	max_available_positions = 1
-	category = court_position_category_special
-
+	court_position_asset = {
+		animation = physician
+		background = "gfx/interface/illustrations/event_scenes/study_physician.dds"
+	}
 	opinion = {
 		value = regular_court_position_opinion
 	}
@@ -163,18 +165,23 @@ maester_court_position = {
 	}
 
 	is_shown = {
-		culture = {
-			has_innovation = innovation_maesters
+		OR = {
+			culture = {
+				has_innovation = innovation_maesters
+			}
+			has_title = title:e_the_iron_throne # grand maester
 		}
-		is_landless_nw_character = no
+		agot_is_landless_nw_character = no
 	}
 
 	# Is this an available position for this court? (root is court owner)
 	valid_position = {
-		culture = {
-			has_innovation = innovation_maesters
+		OR = {
+			culture = {
+				has_innovation = innovation_maesters
+			}
+			has_title = title:e_the_iron_throne # grand maester
 		}
-		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -194,12 +201,15 @@ maester_court_position = {
 				has_trait = disgraced_maester
 				has_character_flag = former_acolyte
 			}
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 		scope:liege = {
 			trigger_if = {
 				limit = {
-					primary_title = title:e_the_iron_throne
+					has_title = title:e_the_iron_throne
 				}
 				scope:employee = {
 					has_inactive_trait = grandmaester
@@ -274,6 +284,42 @@ maester_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = maester_court_position
+						any_court_position_holder = {
+							type = maester_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+			if = {
+				limit = {
+					scope:liege = {
+						is_landless_adventurer = yes
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = agot_laamp_cost_reduction
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
 		round = no
 	}
 
@@ -303,7 +349,6 @@ maester_court_position = {
 	custom_employer_modifier_description = maester_employer_custom_effect_description
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		learning = 2
 	}
 
@@ -364,8 +409,10 @@ maester_court_position = {
 # Captain of Household Guard  - Garuda/Bodyguard hybrid
 household_guard_court_position = {
 	max_available_positions = 1
-	category = court_position_category_common
-
+	court_position_asset = {
+		animation = marshal_random_weapon
+		background = "gfx/interface/illustrations/event_scenes/armory.dds"
+	}
 	opinion = {
 		value = carnx_regular_court_position_opinion
 	}
@@ -456,8 +503,8 @@ household_guard_court_position = {
 
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		NOT = { government_has_flag = government_is_custom_landless }
 		has_ep1_court_positions_dlc_trigger = yes
-		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -467,9 +514,7 @@ household_guard_court_position = {
 		}
 	}
 
-	valid_position = {
-		is_landless_nw_character = no
-	}
+	valid_position = {}
 
 	valid_character = {
 		scope:employee = {
@@ -499,6 +544,30 @@ household_guard_court_position = {
 		round = no
 		gold = {
 			value = carnx_court_position_household_guard_salary # minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = household_guard_court_position
+						any_court_position_holder = {
+							type = household_guard_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = major_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -554,7 +623,6 @@ household_guard_court_position = {
 	custom_employer_modifier_description = household_guard_employer_custom_effect_description
 
 	modifier = {
-		monthly_prestige = major_court_position_prestige_salary
 		prowess = household_guard_prowess_svalue
 	}
 
@@ -581,8 +649,10 @@ household_guard_court_position = {
 # Septon - NON-FOTS Characters
 septon_court_position = {
 	max_available_positions = 1
-	category = court_position_category_royal
-
+	court_position_asset = {
+		animation = prayer
+		background = "gfx/interface/illustrations/event_scenes/temple.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -669,10 +739,10 @@ septon_court_position = {
 
 	is_shown = {
 		NOT = {
-			faith = {religion_tag = faith_of_the_seven_religion }
+			faith = { religion_tag = faith_of_the_seven_religion }
 		}
 		NOT = { government_has_flag = government_is_landless_adventurer }
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -681,9 +751,8 @@ septon_court_position = {
 			faith = { religion_tag = faith_of_the_seven_religion }
 		}
 		NOT = {
-			faith = {religion_tag = faith_of_the_seven_religion }
+			faith = { religion_tag = faith_of_the_seven_religion }
 		}
-		is_landless_nw_character = no
 	}
 
 
@@ -699,7 +768,10 @@ septon_court_position = {
 	valid_character = {
 		scope:employee = {
 			base_court_position_validity_trigger = { EMPLOYER = scope:liege }
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -758,6 +830,30 @@ septon_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = septon_court_position
+						any_court_position_holder = {
+							type = septon_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
 	}
 
 	base_employer_modifier = {
@@ -788,7 +884,6 @@ septon_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		learning = 2
 	}
 
@@ -823,8 +918,10 @@ septon_court_position = {
 # Septa - All Westerosi Characters
 septa_court_position = {
 	max_available_positions = 1
-	category = court_position_category_special
-
+	court_position_asset = {
+		animation = prayer
+		background = "gfx/interface/illustrations/event_scenes/temple.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -979,7 +1076,7 @@ septa_court_position = {
 	is_shown = {
 		NOT = { government_has_flag = government_is_nw }
 		NOT = { government_has_flag = government_is_landless_adventurer }
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	# Is this an available position for this court? (root is court owner)
@@ -991,7 +1088,6 @@ septa_court_position = {
 				title_province = { geographical_region = world_westeros_seven_kingdoms }
 			}
 		}
-		is_landless_nw_character = no
 	}
 
 	valid_character = {
@@ -1000,7 +1096,10 @@ septa_court_position = {
 			is_courtier_of = scope:liege
 			has_trait = septon
 			is_male = no
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -1059,6 +1158,30 @@ septa_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = septon_court_position
+						any_court_position_holder = {
+							type = septon_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
 	}
 
 	base_employer_modifier = {
@@ -1089,7 +1212,6 @@ septa_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		learning = 2
 	}
 
@@ -1123,8 +1245,10 @@ septa_court_position = {
 
 gaoler_court_position = {
 	max_available_positions = 1
-	category = court_position_category_special
-
+	court_position_asset = {
+		animation = prayer
+		background = "gfx/interface/illustrations/event_scenes/dungeon.dds"
+	}
 	opinion = {
 		value = carnx_regular_court_position_opinion
 	}
@@ -1192,8 +1316,8 @@ gaoler_court_position = {
 
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		NOT = { government_has_flag = government_is_custom_landless }
 		has_ep1_court_positions_dlc_trigger = yes
-		is_landless_nw_character = no
 	}
 
 	valid_position = {
@@ -1205,9 +1329,8 @@ gaoler_court_position = {
 					has_building = castle_05
 					has_building = castle_04
 				}
-				}
 			}
-		is_landless_nw_character = no
+		}
 	}
 
 	is_shown_character = {
@@ -1283,6 +1406,30 @@ gaoler_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = executioner_court_position
+						any_court_position_holder = {
+							type = executioner_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
 	}
 
 	# These modifiers are employed based on what level the aptitude reaches (levels are defined as breakpoints)
@@ -1310,7 +1457,6 @@ gaoler_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 	}
 
 	on_court_position_received = {
@@ -1360,16 +1506,18 @@ gaoler_court_position = {
 
 # AGOT : Amanes
 harbormaster_court_position = {
-	category = court_position_category_special
 	max_available_positions = 1
-
+	court_position_asset = {
+		animation = idle
+		background = "gfx/interface/illustrations/event_scenes/docks.dds"
+	}
 	opinion = {
 		value = carnx_ceremonial_court_position_opinion
 	}
 
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
-		is_landless_nw_character = no
+		NOT = { government_has_flag = government_is_custom_landless }
 	}
 
 	valid_position = {
@@ -1403,9 +1551,15 @@ harbormaster_court_position = {
 				court_position_does_not_already_have_a_job_trigger = yes # This positions is considered a job, and cannot be held at the same tims as another similar position
 			}
 			OR = {
-				NOT = { carnx_is_slave_trigger = yes }
-				scope:liege = {
-					carnx_is_slave_employment_enabled_trigger = yes
+				custom_tooltip = {
+					text = none_is_not_a_slave
+					carnx_is_slave_trigger = no
+				}
+				custom_tooltip = {
+					text = none_liege_can_employ_slaves
+					scope:liege = {
+						carnx_is_slave_employment_enabled_trigger = yes
+					}
 				}
 			}
 		}
@@ -1443,6 +1597,30 @@ harbormaster_court_position = {
 		round = no
 		gold = {
 			value = carnx_court_position_harbormaster_salary # minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = harbormaster_court_position
+						any_court_position_holder = {
+							type = harbormaster_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -1579,7 +1757,6 @@ harbormaster_court_position = {
 
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		stewardship = 1
 	}
 
@@ -1596,10 +1773,12 @@ harbormaster_court_position = {
 }
 
 warden_of_the_north_court_position = {
-	category = court_position_category_special
 	max_available_positions = 1
 	minimum_rank = empire
-
+	court_position_asset = {
+		animation = throne_room_one_handed_passive_1
+		background = "gfx/interface/illustrations/event_scenes/north/throneroom_winterfell.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -1625,7 +1804,10 @@ warden_of_the_north_court_position = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
 			}
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -1660,6 +1842,29 @@ warden_of_the_north_court_position = {
 		round = no
 		gold = {
 			value = minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+						employs_court_position = warden_of_the_north_court_position
+						any_court_position_holder = {
+							type = warden_of_the_north_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -1732,7 +1937,6 @@ warden_of_the_north_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		stewardship = 1
 	}
 
@@ -1770,10 +1974,12 @@ warden_of_the_north_court_position = {
 }
 
 warden_of_the_east_court_position = {
-	category = court_position_category_special
 	max_available_positions = 1
 	minimum_rank = empire
-
+	court_position_asset = {
+		animation = throne_room_one_handed_passive_1
+		background = "gfx/interface/illustrations/event_scenes/vale/throneroom_vale_high.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -1798,7 +2004,10 @@ warden_of_the_east_court_position = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
 			}
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -1833,6 +2042,29 @@ warden_of_the_east_court_position = {
 		round = no
 		gold = {
 			value = minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+						employs_court_position = warden_of_the_east_court_position
+						any_court_position_holder = {
+							type = warden_of_the_east_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -1905,7 +2137,6 @@ warden_of_the_east_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		stewardship = 1
 	}
 
@@ -1944,10 +2175,12 @@ warden_of_the_east_court_position = {
 }
 
 warden_of_the_west_court_position = {
-	category = court_position_category_special
 	max_available_positions = 1
 	minimum_rank = empire
-
+	court_position_asset = {
+		animation = throne_room_one_handed_passive_1
+		background = "gfx/interface/illustrations/event_scenes/west/casterly_rock.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -1974,7 +2207,10 @@ warden_of_the_west_court_position = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
 			}
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -2009,6 +2245,29 @@ warden_of_the_west_court_position = {
 		round = no
 		gold = {
 			value = minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+						employs_court_position = warden_of_the_west_court_position
+						any_court_position_holder = {
+							type = warden_of_the_west_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -2081,7 +2340,6 @@ warden_of_the_west_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		stewardship = 1
 	}
 
@@ -2120,10 +2378,12 @@ warden_of_the_west_court_position = {
 }
 
 warden_of_the_south_court_position = {
-	category = court_position_category_special
 	max_available_positions = 1
 	minimum_rank = empire
-
+	court_position_asset = {
+		animation = throne_room_one_handed_passive_1
+		background = "gfx/interface/illustrations/event_scenes/reach/highgarden.dds"
+	}
 	opinion = {
 		value = ceremonial_court_position_opinion
 	}
@@ -2149,7 +2409,10 @@ warden_of_the_south_court_position = {
 				is_vassal_of = scope:liege
 				is_courtier_of = scope:liege
 			}
-			NOT = { carnx_is_slave_trigger = yes }
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
 		}
 	}
 
@@ -2184,6 +2447,29 @@ warden_of_the_south_court_position = {
 		round = no
 		gold = {
 			value = minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+						employs_court_position = warden_of_the_south_court_position
+						any_court_position_holder = {
+							type = warden_of_the_south_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = {
@@ -2256,7 +2542,6 @@ warden_of_the_south_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		stewardship = 1
 	}
 
@@ -2296,8 +2581,10 @@ warden_of_the_south_court_position = {
 
 master_at_arms_court_position = {
 	max_available_positions = 1
-	category = court_position_category_special
-
+	court_position_asset = {
+		animation = throne_room_one_handed_passive_3
+		background = "gfx/interface/illustrations/event_scenes/armory.dds"
+	}
 	opinion = {
 		value = carnx_ceremonial_court_position_opinion
 	}
@@ -2354,17 +2641,16 @@ master_at_arms_court_position = {
 
 	is_shown = {
 		NOT = { government_has_flag = government_is_landless_adventurer }
+		NOT = { government_has_flag = government_is_custom_landless }
 		culture = {
 			has_innovation = innovation_agot_sword_bound
 		}
-		is_landless_nw_character = no
 	}
 
 	valid_position = {
 		culture = {
 			has_innovation = innovation_agot_sword_bound
 		}
-		is_landless_nw_character = no
 	}
 
 	is_shown_character = {
@@ -2382,9 +2668,15 @@ master_at_arms_court_position = {
 				is_courtier_of = scope:liege
 			}
 			OR = {
-				NOT = { carnx_is_slave_trigger = yes }
-				scope:liege = {
-					carnx_is_slave_employment_enabled_trigger = yes
+				custom_tooltip = {
+					text = none_is_not_a_slave
+					carnx_is_slave_trigger = no
+				}
+				custom_tooltip = {
+					text = none_liege_can_employ_slaves
+					scope:liege = {
+						carnx_is_slave_employment_enabled_trigger = yes
+					}
 				}
 			}
 		}
@@ -2465,6 +2757,50 @@ master_at_arms_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = master_at_arms_court_position
+						any_court_position_holder = {
+							type = master_at_arms_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+			if = {
+				limit = {
+					scope:liege = {
+						employs_court_position = master_at_arms_court_position
+						any_court_position_holder = {
+							type = master_at_arms_court_position
+							scope:liege = {
+								has_hook_of_type = {
+									type = obligation_hook
+									target = prev
+								}
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = obligation_hook_salary
+				}
+			}
+		}
 	}
 
 	base_employer_modifier = {
@@ -2490,7 +2826,6 @@ master_at_arms_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		diplomacy = 1
 	}
 
@@ -2516,8 +2851,10 @@ master_at_arms_court_position = {
 
 court_smith_court_position = {
 	max_available_positions = 1
-	category = court_position_category_common
-
+	court_position_asset = {
+		animation = idle
+		background = "gfx/interface/illustrations/event_scenes/armory.dds"
+	}
 	opinion = {
 		value = carnx_regular_court_position_opinion
 	}
@@ -2703,7 +3040,62 @@ court_smith_court_position = {
 			#Free for First Ranger - they mostly operate with Provisions
 			if = {
 				limit = {
-					scope:liege ?= { is_landless_nw_character = yes }
+					scope:liege ?= { agot_is_landless_nw_character = yes }
+				}
+				multiply = {
+					value = 0
+					desc = court_position_laamps_free
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = court_smith_court_position
+						any_court_position_holder = {
+							type = court_smith_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+			if = {
+				limit = {
+					scope:liege = {
+						employs_court_position = court_smith_court_position
+						any_court_position_holder = {
+							type = court_smith_court_position
+							scope:liege = {
+								has_hook_of_type = {
+									type = obligation_hook
+									target = prev
+								}
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = obligation_hook_salary
+				}
+			}
+			#Free for First Ranger - they mostly operate with Provisions
+			if = {
+				limit = {
+					scope:liege ?= { agot_is_landless_nw_character = yes }
 				}
 				multiply = {
 					value = 0
@@ -2734,7 +3126,6 @@ court_smith_court_position = {
 	}
 
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 	}
 
 	on_court_position_received = {
@@ -2795,8 +3186,10 @@ court_smith_court_position = {
 head_dragonkeeper_court_position = {
 	skill = learning
 	max_available_positions = 1
-	category = court_position_category_special
-
+	court_position_asset = {
+		animation = agot_egg_yellow
+		background = "gfx/interface/illustrations/event_scenes/agot_dragonpit.dds"
+	}
 	opinion = {
 		value = carnx_regular_court_position_opinion
 	}
@@ -2952,6 +3345,30 @@ head_dragonkeeper_court_position = {
 				}
 			}
 		}
+		prestige = {
+			value = minor_court_position_prestige_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = maester_court_position
+						any_court_position_holder = {
+							type = maester_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+		}
 		round = no
 	}
 
@@ -2992,7 +3409,6 @@ head_dragonkeeper_court_position = {
 
 	# Perks to the Employee
 	modifier = {
-		monthly_prestige = minor_court_position_prestige_salary
 		learning = 2
 	}
 
