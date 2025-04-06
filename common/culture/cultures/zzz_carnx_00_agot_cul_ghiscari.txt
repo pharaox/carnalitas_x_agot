@@ -8,7 +8,8 @@ astapori = {
 	martial_custom = martial_custom_male_only
 
 	traditions = {
-		#tradition_unsullied #AGOT TODO
+		agot_tradition_slavers_bay
+		agot_tradition_astapori
 		tradition_city_keepers
 		tradition_maritime_mercantilism
 		tradition_artisans

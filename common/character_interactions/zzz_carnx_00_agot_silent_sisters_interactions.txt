@@ -24,7 +24,7 @@
 			is_courtier_of = scope:actor
 			is_female = yes
 			is_human = yes
-			religion = religion:faith_of_the_seven_religion
+			religion = religion:the_seven_religion
 			NOR = {
 				has_trait = devoted
 				has_trait = order_member

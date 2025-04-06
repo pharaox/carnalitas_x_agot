@@ -681,17 +681,12 @@ release_from_prison_interaction = {
 						scope:mega_war_switch_sides = yes
 					}
 
-					agot_mw_fetch_story_scopes_of_chars_effect = { CHARACTER_1 = scope:actor CHARACTER_2 = scope:recipient }
+					agot_mw_fetch_story_scopes_from_chars_effect = { CHARACTER_1 = actor CHARACTER_2 = recipient }
 
 					scope:actor = {
 						if = { # switch to rebels?
 							limit = {
-								any_ruler = {
-									any_owned_story = {
-										story_type = story_agot_mw_crown
-										is_target_in_variable_list = { name = mw_loyalist_list target = scope:recipient }
-									}
-								}
+								scope:mw_crown_story ?= { is_target_in_variable_list = { name = mw_loyalist_list target = scope:recipient } }
 							}
 							agot_mw_join_rebels_effect = { RULER = scope:recipient REBEL_LEADER = scope:mw_rebel_story.story_owner }
 						}
@@ -1034,6 +1029,15 @@ release_from_prison_interaction = {
 					}
 				}
 			}
+			# AGOT ADDED, doctrine_syncreticism_the_cult
+			custom_description = {
+				text = AGOT_FAITH_CANNOT_DEMAND_CONVERSION
+				NOT = {
+					scope:actor.faith = {
+						has_doctrine_parameter = cannot_demand_conversion
+					}
+				}
+			}			
 		}
 	}
 
@@ -2017,7 +2021,7 @@ release_from_prison_interaction = {
 					scope:recipient = {
 						NOT = {
 							faith = {
-								has_doctrine = tenet_knighthood
+								has_doctrine_parameter = can_grant_knighthood
 							}
 						}
 					}
@@ -2032,7 +2036,7 @@ release_from_prison_interaction = {
 				scope:recipient = { ai_zeal > 50 }
 				scope:recipient = {
 					faith = {
-						has_doctrine = tenet_knighthood
+						has_doctrine_parameter = can_grant_knighthood
 					}
 				}
 				scope:agot_strip_knighthood = yes
@@ -2419,6 +2423,13 @@ release_from_prison_interaction = {
 			factor = 0
 			scope:recipient = {
 				has_character_flag = being_prisonbroken_by_laamp
+			}
+		}
+		#AGOT Added
+		modifier = {
+			factor = 0
+			scope:recipient = {
+				has_character_modifier = locked_in_maidenvault
 			}
 		}
 	}

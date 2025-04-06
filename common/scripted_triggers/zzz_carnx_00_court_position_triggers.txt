@@ -64,18 +64,21 @@ court_position_does_not_already_have_a_job_trigger = {
 
 			#AGOT Added
 			has_court_position = household_guard_court_position
+			has_court_position = bloodrider_court_position
 			has_court_position = gaoler_court_position
 			has_court_position = harbormaster_court_position
 			has_court_position = court_smith_court_position
 			has_court_position = head_dragonkeeper_court_position
+			has_court_position = first_sword_court_position
 		}
-		trigger_if = {
-			limit = { has_global_variable = essos_is_loaded } # Legacy of Valyria
-			NOR = {
-				has_court_position = zz_kingsguard_lord_commander_court_position
-				has_court_position = zz_kingsguard_court_position
-				has_court_position = zz_valyria_champion_of_the_fourteen_court_position
-			}
-		}
+		# CSR TODO Temporarily disable LoV
+		#trigger_if = {
+		#	limit = { has_global_variable = essos_is_loaded } # Legacy of Valyria
+		#	NOR = {
+		#		has_court_position = zz_kingsguard_lord_commander_court_position
+		#		has_court_position = zz_kingsguard_court_position
+		#		has_court_position = zz_valyria_champion_of_the_fourteen_court_position
+		#	}
+		#}
 	}
 }

@@ -16,6 +16,7 @@
 #Master of the Crackclaw Point ?
 
 goldcloaks_court_position = { #Seneschal / Eunuch hybrid
+	sort_order = 980
 	max_available_positions = 1
 	court_position_asset = {
 		animation = marshal

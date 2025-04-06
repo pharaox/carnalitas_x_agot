@@ -7,6 +7,7 @@ slavery_laws = {
 	flag = all_realm_law
 	flag = agot_realm_law
 	flag = agot_slavery_law
+	flag = admin_law
 
 	slavery_disallowed_law = {
 		flag = slavery_disabled
@@ -63,6 +64,20 @@ slavery_laws = {
 				NOT = { government_has_flag = government_is_nw }
 			}
 
+			custom_description = {
+				subject = root
+				text = "slavery_criminal_under_faith"
+				NOT = {
+					faith = {
+						OR = {
+							has_doctrine = doctrine_slavery_thralls
+							has_doctrine = doctrine_slavery_indentured
+							has_doctrine = doctrine_slavery_crime
+						}
+					}
+				}
+			}
+
 			# CSR: Barons can't pass slavery laws
 			highest_held_title_tier >= tier_county
 		}
@@ -75,6 +90,24 @@ slavery_laws = {
 			set_variable = {
 				name = slavery_law_cooldown
 				years = @slavery_law_cooldown_years
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						OR = {
+							has_title = title:k_braavos
+							has_title = title:d_braavos
+							has_title = title:c_braavos
+						}
+					}
+				}
+				save_scope_as = slaver
+				title:c_ruins.holder = {
+					trigger_event = {
+						id = agot_slavery.0100
+						days = { 30 60 }
+					}
+				}
 			}
 
 			# CSR
@@ -92,7 +125,17 @@ slavery_laws = {
 			custom_description = {
 				text = slavery_allowed_trigger
 				carnx_can_have_slavery_allowed_law_trigger = yes
+				NOT = {
+					faith = {
+						OR = {
+							has_doctrine = doctrine_slavery_thralls
+							has_doctrine = doctrine_slavery_indentured
+							has_doctrine = doctrine_slavery_crime
+						}
+					}
+				}
 			}
+			agot_pentos_braavos_treaty_character_trigger = no
 		}
 
 		# CSR: Rebalance slavery laws ai_will_do values
@@ -110,6 +153,7 @@ dragonpit_laws = {
 	cumulative = no
 	flag = all_realm_law
 	flag = agot_realm_law
+	flag = admin_law
 
 	dragonpit_close_family_law = {
 		flag = dragonpit_close_family
