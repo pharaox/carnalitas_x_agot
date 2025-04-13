@@ -456,7 +456,7 @@ agot_tradition_thenn = {
 
 	parameters = {
 		zealous_trait_more_common = yes
-		can_build_quarries_in_hills = yes
+		can_build_quarries_everywhere = yes
 		unlock_maa_bronze_raiders = yes
 		carnx_agot_slavery_thralls = yes # CSR
 	}
