@@ -47,7 +47,7 @@
 		scope:recipient = {
 			age >= 10
 			# CSR: Disable Send to Silent Sisters for slaves since they will be returned automatically
-			NOT = { carnx_is_slave_trigger = yes }
+			carnx_is_slave_trigger = no
 		}
 	}
 
