@@ -10,15 +10,9 @@
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		OR = {
-			has_trait = nightswatch
-			has_trait = nightswatch_historical # Execution order fix
-		}
+		# CSR Use trigger
+		can_be_personal_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		NOT = { has_character_flag = nw_ranger_title }
-		custom_tooltip = {
-			text = none_is_not_a_slave
-			carnx_is_slave_trigger = no
-		}
 	}
 
 	on_get_position = {
@@ -71,7 +65,7 @@ councillor_admiral = {
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		carnx_can_be_admiral_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		can_be_admiral_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		NOT = { has_character_flag = nw_ranger_title }
 	}
 
@@ -189,7 +183,8 @@ councillor_castellan = {
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		carnx_can_be_castellan_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		# CSR Use trigger
+		can_be_castellan_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		NOT = { has_character_flag = nw_ranger_title }
 	}
 

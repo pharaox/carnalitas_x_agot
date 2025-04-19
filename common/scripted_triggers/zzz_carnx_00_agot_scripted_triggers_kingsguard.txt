@@ -1,0 +1,33 @@
+﻿can_be_kingsguard_trigger = {
+	can_be_councillor_basics_trigger = yes
+	OR = {
+		is_ruler = no
+		AND = {
+			has_title = title:d_kingsguard
+			has_trait = kingsguard
+		}
+	}
+	is_married = no
+	is_capable_adult = yes
+	is_human = yes
+	NOR = {
+		has_trait = nightswatch
+		has_trait = dragon #Go away Drogon
+		has_trait = order_member #Go away Areo Hotah
+		has_trait = devoted
+		has_trait = septon
+		has_trait = maester
+	}
+	save_temporary_scope_as = root_character
+	OR = {
+		can_be_knight_trigger = { ARMY_OWNER = $COURT_OWNER$ }
+		#for historical KG who don't meet reqs
+		has_trait = kingsguard
+	}
+	is_male = yes #for now
+	# CSR
+	custom_tooltip = {
+		text = none_is_not_a_slave
+		carnx_is_slave_trigger = no
+	}
+}

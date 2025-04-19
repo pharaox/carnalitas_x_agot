@@ -1,20 +1,17 @@
-﻿carnx_can_be_admiral_trigger = {
-	can_be_admiral_trigger = { COURT_OWNER = $COURT_OWNER$ }
+﻿can_be_personal_steward_trigger = {
+	can_be_councillor_basics_trigger = yes
+	exists = $COURT_OWNER$
 	OR = {
-		custom_tooltip = {
-			text = none_is_not_a_slave
-			carnx_is_slave_trigger = no
-		}
-		custom_tooltip = {
-			text = none_liege_can_employ_slaves
-			$COURT_OWNER$ = {
-				carnx_is_slave_employment_enabled_trigger = yes
-			}
-		}
+		has_trait = nightswatch
+		has_trait = nightswatch_historical # Execution order fix
+	}
+	custom_tooltip = {
+		text = none_is_not_a_slave
+		carnx_is_slave_trigger = no
 	}
 }
 
-carnx_can_be_castellan_trigger = {
+can_be_castellan_trigger = {
 	can_be_steward_trigger = { COURT_OWNER = $COURT_OWNER$ }
 	OR = {
 		custom_tooltip = {
@@ -30,12 +27,12 @@ carnx_can_be_castellan_trigger = {
 	}
 }
 
-carnx_can_be_kingsguard_trigger = {
-	can_be_kingsguard_trigger = { COURT_OWNER = $COURT_OWNER$ }
-	custom_tooltip = {
-		text = none_is_not_a_slave
-		carnx_is_slave_trigger = no
-	}
+carnx_can_be_admiral_trigger = {
+	can_be_admiral_trigger = { COURT_OWNER = $COURT_OWNER$ }
+}
+
+carnx_can_be_castellan_trigger = {
+	can_be_castellan_trigger = { COURT_OWNER = $COURT_OWNER$ }
 }
 
 carnx_can_appoint_admiral_trigger = {
