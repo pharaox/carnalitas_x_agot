@@ -47,6 +47,8 @@
 * `common/scripted_effects/00_prison_effects.txt`
   * `prisoner_of_war_capture_effect`
   * `imprison_tyranny_effect`
+* `common/scripted_effects/07_dlc_ep3_scripted_effects.txt`
+  * `destroy_laamp_effect`
 * `common/scripted_modifiers/00_agot_portrait_modifiers.txt`
   * `agot_portrait_clean_shaven_clothing_modifier`
   * `agot_portrait_westerosi_beards_clothes_modifier`
