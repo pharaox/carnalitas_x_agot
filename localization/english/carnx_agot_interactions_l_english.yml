@@ -14,5 +14,5 @@
  carnx_agot_slavery_capital_crime_reason: "Slavery is considered a capital [crime|E] by [recipient.GetShortUIName|U]'s liege realm [laws|E]: $VALUE|=+0$"
  carnx_agot_slavery_crime_reason: "Slavery is considered a [crime|E] by [recipient.GetShortUIName|U]'s liege realm [laws|E]: $VALUE|=+0$"
  carnx_agot_slavery_forbidden_reason: "Slavery is forbidden by [recipient.GetShortUIName|U]'s liege realm [laws|E]: $VALUE|=+0$"
- carnx_agot_slavery_embraced_reason: "Slavery is embraced by [recipient.GetShortUIName|U]'s [culture|E]: $VALUE|=+0$"
- carnx_agot_slavery_thralls_reason: "Thralls may not be bought or sold in [recipient.GetShortUIName|U]'s [culture|E]: $VALUE|=+0$"
+ carnx_agot_slavery_embraced_reason: "Slavery is accepted by [recipient.GetShortUIName|U]'s [faith|E]: $VALUE|=+0$"
+ carnx_agot_slavery_thralls_reason: "Thralls may not be bought or sold in [recipient.GetShortUIName|U]'s [faith|E]: $VALUE|=+0$"

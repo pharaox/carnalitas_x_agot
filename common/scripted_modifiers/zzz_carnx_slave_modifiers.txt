@@ -463,9 +463,7 @@ carnx_slavery_modifier = {
 	}
 	first_valid = {
 		modifier = {
-			culture = {
-				carnx_agot_is_slavery_embraced_trigger = yes
-			}
+			carnx_agot_is_slavery_embraced_trigger = yes
 			NOR = {
 				$ACTION$ = flag:free
 				$ACTION$ = flag:demand_ransom
@@ -474,9 +472,7 @@ carnx_slavery_modifier = {
 			desc = carnx_agot_slavery_embraced_reason
 		}
 		modifier = {
-			culture = {
-				carnx_agot_is_slavery_thralls_trigger = yes
-			}
+			carnx_agot_is_slavery_thralls_trigger = yes
 			OR = {
 				$ACTION$ = flag:enslave
 				$ACTION$ = flag:seize
@@ -485,9 +481,7 @@ carnx_slavery_modifier = {
 			desc = carnx_agot_slavery_embraced_reason
 		}
 		modifier = {
-			culture = {
-				carnx_agot_is_slavery_thralls_trigger = yes
-			}
+			carnx_agot_is_slavery_thralls_trigger = yes
 			OR = {
 				$ACTION$ = flag:buy
 				$ACTION$ = flag:sell

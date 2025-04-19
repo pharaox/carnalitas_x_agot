@@ -106,9 +106,7 @@ carnx_apply_slavery_consequences_effect = {
 
 	if = {
 		limit = {
-			culture = {
-				carnx_agot_is_slavery_thralls_trigger = yes
-			}
+			carnx_agot_is_slavery_thralls_trigger = yes
 			OR = {
 				$ACTION$ = flag:buy
 				$ACTION$ = flag:sell

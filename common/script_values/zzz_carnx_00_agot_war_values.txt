@@ -33,11 +33,9 @@
 			limit = {
 				NOR = {
 					carnx_is_slavery_always_accepted_trigger = yes
-					culture = {
-						OR = {
-							carnx_agot_is_slavery_embraced_trigger = yes
-							carnx_agot_is_slavery_thralls_trigger = yes
-						}
+					OR = {
+						carnx_agot_is_slavery_embraced_trigger = yes
+						carnx_agot_is_slavery_thralls_trigger = yes
 					}
 				}
 			}
@@ -100,7 +98,7 @@ free_slaves_ai_score_value = {
 			limit = {
 				NOR = {
 					carnx_is_slavery_always_crime_trigger = yes
-					culture = {
+					AND = {
 						carnx_agot_is_slavery_embraced_trigger = no
 						carnx_agot_is_slavery_thralls_trigger = no
 					}

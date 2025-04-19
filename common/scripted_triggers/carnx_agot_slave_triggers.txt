@@ -70,20 +70,18 @@ carnx_agot_is_slavery_capital_crime_trigger = {
 	# Slavery must be forbidden by law to be considered a capital crime
 	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
 
-	# Cultures that embrace slavery or keep thralls (Ironborn)
+	# Cultures / faiths that embrace slavery or keep thralls (Ironborn)
 	# do not consider any action a capital crime
 	trigger_if = {
 		limit = {
-			culture = {
-				OR = {
-					carnx_agot_is_slavery_embraced_trigger = yes
-					carnx_agot_is_slavery_thralls_trigger = yes
-				}
+			OR = {
+				carnx_agot_is_slavery_embraced_trigger = yes
+				carnx_agot_is_slavery_thralls_trigger = yes
 			}
 		}
 		always = no
 	}
-	# Other cultures consider enslaving a capital crime
+	# Other cultures / faiths consider enslaving a capital crime
 	trigger_else = {
 		$ACTION$ = flag:enslave
 	}
@@ -93,17 +91,17 @@ carnx_agot_is_slavery_crime_trigger = {
 	# Slavery must be forbidden by law to be considered a crime
 	carnx_agot_is_slavery_forbidden_trigger = { ACTION = $ACTION$ }
 
-	# Cultures that embrace slavery consider enslaving a crime
+	# Cultures / faiths that embrace slavery consider enslaving a crime
 	trigger_if = {
 		limit = {
-			culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+			carnx_agot_is_slavery_embraced_trigger = yes
 		}
 		$ACTION$ = flag:enslave
 	}
-	# Cultures that keep thralls (Ironborn) consider trading slaves a crime
+	# Cultures / faiths that keep thralls (Ironborn) consider trading slaves a crime
 	trigger_else_if = {
 		limit = {
-			culture = { carnx_agot_is_slavery_thralls_trigger = yes }
+			carnx_agot_is_slavery_thralls_trigger = yes
 		}
 		OR = {
 			$ACTION$ = flag:buy
@@ -112,7 +110,7 @@ carnx_agot_is_slavery_crime_trigger = {
 			$ACTION$ = flag:accept_gift
 		}
 	}
-	# Other cultures consider all actions a crime
+	# Other cultures / faiths consider all actions a crime
 	trigger_else = {
 		always = yes
 	}
@@ -128,9 +126,33 @@ carnx_agot_is_slavery_forbidden_trigger = {
 }
 
 carnx_agot_is_slavery_embraced_trigger = {
-	has_cultural_parameter = carnx_agot_slavery_embraced
+	#culture = {
+	#	has_cultural_parameter = carnx_agot_slavery_embraced
+	#}
+	faith = {
+		OR = {
+			has_doctrine = doctrine_slavery_accepted
+			# TODO Remove when all AGOT faiths have slavery doctrines
+			this = faith:cold_gods
+		}
+	}
 }
 
 carnx_agot_is_slavery_thralls_trigger = {
-	has_cultural_parameter = carnx_agot_slavery_thralls
+	#culture = {
+	#	has_cultural_parameter = carnx_agot_slavery_thralls
+	#}
+	faith = {
+		OR = {
+			has_doctrine = doctrine_slavery_thralls
+			# TODO Remove when all AGOT faiths have slavery doctrines
+			this = faith:old_gods_btw_fnf
+			this = faith:old_gods_btw_sni
+			this = faith:old_gods_btw_mns
+			this = faith:old_gods_btw_pnv
+			this = faith:old_gods_btw_dnc
+			this = faith:old_gods_btw_sas
+			this = faith:old_gods_children
+		}
+	}
 }

@@ -63,7 +63,7 @@ carnx_can_start_interaction_trigger = {
 carnx_is_slave_employment_enabled_trigger = {
 	OR = {
 		faith = { has_doctrine_parameter = carnx_slave_employment_active }
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 		has_government = clan_government
 		has_government = tribal_government
 		has_government = feudal_government # Used mainly in Essos
@@ -76,7 +76,7 @@ carnx_is_slave_employment_enabled_trigger = {
 carnx_is_employed_slaves_more_loyal_enabled_trigger = {
 	OR = {
 		faith = { has_doctrine_parameter = carnx_employed_slaves_more_loyal_active }
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 		has_government = clan_government
 		has_government = feudal_government # Used mainly in Essos
 		has_government = administrative_government # Free Cities
@@ -87,7 +87,7 @@ carnx_is_employed_slaves_more_loyal_enabled_trigger = {
 carnx_is_slave_soldiers_enabled_trigger = {
 	OR = {
 		faith = { has_doctrine_parameter = carnx_slave_soldiers_active }
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 		has_government = clan_government
 		has_government = feudal_government # Used mainly in Essos
 		has_government = administrative_government # Free Cities
@@ -107,7 +107,7 @@ carnx_is_slave_eunuchs_enabled_trigger = {
 			}
 		}
 		culture = { has_cultural_parameter = can_appoint_chief_eunuch }
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 	}
 }
 
@@ -143,7 +143,7 @@ carnx_slavery_attitude_slaver_faith_culture_trigger = {
 				this = religion:the_shanties_religion # Sothoryos
 			}
 		}
-		culture = { carnx_agot_is_slavery_thralls_trigger = yes }
+		carnx_agot_is_slavery_thralls_trigger = yes
 	}
 	faith = {
 		NOR = {
@@ -169,11 +169,9 @@ carnx_slavery_attitude_liberator_faith_culture_trigger = {
 			has_doctrine = doctrine_slavery_accepted
 		}
 	}
-	culture = {
-		NOR = {
-			carnx_agot_is_slavery_embraced_trigger = yes
-			carnx_agot_is_slavery_thralls_trigger = yes
-		}
+	NOR = {
+		carnx_agot_is_slavery_embraced_trigger = yes
+		carnx_agot_is_slavery_thralls_trigger = yes
 	}
 }
 
@@ -186,7 +184,7 @@ carnx_slavery_attitude_trader_faith_culture_trigger = {
 				this = religion:the_orders_religion # Jade Sea
 			}
 		}
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 	}
 	faith = {
 		NOR = {
@@ -204,7 +202,7 @@ carnx_slavery_attitude_employer_faith_culture_trigger = {
 				this = religion:the_rhllor_religion # R'hllor
 			}
 		}
-		culture = { carnx_agot_is_slavery_embraced_trigger = yes }
+		carnx_agot_is_slavery_embraced_trigger = yes
 	}
 	faith = {
 		NOR = {
@@ -217,11 +215,9 @@ carnx_slavery_attitude_employer_faith_culture_trigger = {
 carnx_is_declining_to_free_illegal_slaves_crime_trigger = {
 	has_realm_law = slavery_disallowed_law
 
-	culture = {
-		NOR = {
-			carnx_agot_is_slavery_embraced_trigger = yes
-			carnx_agot_is_slavery_thralls_trigger = yes
-		}
+	NOR = {
+		carnx_agot_is_slavery_embraced_trigger = yes
+		carnx_agot_is_slavery_thralls_trigger = yes
 	}
 }
 
@@ -251,7 +247,7 @@ carnx_can_be_enslaved_trigger = {
 
 carnx_is_slavery_always_forbidden_trigger = {
 	OR = {
-		# Slavery is crime according to slavery laws and culture
+		# Slavery is crime according to slavery laws and culture / faith
 		trigger_if = {
 			limit = { exists = liege }
 			liege = {
@@ -262,11 +258,9 @@ carnx_is_slavery_always_forbidden_trigger = {
 			carnx_agot_is_slavery_crime_trigger = { ACTION = $ACTION$ }
 		}
 
-		# Trading or gifting slaves is forbidden for characters of Thralls cultures
+		# Trading or gifting slaves is forbidden for characters of Thralls cultures / faiths
 		AND = {
-			culture = {
-				carnx_agot_is_slavery_thralls_trigger = yes
-			}
+			carnx_agot_is_slavery_thralls_trigger = yes
 			OR = {
 				$ACTION$ = flag:buy
 				$ACTION$ = flag:sell

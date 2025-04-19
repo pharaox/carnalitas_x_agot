@@ -39,14 +39,12 @@
 		add = 10
 	}
 
-	# Slavery cultural parameters (culture)
+	# Slavery embraced or thralls (faith / culture)
 	if = {
 		limit = {
-			culture = {
-				OR = {
-					carnx_agot_is_slavery_embraced_trigger = yes
-					carnx_agot_is_slavery_thralls_trigger = yes
-				}
+			OR = {
+				carnx_agot_is_slavery_embraced_trigger = yes
+				carnx_agot_is_slavery_thralls_trigger = yes
 			}
 		}
 		add = 20

@@ -22,7 +22,7 @@ slave = { # Chattel Slave
 
 	shown_in_ruler_designer = no
 
-	# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures
+	# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures / faiths
 	name = {
 		first_valid = {
 			triggered_desc = {
@@ -35,9 +35,7 @@ slave = { # Chattel Slave
 				trigger = {
 					any_relation = {
 						type = slave_owner
-						culture = {
-							carnx_agot_is_slavery_thralls_trigger = yes
-						}
+						carnx_agot_is_slavery_thralls_trigger = yes
 					}
 				}
 				desc = trait_carnx_agot_thrall
@@ -54,14 +52,12 @@ slave = { # Chattel Slave
 				}
 				desc = trait_slave_desc
 			}
-			# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures
+			# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures / faiths
 			triggered_desc = {
 				trigger = {
 					any_relation = {
 						type = slave_owner
-						culture = {
-							carnx_agot_is_slavery_thralls_trigger = yes
-						}
+						carnx_agot_is_slavery_thralls_trigger = yes
 					}
 				}
 				desc = trait_carnx_agot_thrall_character_desc
