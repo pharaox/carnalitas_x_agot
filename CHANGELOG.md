@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.7.1
+
+* Adapted to AGOT 0.4.0.2 and CSR 0.24.1.
+* Removed slavery cultural parameters *Slavery Embraced* and *Thralls* in favor of the slavery religious doctrines *Accepted* and *Thralls* introduced by AGOT in 0.4.0.
+* Re-added compatibility with Legacy of Valyria. The mod is now compatible with LoV without special changes.
+
 ## Version 0.7.0
 
 * Adapted to AGOT 0.4.0.
@@ -11,7 +17,7 @@
 ## Version 0.5.2
 
 * Adapted to AGOT 0.3.10.
-* Added compatibility with Legacy of Valyria (tested with 1.01.08). Make sure to load Legacy of Valyria **after** Carnalitas-based mods.
+* Added compatibility with Legacy of Valyria (tested with 1.01.08).
 
 ## Version 0.5.1
 

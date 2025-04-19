@@ -1,19 +1,21 @@
 # Carnalitas Slavery Reimagined AGOT Compatibility
 
-This is a [Carnalitas Slavery Reimagined](https://www.loverslab.com/files/file/25565-carnalitas-slavery-reimagined/) compatibility patch for [A Game of Thrones](https://steamcommunity.com/sharedfiles/filedetails/?id=2887120253). It can also be used with the [Legacy of Valyria](https://steamcommunity.com/sharedfiles/filedetails/?id=3403938445) AGOT submod. For an overview of features and other changes, see the README of the main mod.
+This is a [Carnalitas Slavery Reimagined](https://www.loverslab.com/files/file/25565-carnalitas-slavery-reimagined/) compatibility patch for [A Game of Thrones](https://steamcommunity.com/sharedfiles/filedetails/?id=2887120253). For an overview of features and other changes, see the README of the main mod.
 
-The latest version is compatible with CK3 1.15.x, Carnalitas 2.9, CSR 0.24.x, AGOT 0.4.0+. **It is currently not compatible with LoV since there LoV is not yet compatible with AGOT 0.4.0.**
+The latest version is compatible with CK3 1.15.x, Carnalitas 2.9, CSR 0.24.x, and AGOT 0.4.0+.
 
 Note that since Carnalitas itself is not compatible with AGOT, it is strongly recommended to use also [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/).
+
+This mod should be compatible with most (but not all) AGOT submods. Compatibility with [Legacy of Valyria](https://steamcommunity.com/sharedfiles/filedetails/?id=3403938445) has been verified. Load Carnalitas and mods based on it **after** AGOT and other AGOT submods.
 
 Load order:
 
 * A Game of Thrones
+* AGOT submods (optional)
 * Carnalitas
 * Carnalitas AGOT Compatibility
 * Carnalitas Slavery Reimagined
 * CSR AGOT Compatibility (this mod)
-* Legacy of Valyria (optional)
 
 ## Council and Court Positions
 
@@ -58,8 +60,8 @@ In AGOT, rulers can decide to either allow or forbid slavery via a realm law. Mo
 
 If slavery is forbidden by a ruler's liege, slavery actions performed by this ruler may have different consequences depending on whether the violation is considered a capital crime, a non-capital crime, or neither by the liege.
 
-* Enslaving is considered a capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
-* Performing other slavery actions (except freeing or ransoming) is considered a non-capital crime, unless the liege's culture has one of the *Slavery Embraced* or *Thralls* [cultural parameters](#slavery-cultural-parameters).
+* Enslaving is considered a capital crime, unless the liege's faith has one of the *Accepted* or *Thralls* religious doctrines.
+* Performing other slavery actions (except freeing or ransoming) is considered a non-capital crime, unless the liege's faith has one of the *Accepted* or *Thralls* religious doctrines.
 
 If a ruler actually breaks the slavery law of their liege, this is punished by adding an opinion modifier to the liege with 3 different levels of harshness, depending on the severity of the violation:
 
@@ -95,17 +97,9 @@ AGOT introduces 3 new slavery traits:
 * *Slave Owner* is added to rulers with slave realm population. It is modified to avoid -100 opinion penalty with *Slave* characters.
 * *Freedman* is similar to *Former Slave*. It is not changed as it is only used when creating slave revolt leaders.
 
-## Slavery Cultural Parameters
+## Slavery Cultural Parameters (Removed)
 
-Although Carnalitas has religious doctrines that capture different attitudes to slavery and they are seeded in accordance with the world's lore by the [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/) mod, they are insufficient to correctly represent the variety of attitudes to slavery in the world of *A Song of Ice and Fire*. In particular, according to the [sources](https://awoiaf.westeros.org/index.php/Slavery):
-
-* The Ironborn keep thralls and salt wives, and some of the wildling clans north of the Wall also practice thralldom. Thralls however are not slaves in the literal sense as they can't be sold or gifted. In Ironborn culture in particular, one must pay the "iron price" for their thralls. To reflect the ubiquitousness of thralls, the *Drowned God* and *Old God* (north of the Wall) faiths should regard slavery as either shunned or accepted, but then Ironborn and wildlings would also be able to trade slaves without any penalty.
-* Slavery is widespread in most of the Free Cities, even in cities where it's forbidden by law, such as Pentos. Therefore, most Essosi faiths should regard slavery as accepted. However, there are other Free Cities (Braavos) and Andal populations in Essos that practice the same faiths, but have a much harsher view on slavery.
-
-To address these inconsistencies, this mod introduces 2 new cultural parameters that capture the above regional differences:
-
-* The *Slavery Embraced* parameter represents the attitudes to slavery that are prevalent in most of the Free Cities. Rulers of such cultures regard enslaving as a non-capital crime, and other slavery actions as non-criminal. They are also somewhat more willing to engage in slavery. This parameter is added to the special traditions of Lyseni, Myrish, Pentoshi, Qohoric, Tyroshi, and Hartalari cultures.
-* The *Thralls* parameter represents the attitudes to slavery that are prevalent in the Iron Islands and north of the Wall. Rulers of such cultures regard trading and gifting slaves as a non-capital crime, and other slavery actions as non-criminal. Trading and gifting slaves also incurs a prestige penalty and AI rulers are therefore very reluctant to do it. This parameter is added to the special traditions of Ironborn and Wildling cultures.
+In previous versions, this mod introduced 2 new cultural parameters to capture the regional differences specific to the Free Cities, Iron Islands, and north of the wall, such as *Slavery Embraced* and *Thralls*. In version 0.4.0, AGOT introduced similar slavery religious doctrines, namely *Accepted* and *Thralls*. In addition to being mapped to Carnalitas slavery doctrines by the [Carnalitas AGOT Compatibility](https://www.loverslab.com/files/file/32307-carnalitas-agot-compatibility/) mod, these doctrines can also be used to correctly represent the variety of attitudes to slavery in the world of *A Song of Ice and Fire*. As a result, the slavery cultural parameters are now removed. This also enhances the compatibility of this mod with other AGOT submods, such as Legacy of Valyria.
 
 ## Links
 
