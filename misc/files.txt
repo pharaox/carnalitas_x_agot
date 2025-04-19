@@ -5,14 +5,12 @@ common/character_interactions/00_prison_interactions.txt
 common/character_interactions/00_religious_interactions.txt
 common/character_interactions/06_ep3_interactions.txt
 common/council_positions/00_agot_council_positions.txt
-common/council_positions/00_council_kingsguard.txt
 common/council_positions/00_council_positions.txt
 common/court_positions/types/00_admin_court_position.txt
 common/court_positions/types/00_agot_court_positions.txt
 common/court_positions/types/00_agot_court_positions_crownlands.txt
 common/court_positions/types/00_court_positions.txt
 common/culture/cultures/00_agot_cul_ghiscari.txt
-common/culture/traditions/00_agot_regional_traditions.txt
 common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt
 common/laws/02_agot_realm_laws.txt
 common/on_action/child_birth_on_actions.txt
@@ -23,6 +21,8 @@ common/scripted_effects/07_dlc_ep3_scripted_effects.txt
 common/scripted_modifiers/00_agot_portrait_modifiers.txt
 common/scripted_modifiers/00_portrait_modifiers.txt
 common/scripted_modifiers/00_scheme_scripted_modifiers.txt
+common/scripted_triggers/00_agot_councillor_triggers.txt
+common/scripted_triggers/00_agot_scripted_triggers_kingsguard.txt
 common/scripted_triggers/00_available_for_events_triggers.txt
 common/scripted_triggers/00_court_position_triggers.txt
 common/scripted_triggers/00_courtier_guest_management_triggers.txt

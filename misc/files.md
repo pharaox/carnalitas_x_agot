@@ -18,8 +18,6 @@
   * `offer_eunuch_interaction`
 * `common/council_positions/00_agot_council_positions.txt`
   * Entire file
-* `common/council_positions/00_council_kingsguard.txt`
-  * Entire file
 * `common/council_positions/00_council_positions.txt`
   * Entire file
 * `common/court_positions/types/00_admin_court_position.txt`
@@ -32,8 +30,6 @@
   * Entire file
 * `common/culture/cultures/00_agot_cul_ghiscari.txt`
   * `astapori`
-* `common/culture/traditions/00_agot_regional_traditions.txt`
-  * Entire file
 * `common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt`
   * `visit_local_settlement_decision`
 * `common/laws/02_agot_realm_laws.txt`
@@ -58,6 +54,10 @@
 * `common/scripted_modifiers/00_scheme_scripted_modifiers.txt`
   * `ai_agent_join_chance_hostile_taboo_modifier`
   * `ai_agent_join_chance_hostile_grievous_modifier`
+* `common/scripted_triggers/00_agot_councillor_triggers.txt`
+  * `can_be_admiral_trigger`
+* `common/scripted_triggers/00_agot_scripted_triggers_kingsguard.txt`
+  * `can_be_kingsguard_trigger`
 * `common/scripted_triggers/00_available_for_events_triggers.txt`
   * `is_capable_adult`
   * `is_available`
