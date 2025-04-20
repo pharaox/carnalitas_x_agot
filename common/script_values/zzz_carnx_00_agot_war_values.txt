@@ -28,15 +28,12 @@
 			add = 10
 		}
 
-		# Slavery doctrines & cultural parameters (faith / culture)
+		# Slavery doctrines (faith)
 		if = {
 			limit = {
 				NOR = {
-					carnx_is_slavery_always_accepted_trigger = yes
-					OR = {
-						carnx_agot_is_slavery_embraced_trigger = yes
-						carnx_agot_is_slavery_thralls_trigger = yes
-					}
+					carnx_agot_is_slavery_accepted_trigger = yes
+					carnx_agot_is_slavery_thralls_trigger = yes
 				}
 			}
 			multiply = 0
@@ -65,18 +62,6 @@ free_slaves_ai_score_value = {
 			}
 		}
 
-		# Zeal (0 to 10 depending on zeal)
-		if = {
-			limit = {
-				carnx_is_slavery_always_crime_trigger = yes
-				ai_zeal > 0
-			}
-			add = {
-				value = ai_zeal
-				multiply = 0.1
-			}
-		}
-
 		# Slavery attitude
 		# Liberators more likely to free slaves
 		if = {
@@ -93,16 +78,10 @@ free_slaves_ai_score_value = {
 			add = 5
 		}
 
-		# Slavery doctrines & cultural parameters (faith / culture)
+		# Slavery doctrines (faith)
 		if = {
 			limit = {
-				NOR = {
-					carnx_is_slavery_always_crime_trigger = yes
-					AND = {
-						carnx_agot_is_slavery_embraced_trigger = no
-						carnx_agot_is_slavery_thralls_trigger = no
-					}
-				}
+				carnx_agot_is_slavery_criminal_trigger = no
 			}
 			multiply = 0
 		}

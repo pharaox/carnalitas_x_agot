@@ -6,3 +6,7 @@
  trait_carnx_agot_thrall: "Thrall"
  trait_carnx_agot_thrall_desc: "This character has been enslaved and is now the property of another, but may not be sold or gifted."
  trait_carnx_agot_thrall_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been enslaved and is now the property of another, but may not be sold or gifted."
+
+ trait_carnx_agot_indentured: "Indentured"
+ trait_carnx_agot_indentured_desc: "This character has been indentured and is now the property of another, but may not be sold or gifted."
+ trait_carnx_agot_indentured_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] has been indentured and is now the property of another, but may not be sold or gifted."

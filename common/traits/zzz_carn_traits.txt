@@ -22,7 +22,7 @@ slave = { # Chattel Slave
 
 	shown_in_ruler_designer = no
 
-	# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures / faiths
+	# CSR: Use "Thrall" or "Indentured" according to their owner's doctrine
 	name = {
 		first_valid = {
 			triggered_desc = {
@@ -40,6 +40,15 @@ slave = { # Chattel Slave
 				}
 				desc = trait_carnx_agot_thrall
 			}
+			triggered_desc = {
+				trigger = {
+					any_relation = {
+						type = slave_owner
+						carnx_agot_is_slavery_indentured_trigger = yes
+					}
+				}
+				desc = trait_carnx_agot_indentured
+			}
 			desc = trait_slave
 		}
 	}
@@ -52,7 +61,7 @@ slave = { # Chattel Slave
 				}
 				desc = trait_slave_desc
 			}
-			# CSR: Use "Thrall" for slaves owned by characters of Thralls cultures / faiths
+			# CSR: Use "Thrall" or "Indentured" according to their owner's doctrine
 			triggered_desc = {
 				trigger = {
 					any_relation = {
@@ -61,6 +70,15 @@ slave = { # Chattel Slave
 					}
 				}
 				desc = trait_carnx_agot_thrall_character_desc
+			}
+			triggered_desc = {
+				trigger = {
+					any_relation = {
+						type = slave_owner
+						carnx_agot_is_slavery_indentured_trigger = yes
+					}
+				}
+				desc = trait_carnx_agot_indentured_character_desc
 			}
 			desc = trait_slave_character_desc
 		}

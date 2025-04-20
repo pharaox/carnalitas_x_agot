@@ -463,13 +463,13 @@ carnx_slavery_modifier = {
 	}
 	first_valid = {
 		modifier = {
-			carnx_agot_is_slavery_embraced_trigger = yes
+			carnx_agot_is_slavery_accepted_trigger = yes
 			NOR = {
 				$ACTION$ = flag:free
 				$ACTION$ = flag:demand_ransom
 			}
 			add = 5
-			desc = carnx_agot_slavery_embraced_reason
+			desc = carnx_agot_slavery_accepted_reason
 		}
 		modifier = {
 			carnx_agot_is_slavery_thralls_trigger = yes
@@ -478,7 +478,7 @@ carnx_slavery_modifier = {
 				$ACTION$ = flag:seize
 			}
 			add = 10
-			desc = carnx_agot_slavery_embraced_reason
+			desc = carnx_agot_slavery_thralls_enslave_reason
 		}
 		modifier = {
 			carnx_agot_is_slavery_thralls_trigger = yes
@@ -492,7 +492,7 @@ carnx_slavery_modifier = {
 				value = -100
 				multiply = carnx_ai_honor_impact_multiplier
 			}
-			desc = carnx_agot_slavery_thralls_reason
+			desc = carnx_agot_slavery_thralls_buy_sell_reason
 		}
 	}
 }

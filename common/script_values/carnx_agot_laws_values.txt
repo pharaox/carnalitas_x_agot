@@ -15,42 +15,20 @@
 
 	# Slavery doctrines (faith)
 	if = {
-		limit = { carnx_is_slavery_always_accepted_trigger = yes }
+		limit = { carnx_agot_is_slavery_accepted_trigger = yes }
+		add = 50
+	}
+	else_if = {
+		limit = { carnx_agot_is_slavery_thralls_trigger = yes }
 		add = 20
 	}
 	else_if = {
-		limit = { carnx_is_slavery_always_crime_trigger = yes }
+		limit = { carnx_agot_is_slavery_indentured_trigger = yes }
 		add = -20
 	}
 	else_if = {
-		limit = {
-			# crime / shunned
-			carnx_is_slavery_never_accepted_trigger = yes
-			carnx_is_slavery_never_crime_trigger = no
-		}
-		add = -10
-	}
-	else_if = {
-		limit = {
-			# shunned / accepted
-			carnx_is_slavery_never_crime_trigger = yes
-			carnx_is_slavery_never_accepted_trigger = no
-		}
-		add = 10
-	}
-
-	# Slavery embraced or thralls (faith / culture)
-	if = {
-		limit = {
-			OR = {
-				carnx_agot_is_slavery_embraced_trigger = yes
-				carnx_agot_is_slavery_thralls_trigger = yes
-			}
-		}
-		add = 20
-	}
-	else = {
-		add = -20
+		limit = { carnx_agot_is_slavery_criminal_trigger = yes }
+		add = -50
 	}
 
 	# Historical slavery (title)
