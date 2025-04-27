@@ -28,3 +28,32 @@
 	ai_greed = -50
 	ai_honor = 50
 }
+
+carnx_agot_faith_slaver = {
+	category = fame
+
+	shown_in_ruler_designer = no
+
+	triggered_opinion = {
+		parameter = slavery_crime
+		opinion_modifier = carnx_slavery_crime_opinion
+		ignore_opinion_value_if_same_trait = yes
+	}
+	triggered_opinion = {
+		parameter = slavery_indentured
+		opinion_modifier = carnx_slavery_intolerant_opinion
+		ignore_opinion_value_if_same_trait = yes
+	}
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_carnx_agot_faith_slaver_desc
+			}
+			desc = trait_carnx_agot_faith_slaver_character_desc
+		}
+	}
+}

@@ -1,4 +1,13 @@
-﻿# carnx_add_courtier_effect allows compatibility mods to prevent conversion mods (e.g. AGOT) from redirecting courtiers.
+﻿carnx_acquire_faith_slaver_trait_effect = {
+	$CHARACTER$ ?= {}
+	if = {
+		limit = { has_trait = carnx_agot_faith_slaver }
+		add_trait = carnx_agot_faith_slaver
+		carnx_debug_log_effect = { MSG = carnx_agot_debug_msg_character_acquired_faith_slaver_trait }
+	}
+}
+
+# carnx_add_courtier_effect allows compatibility mods to prevent conversion mods (e.g. AGOT) from redirecting courtiers.
 carnx_add_courtier_effect = {
 	# Remove nightswatch / silent sister / kingsguard trait and set culture to owner's culture
 	# to prevent AGOT from redirecting the courtier to a different court
