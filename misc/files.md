@@ -34,8 +34,6 @@
   * `visit_local_settlement_decision`
 * `common/laws/02_agot_realm_laws.txt`
   * Entire file
-* `common/religion/religions/00_agot_the_pact.txt`
-  * Entire file
 * `common/script_values/00_agot_war_values.txt`
   * `slave_raid_ai_score_value`
   * `free_slaves_ai_score_value`
