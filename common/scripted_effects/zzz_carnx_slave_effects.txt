@@ -1,7 +1,20 @@
 ﻿carnx_acquire_faith_slaver_trait_effect = {
 	$CHARACTER$ ?= {}
+	# Remove CSR vanilla traits if present
 	if = {
-		limit = { has_trait = carnx_agot_faith_slaver }
+		limit = { has_trait = carnx_faith_slaver_1 }
+		remove_trait = carnx_faith_slaver_1
+	}
+	if = {
+		limit = { has_trait = carnx_faith_slaver_2 }
+		remove_trait = carnx_faith_slaver_2
+	}
+
+	# Add CSR AGOT trait if needed
+	if = {
+		limit = {
+			NOT = { has_trait = carnx_agot_faith_slaver }
+		}
 		add_trait = carnx_agot_faith_slaver
 		carnx_debug_log_effect = { MSG = carnx_agot_debug_msg_character_acquired_faith_slaver_trait }
 	}

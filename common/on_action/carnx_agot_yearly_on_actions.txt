@@ -1,0 +1,32 @@
+﻿# Called every Jan 1st
+# Root does not exist
+yearly_global_pulse = {
+	on_actions = {
+		carnx_agot_yearly_global_pulse
+	}
+}
+
+carnx_agot_yearly_global_pulse = {
+	effect = {
+		# Migrate CSR vanilla traits to CSR AGOT traits
+		if = {
+			limit = {
+				NOT = { has_global_variable = carnx_agot_faith_slaver_trait_migrated }
+			}
+			carnx_debug_log_effect = { MSG = carnx_agot_debug_msg_migrating_faith_slaver_traits }
+			every_living_character = {
+				limit = {
+					OR = {
+						has_trait = carnx_faith_slaver_1
+						has_trait = carnx_faith_slaver_2
+					}
+				}
+				carnx_acquire_faith_slaver_trait_effect = { CHARACTER = this }
+			}
+			set_global_variable = {
+				name = carnx_agot_faith_slaver_trait_migrated
+				value = yes
+			}
+		}
+	}
+}

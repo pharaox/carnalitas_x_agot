@@ -75,6 +75,7 @@
  carnx_agot_debug_msg_forcibly_freeing_slave: "$carnx_debug_prefix$: Forcibly freeing slave, emancipator: $carnx_emancipator$"
 
  carnx_agot_debug_msg_character_acquired_faith_slaver_trait: "$carnx_debug_prefix$: Character acquired Slaver trait"
+ carnx_agot_debug_msg_migrating_faith_slaver_traits: "Migrating Slaver traits from CSR to CSR AGOT"
 
  carnx_slavery_allowed_law_ai_will_do: "[THIS.Var('slavery_allowed_law_ai_will_do').GetValue]"
  carnx_emancipator: "[THIS.Var('emancipator').Char.GetFullNameNoTooltip]"
