@@ -70,7 +70,7 @@ slavery_laws = {
 				NOT = {
 					faith = {
 						OR = {
-							has_doctrine = doctrine_slavery_thralls
+							#has_doctrine = doctrine_slavery_thralls # CSR
 							has_doctrine = doctrine_slavery_indentured
 							has_doctrine = doctrine_slavery_crime
 						}
@@ -128,7 +128,7 @@ slavery_laws = {
 				NOT = {
 					faith = {
 						OR = {
-							has_doctrine = doctrine_slavery_thralls
+							#has_doctrine = doctrine_slavery_thralls # CSR
 							has_doctrine = doctrine_slavery_indentured
 							has_doctrine = doctrine_slavery_crime
 						}
