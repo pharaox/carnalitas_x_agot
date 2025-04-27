@@ -133,51 +133,24 @@ carnx_agot_is_slavery_forbidden_trigger = {
 
 carnx_agot_is_slavery_accepted_trigger = {
 	faith = {
-		OR = {
-			has_doctrine = doctrine_slavery_accepted
-			# TODO Remove when all AGOT faiths have slavery doctrines
-			this = faith:cold_gods
-		}
+		has_doctrine = doctrine_slavery_accepted
 	}
 }
 
 carnx_agot_is_slavery_thralls_trigger = {
 	faith = {
-		OR = {
-			has_doctrine = doctrine_slavery_thralls
-			# TODO Remove when all AGOT faiths have slavery doctrines
-			this = faith:old_gods_btw_fnf
-			this = faith:old_gods_btw_sni
-			this = faith:old_gods_btw_mns
-			this = faith:old_gods_btw_pnv
-			this = faith:old_gods_btw_dnc
-			this = faith:old_gods_btw_sas
-			this = faith:old_gods_children
-		}
+		has_doctrine = doctrine_slavery_thralls
 	}
 }
 
 carnx_agot_is_slavery_indentured_trigger = {
 	faith = {
-		OR = {
-			has_doctrine = doctrine_slavery_indentured
-		}
+		has_doctrine = doctrine_slavery_indentured
 	}
 }
 
 carnx_agot_is_slavery_criminal_trigger = {
 	faith = {
-		OR = {
-			has_doctrine = doctrine_slavery_crime
-			# TODO Remove when all AGOT faiths have slavery doctrines
-			this = faith:old_gods_wnw
-			this = faith:old_gods_rnh
-			this = faith:old_gods_mnv
-			this = faith:old_gods_rng
-			this = faith:old_gods_fng
-			this = faith:old_gods_snw
-			this = faith:old_gods_dns
-			this = faith:old_gods_sns
-		}
+		has_doctrine = doctrine_slavery_crime
 	}
 }
