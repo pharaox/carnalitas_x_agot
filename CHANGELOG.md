@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.7.2
+
+* Adapted to AGOT 0.4.1 and CSR 0.24.2.
+* Replaced the CSR *Slaver* leveled traits with a single AGOT-specific *Slaver* trait based on AGOT slavery doctrines.
+* Fixed a rare issue where characters with special traits (such as *Nightswatch*) could be added to the wrong court.
+
 ## Version 0.7.1
 
 * Adapted to AGOT 0.4.0.2 and CSR 0.24.1.

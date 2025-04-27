@@ -50,6 +50,10 @@ In the main CSR mod, *Cupbearer*, is only available to slaves if your government
 
 The *Mameluke Captain* court position is renamed to *Unsullied Captain* and requires the slave to actually have the *Unsullied* trait. Although Astapor is still not on the AGOT map, soldiers with this trait are occasionally sold in the *Buy Foreign Slaves* event, and so they can be acquired either via this event or via trade.
 
+### AGOT-specific Slaver Trait
+
+In version 0.4.0, AGOT overhauled their faiths and introduced their own *Slavery* doctrines: *Criminal*, *Indentured Servitude*, *Thralls*, and *Accepted*. In version 0.4.1, the corresponding doctrine parameters were also added. The CSR AGOT mod now has a different, AGOT-specific *Slaver* trait based on the AGOT doctrines, that replaces the vanilla CSR leveled traits. You get this trait if you enslave someone, independent of their faith. This may affect the opinion of all characters in the game, depending on their slavery doctrine, not just of your co-religionists as in vanilla CSR. Importantly, this may give your liege imprisonment and execution reasons, even if they haven't passed the *Slavery Forbidden* law.
+
 ## Integration with AGOT Slavery System
 
 Starting with version 0.2.0, AGOT introduces its own slavery system. This system is still pretty rudimentary and mostly does not conflict with Carnalitas and CSR. This mod integrates with or disables some of this slavery system features.
