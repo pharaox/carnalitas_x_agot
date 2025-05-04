@@ -1,3 +1,3 @@
-version="0.7.2"
+version="0.8.0"
 name="CSR AGOT Compatibility"
-supported_version="1.15.*"
+supported_version="1.16.*"
