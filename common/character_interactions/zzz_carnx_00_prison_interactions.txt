@@ -109,7 +109,7 @@ release_from_prison_interaction = {
 						scope:recipient = { is_landed_or_landless_administrative = yes }
 					}
 					#AGOT Modified, add NW banishment
-					# banish = yes
+					# banish_effect = { BANISHER = scope:actor }
 					if = {
 						limit = {
 							agot_nw_can_banish = { BANISHER = scope:actor BANISHEE = scope:recipient }
@@ -1029,7 +1029,7 @@ release_from_prison_interaction = {
 					}
 				}
 			}
-			# AGOT ADDED, doctrine_syncreticism_the_cult
+			# AGOT ADDED, doctrine_syncretism_the_cult
 			custom_description = {
 				text = AGOT_FAITH_CANNOT_DEMAND_CONVERSION
 				NOT = {
@@ -1170,7 +1170,10 @@ release_from_prison_interaction = {
 				NOT = { has_trait = nightswatch }
 			}
 			scope:recipient = {
-				NOT = { has_trait = nightswatch }
+				NOR = {
+					has_trait = nightswatch
+					has_trait = high_septon
+				}
 			}
 			scope:agot_banish_to_essos = no
 		}
@@ -1696,6 +1699,7 @@ release_from_prison_interaction = {
 					target_is_liege_or_above = scope:actor
 					is_pool_character = yes
 				}
+				NOT = { has_trait = high_septon }
 			}
 			custom_description = {
 				text = "release_banish_invalid_take_vows"

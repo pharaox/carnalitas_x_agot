@@ -35,6 +35,7 @@
 # charioteer_court_position
 # bookmaker_court_position
 # akolouthos_court_position
+# court_astrologer_court_position
 
 ### Important Court Positions ### ( Sort order 399 - 300 )
 court_physician_court_position = {
@@ -218,6 +219,50 @@ court_physician_court_position = {
 			add = {
 				value = 15
 				desc = court_position_herbalist_trait
+			}
+		}
+		# Nomad Yurt
+		if = {
+			limit = {
+				employer.domicile ?= {
+					has_domicile_building_or_higher = physician_yurt_01
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_physician_aptitude_lvl_4
+						}
+					}
+					add = 32
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_physician_aptitude_lvl_3
+						}
+					}
+					add = 16
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_physician_aptitude_lvl_2
+						}
+					}
+					add = 8
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_physician_aptitude_lvl_1
+						}
+					}
+					add = 4
+				}
+				desc = physician_yurt_01_domicile_building
 			}
 		}
 		# Education
@@ -920,7 +965,7 @@ travel_leader_court_position = {
 			}
 		}
 
-		if = { # CSR
+		if = { #Unop Added since missing
 			limit = {
 				employer ?= {
 					#AGOT Modified
@@ -1896,6 +1941,7 @@ seneschal_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -2365,6 +2411,50 @@ court_tutor_court_position = {
 				desc = seneschal_improve_court_aptitude_desc
 			}
 		}
+		# Nomad Yurt
+		if = {
+			limit = {
+				employer.domicile ?= {
+					has_domicile_building_or_higher = wet_nurse_yurt_01
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_4
+						}
+					}
+					add = 32
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_3
+						}
+					}
+					add = 16
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_2
+						}
+					}
+					add = 8
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_court_tutor_aptitude_lvl_1
+						}
+					}
+					add = 4
+				}
+				desc = wet_nurse_yurt_01_domicile_building
+			}
+		}
 	}
 
 	is_shown = {
@@ -2381,7 +2471,17 @@ court_tutor_court_position = {
 
 	# Is this an available position for this court? (root is court owner)
 	valid_position = {
-		is_landed_or_landless_administrative = yes
+		trigger_if = {
+			limit = {
+				government_has_flag = government_is_nomadic
+			}
+			domicile ?= {
+				has_domicile_parameter = nomad_unlock_court_tutor
+			}
+		}
+		trigger_else = {
+			is_landed_or_landless_administrative = yes
+		}
 	}
 
 	is_shown_character = {
@@ -2393,6 +2493,18 @@ court_tutor_court_position = {
 	valid_character = {
 		scope:employee = {
 			court_tutor_validity_trigger = { EMPLOYER = scope:liege }
+			OR = {
+				custom_tooltip = {
+					text = none_is_not_a_slave
+					carnx_is_slave_trigger = no
+				}
+				custom_tooltip = {
+					text = none_liege_can_employ_slaves
+					scope:liege = {
+						carnx_is_slave_employment_enabled_trigger = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -2684,7 +2796,7 @@ court_tutor_court_position = {
 	}
 }
 
-wet_nurse_court_position = {
+wet_nurse_court_position = { # BP2
 	sort_order = 285
 	max_available_positions = 1
 	skill = learning
@@ -2805,6 +2917,50 @@ wet_nurse_court_position = {
 				desc = court_position_loyal_trait
 			}
 		}
+		# Nomad Yurt
+		if = {
+			limit = {
+				employer.domicile ?= {
+					has_domicile_building_or_higher = wet_nurse_yurt_01
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_wet_nurse_aptitude_lvl_4
+						}
+					}
+					add = 32
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_wet_nurse_aptitude_lvl_3
+						}
+					}
+					add = 16
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_wet_nurse_aptitude_lvl_2
+						}
+					}
+					add = 8
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_wet_nurse_aptitude_lvl_1
+						}
+					}
+					add = 4
+				}
+				desc = wet_nurse_yurt_01_domicile_building
+			}
+		}
 		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_traveling_friends_value
 		add = court_position_aptitude_high_penalty_value
@@ -2845,6 +3001,26 @@ wet_nurse_court_position = {
 	}
 
 	valid_position = {
+		OR = {
+			any_child = {
+				is_adult = no
+			}
+			is_adult = no
+			any_warden_hostage = {
+				is_adult = no
+			}
+		}
+		trigger_if = {
+			limit = {
+				government_has_flag = government_is_nomadic
+			}
+			custom_tooltip = {
+				text = has_wet_nurse_domicile_building
+				domicile ?= {
+					has_domicile_parameter = nomad_unlock_wet_nurse
+				}
+			}
+		}
 		is_landed_or_landless_administrative = yes
 	}
 
@@ -3179,13 +3355,7 @@ charioteer_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep3_dlc_trigger = yes
-		trigger_if = {
-			limit = {
-				is_ai = yes
-				highest_held_title_tier <= tier_county
-			}
-			always = no
-		}
+		highest_held_title_tier > tier_county
 	}
 
 	opinion = {
@@ -3388,6 +3558,7 @@ charioteer_court_position = {
 		}
 	}
 
+	# Is this an available position for this court? (root is court owner)
 	valid_position = {
 		is_landed_or_landless_administrative = yes
 		culture = { has_cultural_parameter = hosts_chariot_races }
@@ -3726,7 +3897,7 @@ charioteer_court_position = {
 	}
 }
 
-bookmaker_court_position = {
+bookmaker_court_position = { # EP3
 	sort_order = 283
 	max_available_positions = 1
 	skill = stewardship
@@ -4054,7 +4225,7 @@ bookmaker_court_position = {
 	}
 }
 
-akolouthos_court_position = { # Captain of the Varangians
+akolouthos_court_position = { # EP1 & EP3
 	sort_order = 282
 	max_available_positions = 1
 
@@ -4241,19 +4412,26 @@ akolouthos_court_position = { # Captain of the Varangians
 		if = {
 			limit = {
 				has_character_flag = competing_knight_position
-				OR = {
-					any_court_position_holder = {
-						type = bodyguard_court_position
-						has_character_flag = competing_knight_position
-					}
-					any_court_position_holder = {
-						type = champion_court_position
-						has_character_flag = competing_knight_position
+				save_temporary_scope_as = unop_temp_employee #Unop Fix this aptitude check by ensuring we are looking at the liege court
+				employer ?= {
+					OR = {
+						any_court_position_holder = {
+							type = bodyguard_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
+						any_court_position_holder = {
+							type = champion_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
 					}
 				}
 			}
-			add = 30
-			desc = competing_knight_position_desc
+			add = { #Unop: Fix the value/desc block so it is shown in the tooltip UI of aptitude
+				value = 30
+				desc = competing_knight_position_desc
+			}
 		}
 		add = court_position_aptitude_traveling_friends_value
 		add = court_position_aptitude_family_business_value
@@ -4996,6 +5174,7 @@ master_of_horse_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -5302,10 +5481,28 @@ master_of_horse_court_position = {
 }
 
 master_of_hunt_court_position = {
-	sort_order = 275
+	sort_order = {
+		value = 275
+		if = {
+			limit = {
+				has_mpo_dlc_trigger = yes
+				government_has_flag = government_is_nomadic
+			}
+			add = 100
+		}
+	}
 	max_available_positions = 1
 	minimum_rank = county
 	skill = prowess
+
+	court_position_asset = {
+		trigger = {
+			government_has_flag = government_is_nomadic
+		}
+		animation = hunting_falcon
+		background = "gfx/interface/illustrations/event_scenes/ep2_hunt_poachers_camp.dds"
+		localization_key = master_of_hunt_court_position_nomadic
+	}
 
 	court_position_asset = {
 		animation = hunting_shortbow_aim_arrow_default
@@ -5447,7 +5644,7 @@ master_of_hunt_court_position = {
 	# Is this an available position for this court? (root is court owner)
 	valid_position = {
 		is_landed_or_landless_administrative = yes
-		# CSR: Adopted from Unofficial Patch
+		#Unop Not available if culture has cannot_hunt parameter
 		custom_tooltip = {
 			text = hunt_can_hunt_parameter_tt
 			NOT = {
@@ -5469,7 +5666,7 @@ master_of_hunt_court_position = {
 				text = none_is_not_a_slave
 				carnx_is_slave_trigger = no
 			}
-			# CSR: Adopted from Unofficial Patch
+			#Unop Not available if culture has cannot_hunt parameter
 			custom_tooltip = {
 				text = hunt_can_hunt_parameter_tt
 				NOT = {
@@ -5924,7 +6121,6 @@ master_assassin_court_position = {
 			}
 		}
 	}
-
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
@@ -6742,6 +6938,7 @@ cave_hermit_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -7563,6 +7760,18 @@ court_gardener_court_position = {
 	valid_character = {
 		scope:employee = {
 			court_gardener_validity_trigger = { EMPLOYER = scope:liege }
+			OR = {
+				custom_tooltip = {
+					text = none_is_not_a_slave
+					carnx_is_slave_trigger = no
+				}
+				custom_tooltip = {
+					text = none_liege_can_employ_slaves
+					scope:liege = {
+						carnx_is_slave_employment_enabled_trigger = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -7823,7 +8032,7 @@ court_gardener_court_position = {
 	}
 }
 
-court_scholar_court_position = {
+court_scholar_court_position = { # FP3
 	sort_order = 231
 	max_available_positions = 1
 	minimum_rank = kingdom
@@ -7946,6 +8155,17 @@ court_scholar_court_position = {
 				desc = court_position_shrewd_trait
 			}
 		}
+		if = {
+			limit = {
+				scope:liege.culture ?= {
+					has_innovation = fp3_innovation_mural_sextant
+				}
+			}
+			add = {
+				value = 10
+				desc = court_position_innovation_mural_sextant
+			}
+		}
 		# AGOT Added
 		if = {
 			limit = {
@@ -7954,18 +8174,6 @@ court_scholar_court_position = {
 			add = {
 				value = 10
 				desc = court_position_inquistive_trait
-			}
-		}
-		if = {
-			limit = {
-				#AGOT Modified Check employer instead of scope:liege (Unop)
-				#scope:liege.culture ?= {
-				#	has_innovation = fp3_innovation_mural_sextant
-				#}
-			}
-			add = {
-				value = 10
-				desc = court_position_innovation_mural_sextant
 			}
 		}
 		add = court_position_aptitude_traveling_friends_value
@@ -8303,10 +8511,22 @@ court_scholar_court_position = {
 	}
 }
 
-chronicler_court_position = {
+chronicler_court_position = { # CE1
 	sort_order = 230
 	max_available_positions = 1
 	skill = diplomacy
+
+	court_position_asset = {
+		trigger = {
+			OR = {
+				government_has_flag = government_is_nomadic
+				government_has_flag = government_is_tribal
+			}
+		}
+		animation = storyteller
+		background = "gfx/interface/illustrations/event_scenes/throneroom_west.dds"
+		localization_key = chronicler_court_position_nomadic_tribal
+	}
 
 	court_position_asset = {
 		animation = writing
@@ -8415,6 +8635,14 @@ chronicler_court_position = {
 
 	valid_position = {
 		is_landed_or_landless_administrative = yes
+		trigger_if = {
+			limit = {
+				government_has_flag = government_is_nomadic
+			}
+			domicile ?= {
+				has_domicile_building_or_higher = court_yurt_01
+			}
+		}
 	}
 
 	is_shown_character = {
@@ -8709,7 +8937,7 @@ chronicler_court_position = {
 	}
 }
 
-champion_court_position = {
+champion_court_position = { # EP1
 	sort_order = 215
 	max_available_positions = 1
 	skill = prowess
@@ -8856,19 +9084,26 @@ champion_court_position = {
 		if = {
 			limit = {
 				has_character_flag = competing_knight_position
-				OR = {
-					any_court_position_holder = {
-						type = bodyguard_court_position
-						has_character_flag = competing_knight_position
-					}
-					any_court_position_holder = {
-						type = akolouthos_court_position
-						has_character_flag = competing_knight_position
+				save_temporary_scope_as = unop_temp_employee #Unop Fix this aptitude check by ensuring we are looking at the liege court
+				employer ?= {
+					OR = {
+						any_court_position_holder = {
+							type = bodyguard_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
+						any_court_position_holder = {
+							type = akolouthos_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
 					}
 				}
 			}
-			add = 30
-			desc = competing_knight_position_desc
+			add = {
+				value = 30
+				desc = competing_knight_position_desc
+			}
 		}
 		add = court_position_aptitude_traveling_friends_value
 		add = court_position_aptitude_family_business_value
@@ -8897,6 +9132,7 @@ champion_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -8927,6 +9163,18 @@ champion_court_position = {
 	valid_character = {
 		scope:employee = {
 			champion_validity_trigger = { EMPLOYER = scope:liege }
+			OR = {
+				custom_tooltip = {
+					text = none_is_not_a_slave
+					carnx_is_slave_trigger = no
+				}
+				custom_tooltip = {
+					text = none_liege_can_employ_slaves
+					scope:liege = {
+						carnx_is_slave_employment_enabled_trigger = yes
+					}
+				}
+			}
 		}
 	}
 
@@ -9528,7 +9776,7 @@ court_brewmaster_court_position = {
 	}
 }
 
-lady_in_waiting_court_position = {
+lady_in_waiting_court_position = { # EP1
 	sort_order = 205
 	max_available_positions = 2
 	minimum_rank = duchy # Should only be available for dukes or higher tiers
@@ -9612,6 +9860,7 @@ lady_in_waiting_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -9708,7 +9957,7 @@ lady_in_waiting_court_position = {
 	salary = {
 		round = no
 		gold = {
-			value = medium_court_position_salary # Update X_salary_tooltip if script_value is changed
+			value = tiny_court_position_salary # Update X_salary_tooltip if script_value is changed
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = { court_position_inner_circle_salary_trigger = { POS = lady_in_waiting } }
@@ -9946,7 +10195,7 @@ lady_in_waiting_court_position = {
 }
 
 ### Kingdom Tier Court Positions ### ( Sort order 199 - 100 )
-royal_architect_court_position = {
+royal_architect_court_position = { # EP1
 	sort_order = 199
 	max_available_positions = 1
 	minimum_rank = kingdom # Should only be available for kings and emperors
@@ -10041,6 +10290,7 @@ royal_architect_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -10125,7 +10375,7 @@ royal_architect_court_position = {
 	salary = {
 		round = no
 		gold = {
-			value = medium_court_position_salary # Update X_salary_tooltip if script_value is changed
+			value = minor_court_position_salary # Update X_salary_tooltip if script_value is changed
 			# Set to 0 with Dynasty Perk Inner Circle
 			if = {
 				limit = { court_position_inner_circle_salary_trigger = { POS = royal_architect } }
@@ -10489,6 +10739,7 @@ high_almoner_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -10706,7 +10957,7 @@ high_almoner_court_position = {
 	}
 }
 
-court_poet_court_position = {
+court_poet_court_position = { # EP1
 	sort_order = 180
 	max_available_positions = 1
 	minimum_rank = duchy # Usually available only to kings++, but at times available to dukes
@@ -11715,6 +11966,7 @@ cupbearer_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -11869,7 +12121,7 @@ cupbearer_court_position = {
 	}
 }
 
-food_taster_court_position = {
+food_taster_court_position = { # EP1
 	sort_order = 165
 	max_available_positions = 1
 	minimum_rank = duchy # Usually available only to kings++, but at times available to dukes
@@ -12007,6 +12259,7 @@ food_taster_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -12406,6 +12659,7 @@ keeper_of_swans_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -12798,6 +13052,7 @@ court_jester_court_position = {
 
 	is_shown = {
 		is_landed_or_landless_administrative = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -13156,7 +13411,7 @@ court_jester_court_position = {
 	}
 }
 
-executioner_court_position = {
+executioner_court_position = { # EP1
 	sort_order = 140
 	max_available_positions = 1
 	minimum_rank = kingdom # Should only be available for kings and emperors
@@ -13236,6 +13491,7 @@ executioner_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes
@@ -13487,7 +13743,7 @@ executioner_court_position = {
 	}
 }
 
-bodyguard_court_position = {
+bodyguard_court_position = { # EP1
 	sort_order = {
 		value = 131
 		if = { # Lower for landless
@@ -13500,6 +13756,16 @@ bodyguard_court_position = {
 	max_available_positions = 2
 
 	skill = prowess
+
+	#AGOT Disabled
+	#court_position_asset = {
+	#	trigger = {
+	#		culture = { has_cultural_pillar = heritage_mongolic }
+	#	}
+	#	animation = menacing
+	#	background = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	#	localization_key = bodyguard_court_position_nomadic
+	#}
 
 	court_position_asset = {
 		animation = menacing
@@ -13550,6 +13816,42 @@ bodyguard_court_position = {
 			add = {
 				value = 5
 				desc = court_position_positions_of_power_perk_friend
+			}
+		}
+		# Nomad Yurt
+		if = {
+			limit = {
+				employer.domicile ?= {
+					has_domicile_building_or_higher = bodyguard_yurt_01
+				}
+			}
+			add = {
+				value = 0
+				if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_bodyguard_aptitude_lvl_3
+						}
+					}
+					add = 30
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_bodyguard_aptitude_lvl_2
+						}
+					}
+					add = 20
+				}
+				else_if = {
+					limit = {
+						employer.domicile ?= {
+							has_domicile_parameter = nomad_yurt_increased_bodyguard_aptitude_lvl_1
+						}
+					}
+					add = 10
+				}
+				desc = bodyguard_yurt_01_domicile_building
 			}
 		}
 		if = {
@@ -13743,24 +14045,31 @@ bodyguard_court_position = {
 		if = {
 			limit = {
 				has_character_flag = competing_knight_position
-				OR = {
-					any_court_position_holder = {
-						type = bodyguard_court_position
-						has_character_flag = competing_knight_position
-						NOT = { this = prev }
-					}
-					any_court_position_holder = {
-						type = champion_court_position
-						has_character_flag = competing_knight_position
-					}
-					any_court_position_holder = {
-						type = akolouthos_court_position
-						has_character_flag = competing_knight_position
+				save_temporary_scope_as = unop_temp_employee #Unop Fix this aptitude check by ensuring we are looking at the liege court
+				employer ?= {
+					OR = {
+						any_court_position_holder = {
+							type = bodyguard_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
+						any_court_position_holder = {
+							type = champion_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
+						any_court_position_holder = {
+							type = akolouthos_court_position
+							has_character_flag = competing_knight_position
+							NOT = { this = scope:unop_temp_employee }
+						}
 					}
 				}
 			}
-			add = 30
-			desc = competing_knight_position_desc
+			add = {
+				value = 30
+				desc = competing_knight_position_desc
+			}
 		}
 		# Estate bonus
 		if = {
@@ -13805,6 +14114,44 @@ bodyguard_court_position = {
 			}
 		}
 
+		if = { # Cherbi / Chief Bodyguard bonus
+			limit = {
+				exists = liege.court_position:cherbi_court_position
+			}
+			switch = {
+				trigger = "liege.court_position:cherbi_court_position.aptitude(cherbi_court_position)"
+				1 = { 
+					add = {
+						value = 1 
+						desc = court_position_bodyguard_cherbi_modifier
+					}
+				}
+				2 = {
+					add = {
+						value = 4
+						desc = court_position_bodyguard_cherbi_modifier
+					}
+				}
+				3 = { 
+					add = {
+						value = 7
+						desc = court_position_bodyguard_cherbi_modifier
+					}
+				}
+				4 = {
+					add = {
+						value = 10
+						desc = court_position_bodyguard_cherbi_modifier
+					}
+				}
+				5 = {
+					add = {
+						value = 15
+						desc = court_position_bodyguard_cherbi_modifier
+					}
+				}
+			}
+		}
 		add = court_position_aptitude_eunuch_tradition_value
 		add = court_position_aptitude_family_business_value
 		add = court_position_aptitude_high_penalty_value
@@ -13846,6 +14193,21 @@ bodyguard_court_position = {
 		agot_is_landless_nw_character = no
 		NOT = { government_has_flag = government_is_custom_landless }
 		#AGOT Added - Bloodriders have their own version of Bodyguard
+		NOT = { faith = { has_doctrine_parameter = can_make_bloodriders } }
+	}
+
+	valid_position = {
+		trigger_if = {
+			limit = {
+				government_has_flag = government_is_nomadic
+			}
+			domicile ?= {
+				has_domicile_building_or_higher = character_warfare_yurt_01
+			}
+		}
+		#AGOT Added
+		agot_is_landless_nw_character = no
+		#Bloodriders have their own version of Bodyguard
 		NOT = { faith = { has_doctrine_parameter = can_make_bloodriders } }
 	}
 
@@ -14171,15 +14533,9 @@ bodyguard_court_position = {
 		add = court_position_debt_considerations_value
 		add = carnx_court_position_candidate_slave_value
 	}
-	#AGOT Added
-	valid_position = { 
-		agot_is_landless_nw_character = no
-		#AGOT Added - Bloodriders have their own version of Bodyguard
-		NOT = { faith = { has_doctrine_parameter = can_make_bloodriders } }
-	}
 }
 
-court_artificer_court_position = {
+court_artificer_court_position = { # EP1
 	sort_order = 130
 	max_available_positions = 3
 	minimum_rank = kingdom
@@ -14265,6 +14621,7 @@ court_artificer_court_position = {
 	is_shown = {
 		is_landed_or_landless_administrative = yes
 		has_ep1_court_positions_dlc_trigger = yes
+		NOT = { government_has_flag = government_is_nomadic }
 		trigger_if = {
 			limit = {
 				is_ai = yes

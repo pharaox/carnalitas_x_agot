@@ -26,9 +26,12 @@
 	}
 
 	valid_position = {
-		NOT = { government_has_flag = government_is_landless_adventurer }
-		#AGOT Added
-		NOT = { government_has_flag = government_is_custom_landless }
+		NOR = { 
+			government_has_flag = government_is_landless_adventurer 
+			government_has_flag = government_is_nomadic
+			#AGOT Added
+			government_has_flag = government_is_custom_landless
+		}
 	}
 
 	tooltip = game_concept_chancellor_desc
@@ -67,11 +70,23 @@
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		carnx_can_be_chancellor_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		can_be_chancellor_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
 		#AGOT Added
 		NOT = { has_character_flag = nw_ranger_title }
+		OR = {
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
+			custom_tooltip = {
+				text = none_liege_can_employ_slaves
+				root.liege_or_court_owner = {
+					carnx_is_slave_employment_enabled_trigger = yes
+				}
+			}
+		}
 	}
 
 	on_get_position = {
@@ -119,9 +134,12 @@ councillor_steward = {
 	tooltip = game_concept_steward_desc
 
 	valid_position = {
-		NOT = { government_has_flag = government_is_landless_adventurer }
-		#AGOT Added
-		NOT = { government_has_flag = government_is_custom_landless }
+		NOR = { 
+			government_has_flag = government_is_landless_adventurer 
+			government_has_flag = government_is_nomadic
+			#AGOT Added
+			government_has_flag = government_is_custom_landless
+		}
 	}
 
 	modifier = {
@@ -159,11 +177,23 @@ councillor_steward = {
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		carnx_can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
 		#AGOT Added
 		NOT = { has_character_flag = nw_ranger_title }
+		OR = {
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
+			custom_tooltip = {
+				text = none_liege_can_employ_slaves
+				root.liege_or_court_owner = {
+					carnx_is_slave_employment_enabled_trigger = yes
+				}
+			}
+		}
 	}
 
 	on_get_position = {
@@ -211,9 +241,12 @@ councillor_marshal = {
 	tooltip = game_concept_marshal_desc
 
 	valid_position = {
-		NOT = { government_has_flag = government_is_landless_adventurer }
-		#AGOT Added
-		NOT = { government_has_flag = government_is_custom_landless }
+		NOR = { 
+			government_has_flag = government_is_landless_adventurer 
+			government_has_flag = government_is_nomadic
+			#AGOT Added
+			government_has_flag = government_is_custom_landless
+		}
 	}
 
 	modifier = {
@@ -257,12 +290,12 @@ councillor_marshal = {
 		OR = {
 			AND = {
 				exists = root.liege_or_court_owner
-				carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+				can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
 				NOT = { root.liege_or_court_owner = title:k_the_wall.holder }
 			}
 			AND = {
 				exists = root.liege_or_court_owner
-				carnx_can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
+				can_be_marshal_trigger = { COURT_OWNER = root.liege_or_court_owner }
 				root.liege_or_court_owner = title:k_the_wall.holder
 				title:k_the_wall.holder = { NOT = { has_character_flag = fr_assign_block } }
 				has_trait = nightswatch
@@ -280,6 +313,18 @@ councillor_marshal = {
 					has_character_flag = nw_ranger_title
 				}
 
+			}
+		}
+		OR = {
+			custom_tooltip = {
+				text = none_is_not_a_slave
+				carnx_is_slave_trigger = no
+			}
+			custom_tooltip = {
+				text = none_liege_can_employ_slaves
+				root.liege_or_court_owner = {
+					carnx_is_slave_employment_enabled_trigger = yes
+				}
 			}
 		}
 	}
@@ -362,7 +407,7 @@ councillor_spymaster = {
 
 	valid_character = {
 		exists = root.liege_or_court_owner
-		carnx_can_be_spymaster_trigger = { COURT_OWNER = root.liege_or_court_owner }
+		can_be_spymaster_trigger = { COURT_OWNER = root.liege_or_court_owner }
 		#AGOT Disabled
 		# NOT = { this = character:528 }
 		#AGOT Added
@@ -611,7 +656,7 @@ councillor_court_chaplain = {
 		OR = {
 			AND = {
 				exists = root.liege_or_court_owner
-				carnx_can_be_court_chaplain_trigger = { COURT_OWNER = root.liege_or_court_owner }
+				can_be_court_chaplain_trigger = { COURT_OWNER = root.liege_or_court_owner }
 			}
 			AND = {
 				has_title = title:k_the_most_devout
@@ -620,6 +665,23 @@ councillor_court_chaplain = {
 					exists = faith.religious_head
 					faith.religious_head = prev
 				}
+			}
+		}
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+	}
+
+	valid_position = {
+		NOR = { 
+			government_has_flag = government_is_landless_adventurer 
+			government_has_flag = government_is_nomadic
+			#AGOT Added
+			government_has_flag = government_is_custom_landless
+			government_has_flag = government_is_nw
+			any_liege_or_above = {
+				government_has_flag = government_is_nw
 			}
 		}
 	}
@@ -733,14 +795,6 @@ councillor_court_chaplain = {
 	}
 
 	#AGOT Added
-	valid_position = {
-		NOR = {
-			government_has_flag = government_is_nw
-			any_liege_or_above = {
-				government_has_flag = government_is_nw
-			}
-		}
-	}
 }
 
 councillor_vizier = {
@@ -770,12 +824,12 @@ councillor_vizier = {
 				}
 			}
 		}
+		#AGOT Added
+		NOT = { has_character_flag = nw_ranger_title }
 		custom_tooltip = {
 			text = none_is_not_a_slave
 			carnx_is_slave_trigger = no
 		}
-		#AGOT Added
-		NOT = { has_character_flag = nw_ranger_title }
 	}
 
 	on_get_position = {
@@ -796,5 +850,397 @@ councillor_vizier = {
 	barbershop_data = {
 		position = { 763.0 261.00  }
 		click_to_front = yes
+	}
+}
+
+councillor_kurultai_1 = {
+	name = councillor_kurultai
+	tooltip = game_concept_kurultai_desc
+
+	valid_position = {
+		government_has_flag = government_is_nomadic
+	}
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+		can_be_kurultai_trigger = { 
+			COURT_OWNER = root.liege_or_court_owner 
+			CP1 = councillor_kurultai_2
+			CP2 = councillor_kurultai_3
+			CP3 = councillor_kurultai_4
+		}
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+	}
+	
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		diplomacy = 1
+		scale = kurultai_chancellor_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		stewardship = 1
+		scale = kurultai_steward_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		martial = 1
+		scale = kurultai_marshal_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		learning = 1
+		scale = kurultai_court_chaplain_learn_on_the_job_scale
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_income = 0.5
+		scale = council_scaled_monthly_income
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		herd_gain_mult = 0.05
+		herd_capacity_mult = 0.05
+		scale = council_scaled_by_liege_tier_nomad
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		levy_size = 0.05
+		scale = council_scaled_by_liege_tier_not_nomad
+	}
+
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		fellow_vassal_opinion = 10
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+	}
+
+	on_fired_from_position = {
+		if = {
+			limit = {
+				exists = root.liege_or_court_owner
+				liege_or_court_owner = { is_ai = no }
+			}
+			liege_or_court_owner = {
+				add_prestige = major_prestige_loss
+			}
+		}
+		fired_from_council_position_effect = yes
+	}
+
+	portrait_animation = survey
+
+	barbershop_data = {
+		position = { 918.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_kurultai_2 = {
+	name = councillor_kurultai
+	tooltip = game_concept_kurultai_desc
+
+	valid_position = {
+		government_has_flag = government_is_nomadic
+	}
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+		can_be_kurultai_trigger = { 
+			COURT_OWNER = root.liege_or_court_owner 
+			CP1 = councillor_kurultai_1
+			CP2 = councillor_kurultai_3
+			CP3 = councillor_kurultai_4
+		}
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+	}
+	
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		diplomacy = 1
+		scale = kurultai_chancellor_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		stewardship = 1
+		scale = kurultai_steward_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		martial = 1
+		scale = kurultai_marshal_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		learning = 1
+		scale = kurultai_court_chaplain_learn_on_the_job_scale
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_income = 0.5
+		scale = council_scaled_monthly_income
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		herd_gain_mult = 0.05
+		herd_capacity_mult = 0.05
+		scale = council_scaled_by_liege_tier_nomad
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		levy_size = 0.05
+		scale = council_scaled_by_liege_tier_not_nomad
+	}
+
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		fellow_vassal_opinion = 10
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+	}
+
+	on_fired_from_position = {
+		if = {
+			limit = {
+				exists = root.liege_or_court_owner
+				liege_or_court_owner = { is_ai = no }
+			}
+			liege_or_court_owner = {
+				add_prestige = major_prestige_loss
+			}
+		}
+		fired_from_council_position_effect = yes
+	}
+
+	portrait_animation = hunting_falcon
+
+	barbershop_data = {
+		position = { 1268.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_kurultai_3 = {
+	name = councillor_kurultai
+	tooltip = game_concept_kurultai_desc
+
+	valid_position = {
+		government_has_flag = government_is_nomadic
+	}
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+		can_be_kurultai_trigger = { 
+			COURT_OWNER = root.liege_or_court_owner 
+			CP1 = councillor_kurultai_1
+			CP2 = councillor_kurultai_2
+			CP3 = councillor_kurultai_4
+		}
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+	}
+	
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		diplomacy = 1
+		scale = kurultai_chancellor_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		stewardship = 1
+		scale = kurultai_steward_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		martial = 1
+		scale = kurultai_marshal_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		learning = 1
+		scale = kurultai_court_chaplain_learn_on_the_job_scale
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_income = 0.5
+		scale = council_scaled_monthly_income
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		herd_gain_mult = 0.05
+		herd_capacity_mult = 0.05
+		scale = council_scaled_by_liege_tier_nomad
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		levy_size = 0.05
+		scale = council_scaled_by_liege_tier_not_nomad
+	}
+
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		fellow_vassal_opinion = 10
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+	}
+
+	on_fired_from_position = {
+		if = {
+			limit = {
+				exists = root.liege_or_court_owner
+				liege_or_court_owner = { is_ai = no }
+			}
+			liege_or_court_owner = {
+				add_prestige = major_prestige_loss
+			}
+		}
+		fired_from_council_position_effect = yes
+	}
+
+	portrait_animation = hunting_shortbow_aim_arrow_default
+
+	barbershop_data = {
+		position = { 1618.0 172.0  }
+		click_to_front = no
+	}
+}
+
+councillor_kurultai_4 = {
+	name = councillor_kurultai
+	tooltip = game_concept_kurultai_desc
+
+	valid_position = {
+		government_has_flag = government_is_nomadic
+	}
+
+	valid_character = {
+		exists = root.liege_or_court_owner
+		can_be_kurultai_trigger = { 
+			COURT_OWNER = root.liege_or_court_owner 
+			CP1 = councillor_kurultai_1
+			CP2 = councillor_kurultai_2
+			CP3 = councillor_kurultai_3
+		}
+		custom_tooltip = {
+			text = none_is_not_a_slave
+			carnx_is_slave_trigger = no
+		}
+	}
+	
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		diplomacy = 1
+		scale = kurultai_chancellor_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		stewardship = 1
+		scale = kurultai_steward_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		martial = 1
+		scale = kurultai_marshal_learn_on_the_job_scale
+	}
+
+	council_owner_modifier = {
+		name = learn_on_the_job_modifier
+		learning = 1
+		scale = kurultai_court_chaplain_learn_on_the_job_scale
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_income = 0.5
+		scale = council_scaled_monthly_income
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		herd_gain_mult = 0.05
+		herd_capacity_mult = 0.05
+		scale = council_scaled_by_liege_tier_nomad
+	}
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		monthly_prestige = 0.15
+		levy_size = 0.05
+		scale = council_scaled_by_liege_tier_not_nomad
+	}
+
+
+	modifier = {
+		name = councillor_kurultai_modifier
+		fellow_vassal_opinion = 10
+	}
+
+	on_get_position = {
+		got_council_position_effect = yes
+	}
+
+	on_fired_from_position = {
+		if = {
+			limit = {
+				exists = root.liege_or_court_owner
+				liege_or_court_owner = { is_ai = no }
+			}
+			liege_or_court_owner = {
+				add_prestige = major_prestige_loss
+			}
+		}
+		fired_from_council_position_effect = yes
+	}
+
+	portrait_animation = shepherd_with_sheep
+
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
 	}
 }

@@ -6,6 +6,7 @@ astapori = {
 	heritage = heritage_ghiscari
 	language = language_valyrian
 	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
 
 	traditions = {
 		agot_tradition_slavers_bay

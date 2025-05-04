@@ -28,6 +28,8 @@
   * Entire file
 * `common/court_positions/types/00_court_positions.txt`
   * Entire file
+* `common/court_positions/types/00_mpo_court_positions.txt`
+  * Entire file
 * `common/culture/cultures/00_agot_cul_ghiscari.txt`
   * `astapori`
 * `common/decisions/dlc_decisions/ep_3/06_ep3_laamp_decisions.txt`

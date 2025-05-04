@@ -1,11 +1,4 @@
-﻿carnx_can_be_executioner_trigger = {
-	is_capable_adult = yes
-	NOT = { is_spouse_of = $LIEGE$ }
-	is_ruler = no
-	can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = $LIEGE$ }
-}
-
-# CSR Court Positions
+﻿# CSR Court Positions
 
 carnx_can_be_slave_captain_trigger = {
 	custom_tooltip = {
