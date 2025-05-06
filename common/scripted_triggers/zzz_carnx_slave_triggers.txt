@@ -66,7 +66,6 @@ carnx_is_slave_employment_enabled_trigger = {
 		government_has_flag = government_is_clan
 		government_has_flag = government_is_administrative # Free Cities
 		has_character_modifier = carnx_slavery_attitude_employer_modifier
-		carnx_agot_is_slavery_accepted_trigger = yes
 	}
 }
 
@@ -76,7 +75,6 @@ carnx_is_slave_concubines_enabled_trigger = {
 			text = faith_or_culture_allows_polygamy_or_concubines_tt
 			carnx_is_polygamous_faith_or_culture_trigger = yes
 		}
-		carnx_agot_is_slavery_accepted_trigger = yes
 	}
 }
 
@@ -89,7 +87,6 @@ carnx_is_slave_soldiers_enabled_trigger = {
 		government_has_flag = government_is_clan
 		government_has_flag = government_is_administrative
 		has_character_modifier = carnx_slavery_attitude_employer_modifier
-		carnx_agot_is_slavery_accepted_trigger = yes
 	}
 }
 
@@ -110,7 +107,6 @@ carnx_is_slave_eunuchs_enabled_trigger = {
 			text = can_appoint_chief_eunuch_name_tt
 			culture = { has_cultural_parameter = can_appoint_chief_eunuch }
 		}
-		carnx_agot_is_slavery_accepted_trigger = yes
 	}
 }
 
