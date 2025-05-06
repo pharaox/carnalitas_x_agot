@@ -27,24 +27,19 @@ The main CSR mod divides the existing council and court positions into ones that
 
 #### Council Positions
 
-In addition to the 4 council positions that are available to slaves in CSR, the following AGOT council positions are also available to slaves: *Admiral*, and *Castellan*. The remaining AGOT council positions are not available to slaves, for the following reasons:
+In addition to the council and court positions that are available to slaves in CSR, this mod makes some of the AGOT council and court positions available to slaves as well. Some positions are only available to slaves if your government is administrative (Free Cities) or you have the *Slave Employer* attitude, to reflect the fact that such important roles may be held by slaves only if they were considered more loyal than other available options, which is the case only in the Free Cities according to the lore.
 
-* *Personal Steward* is available to the Night's Watch and is therefore incompatible with slavery.
-* *Kingsguard* positions are only available to The Iron Throne and are reserved for powerful highborn knights.
+#### AGOT Council Positions
 
-In the main CSR mod, *Chancellor*, *Steward*, and *Marshal* are only available to slaves if your government is clan or tribal. In CSR AGOT, they are available to slaves also if your government form is feudal, free city, or pirate. Note that "feudal" governments are mostly found in Essos, the corresponding Westeros government form is "feudal paramountcy".
+* The following AGOT council positions are available to slaves: *Admiral*.
+* The following AGOT council positions are available to slaves only if your government is administrative or you have the *Slave Employer* attitude: *Castellan*.
+* The remaining AGOT council positions are not available to slaves, since they are only available to the Night's Watch or The Iron Throne, and therefore incompatible with slavery.
 
-#### Court Positions
+#### AGOT Court Positions
 
-In addition to the 16 court positions that are available to slaves in CSR, the following 5 AGOT court positions are also available to slaves: *Captain of the Household Guard*, *Keeper of the Cells*, *Harbormaster*, *Master-at-Arms*, and *Court Smith*. The remaining AGOT court positions are not available to slaves, for the following reasons:
-
-* *Maester* requires its holder to be a member of the Master's order. It is not clear from the sources if an enslaved Maester can continue to serve as such, so I left it out to be on the safe side.
-* *Septon* and *Septa* are religious and therefore incompatible with slavery.
-* *Warden of the North*, etc. are only available to The Iron Throne and are practically reserved for powerful vassals holding to corresponding kingships.
-* *Commander of the Gold Cloaks* is only available to Kings Landing and is therefore incompatible with slavery.
-* Night's Watch positions are only available to the Night's Watch and are therefore incompatible with slavery.
-
-In the main CSR mod, *Cupbearer*, is only available to slaves if your government is clan or tribal. In CSR AGOT, this position, as well as *Harbormaster* and *Master-at-Arms* are available to slaves also if your government form is feudal, free city, or pirate.
+* The following AGOT court positions are available to slaves: *Captain of the Household Guard*, *Keeper of the Cells*, *Court Smith*, *Head Dragonkeeper*.
+* The following AGOT court positions are available to slaves only if your government is administrative or you have the *Slave Employer* attitude: *Harbormaster*, *Master-at-Arms*.
+* The remaining AGOT court positions are not available to slaves, since they have special requirements that make them incompatible with slavery.
 
 ### New Slave Court Positions
 
