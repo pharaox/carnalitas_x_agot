@@ -2,7 +2,7 @@
 
 ## Version 0.8.1
 
-* Adapted to AGOT 0.4.3.4.
+* Adapted to AGOT 0.4.3.4 and CSR 0.25.3.
 
 ## Version 0.8.0
 
