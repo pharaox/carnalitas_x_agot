@@ -9,7 +9,7 @@
 ## 00_relations.txt
 ## 00_agot_court_position_triggers.txt
 
-# AGOT COURT POSITIONS
+#AGOT COURT POSITIONS
 #Maester
 #Captain of Household Guard
 #Septon
@@ -1509,7 +1509,7 @@ gaoler_court_position = {
 ####	King's Landing / Iron Throne Positions 	####
 ####################################################
 
-# AGOT : Amanes
+#AGOT : Amanes
 harbormaster_court_position = {
 	sort_order = 971
 	max_available_positions = 1

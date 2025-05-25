@@ -5,7 +5,7 @@
 	agot_is_available_for_anything = yes
 	#AGOT Added cause mutes should get less events really but we might change it later
 	NOT = { has_trait = mute }
-	# AGOT Added
+	#AGOT Added
 	is_human = yes
 	NOT = { agot_is_fake_dead = yes }
 	NOT = { has_variable = agot_rr_is_companion_leader }

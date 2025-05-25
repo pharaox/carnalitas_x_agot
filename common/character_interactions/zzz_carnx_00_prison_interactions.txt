@@ -158,8 +158,9 @@ release_from_prison_interaction = {
 					if = {
 						limit = {
 							this.gold > 0
-							NOT = {
+							NOR = {
 								has_character_flag = realm_priest
+								has_character_flag = was_bookmaker
 							}
 						}
 						pay_short_term_gold = { target = scope:actor gold = this.gold }
@@ -265,7 +266,7 @@ release_from_prison_interaction = {
 					}
 				}
 
-				# AGOT Added, Banish to Essos - Landed Character
+				#AGOT Added, Banish to Essos - Landed Character
 				if = {
 					limit = {
 						scope:agot_banish_to_essos = yes
@@ -298,7 +299,7 @@ release_from_prison_interaction = {
 						target = scope:actor
 					}
 				}
-				# AGOT Added, Banish to Essos - Unlanded Character
+				#AGOT Added, Banish to Essos - Unlanded Character
 				else_if = {
 					limit = {
 						AND = {
@@ -367,7 +368,7 @@ release_from_prison_interaction = {
 						target = scope:actor
 					}
 				}
-				# AGOT Added, Banish to Essos - Pool Character
+				#AGOT Added, Banish to Essos - Pool Character
 				else_if = {
 					limit = {
 						AND = {
@@ -978,7 +979,7 @@ release_from_prison_interaction = {
 		localization = "RELEASE_DEMAND_CONVERSION"
 		is_shown = {
 			NOT = { scope:recipient.faith = scope:actor.faith }
-			# AGOT Added, NW doesn't care about faith
+			#Added, NW doesn't care about faith
 			scope:actor = {
 				NOT = { has_trait = nightswatch }
 			}
@@ -1029,7 +1030,7 @@ release_from_prison_interaction = {
 					}
 				}
 			}
-			# AGOT ADDED, doctrine_syncretism_the_cult
+			#AGOT Added, doctrine_syncretism_the_cult
 			custom_description = {
 				text = AGOT_FAITH_CANNOT_DEMAND_CONVERSION
 				NOT = {
@@ -1165,7 +1166,7 @@ release_from_prison_interaction = {
 				carnx_is_slave_trigger = no
 			}
 
-			# AGOT Added, NW cannot banish
+			#AGOT Added, NW cannot banish
 			scope:actor = {
 				NOT = { has_trait = nightswatch }
 			}
@@ -1228,7 +1229,7 @@ release_from_prison_interaction = {
 			scope:recipient = {
 				carnx_is_slave_trigger = no
 			}
-			# AGOT Added
+			#AGOT Added
 			scope:actor = {
 				NOT = { has_trait = nightswatch }
 			}
