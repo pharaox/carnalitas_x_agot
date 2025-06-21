@@ -1,0 +1,4 @@
+﻿l_french:
+ carnx_agot_cant_interact_with_merchant: "[CHARACTER.GetShortUIName] est le $agot_artifact_keeper_head_text$"
+ carnx_agot_wildlings_cant_interact_with_non_wildlings: "[CHARACTER.GetShortUIName] est un sauvageon"
+ carnx_agot_non_wildlings_cant_interact_with_wildlings: "[CHARACTER.GetShortUIName] n'est pas un sauvageon"

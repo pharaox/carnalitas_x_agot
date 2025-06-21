@@ -1,0 +1,3 @@
+﻿l_french:
+ carnx_slavery_crime_opinion: "[GetTrait('carnx_agot_faith_slaver').GetName( GetNullCharacter )] reconnu"
+ carnx_slavery_intolerant_opinion: "[GetTrait('carnx_agot_faith_slaver').GetName( GetNullCharacter )] notoire"

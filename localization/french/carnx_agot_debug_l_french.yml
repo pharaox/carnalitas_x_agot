@@ -1,0 +1,81 @@
+﻿l_french:
+ # Council positions
+ carnx_debug_msg_admiral_received: "$carnx_debug_prefix$: Admiral council position received"
+ carnx_debug_msg_admiral_revoked: "$carnx_debug_prefix$: Admiral council position revoked"
+ carnx_debug_msg_castellan_received: "$carnx_debug_prefix$: Castellan council position received"
+ carnx_debug_msg_castellan_revoked: "$carnx_debug_prefix$: Castellan council position revoked"
+
+ # Court positions
+ carnx_debug_msg_household_guard_received: "$carnx_debug_prefix$: Household Guard court position received"
+ carnx_debug_msg_household_guard_revoked: "$carnx_debug_prefix$: Household Guard court position revoked"
+ carnx_debug_msg_household_guard_invalidated: "$carnx_debug_prefix$: Household Guard court position invalidated"
+ carnx_debug_msg_gaoler_received: "$carnx_debug_prefix$: Gaoler court position received"
+ carnx_debug_msg_gaoler_revoked: "$carnx_debug_prefix$: Gaoler court position revoked"
+ carnx_debug_msg_gaoler_invalidated: "$carnx_debug_prefix$: Gaoler court position invalidated"
+ carnx_debug_msg_harbormaster_received: "$carnx_debug_prefix$: Harbormaster court position received"
+ carnx_debug_msg_harbormaster_revoked: "$carnx_debug_prefix$: Harbormaster court position revoked"
+ carnx_debug_msg_harbormaster_invalidated: "$carnx_debug_prefix$: Harbormaster court position invalidated"
+ carnx_debug_msg_master_at_arms_received: "$carnx_debug_prefix$: Master at Arms court position received"
+ carnx_debug_msg_master_at_arms_revoked: "$carnx_debug_prefix$: Master at Arms court position revoked"
+ carnx_debug_msg_master_at_arms_invalidated: "$carnx_debug_prefix$: Master at Arms court position invalidated"
+ carnx_debug_msg_court_smith_received: "$carnx_debug_prefix$: Court Smith court position received"
+ carnx_debug_msg_court_smith_revoked: "$carnx_debug_prefix$: Court Smith Guard court position revoked"
+ carnx_debug_msg_court_smith_invalidated: "$carnx_debug_prefix$: Court Smith court position invalidated"
+ carnx_debug_msg_head_dragonkeeper_received: "$carnx_debug_prefix$: Head Dragonkeeper court position received"
+ carnx_debug_msg_head_dragonkeeper_revoked: "$carnx_debug_prefix$: Head Dragonkeeper Guard court position revoked"
+ carnx_debug_msg_head_dragonkeeper_invalidated: "$carnx_debug_prefix$: Head Dragonkeeper court position invalidated"
+
+ # Adding courtiers
+ carnx_debug_msg_adding_courtier_nightswatch: "$carnx_debug_prefix$: Adding slave courtier nightswatch"
+ carnx_debug_msg_adding_courtier_silent_sister: "$carnx_debug_prefix$: Adding slave courtier silent_sister"
+ carnx_debug_msg_adding_courtier_kingsguard: "$carnx_debug_prefix$: Adding slave courtier kingsguard"
+ carnx_debug_msg_adding_courtier_wildling: "$carnx_debug_prefix$: Adding slave courtier wildling"
+
+ # Freeing slaves
+ carnx_debug_msg_freeing_slave_nightswatch: "$carnx_debug_prefix$: Freeing slave nightswatch"
+ carnx_debug_msg_freeing_slave_silent_sister: "$carnx_debug_prefix$: Freeing slave silent_sister"
+
+ # Handling special characters
+ carnx_debug_msg_removing_from_nightswatch: "$carnx_debug_prefix$: Removing from Night's Watch"
+ carnx_debug_msg_removing_from_silent_sisters: "$carnx_debug_prefix$: Removing from Silent Sisterhood"
+ carnx_debug_msg_removing_from_kingsguard: "$carnx_debug_prefix$: Removing from Kingsguard"
+ carnx_debug_msg_sending_to_nightswatch: "$carnx_debug_prefix$: Sending to Night's Watch"
+ carnx_debug_msg_sending_to_silent_sisters: "$carnx_debug_prefix$: Sending to Silent Sisterhood"
+ carnx_debug_msg_sending_to_kingsguard_ruler: "$carnx_debug_prefix$: Sending to Kingsguard ruler"
+
+ # AGOT slavery interactions
+ carnx_debug_msg_character_sold_into_slavery: "$carnx_debug_prefix$: Character sold into slavery"
+
+ # AGOT slavery wars
+ carnx_debug_msg_slave_raid_cb_war_started: "$slave_raid_cb$ war started"
+ carnx_debug_msg_slave_raid_cb_war_won_attacker: "$slave_raid_cb$ war won by attacker"
+ carnx_debug_msg_slave_raid_cb_war_won_defender: "$slave_raid_cb$ war won by defender"
+ carnx_debug_msg_slave_raid_cb_war_white_peace: "$slave_raid_cb$ war ended in white piece"
+ carnx_debug_msg_slave_raid_cb_war_invalidated: "$slave_raid_cb$ war invalidated"
+ carnx_debug_msg_free_slaves_cb_war_started: "$free_slaves_cb$ war started"
+ carnx_debug_msg_free_slaves_cb_war_won_attacker: "$free_slaves_cb$ war won by attacker"
+ carnx_debug_msg_free_slaves_cb_war_won_defender: "$free_slaves_cb$ war won by defender"
+ carnx_debug_msg_free_slaves_cb_war_white_peace: "$free_slaves_cb$ war ended in white piece"
+ carnx_debug_msg_free_slaves_cb_war_invalidated: "$free_slaves_cb$ war invalidated"
+ carnx_debug_msg_slavery_revolt_war_started: "$slavery_revolt$ war started"
+ carnx_debug_msg_slavery_revolt_war_won_attacker: "$slavery_revolt$ war won by attacker"
+ carnx_debug_msg_slavery_revolt_war_won_defender: "$slavery_revolt$ war won by defender"
+ carnx_debug_msg_slavery_revolt_war_white_peace: "$slavery_revolt$ war ended in white piece"
+ carnx_debug_msg_slavery_revolt_war_invalidated: "$slavery_revolt$ war invalidated"
+
+ # AGOT slavery laws
+ carnx_debug_msg_slavery_disallowed_law_passed: "$carnx_debug_prefix$: $slavery_disallowed_law$ passed ($carnx_slavery_allowed_law_ai_will_do$)"
+ carnx_debug_msg_slavery_allowed_law_passed: "$carnx_debug_prefix$: $slavery_allowed_law$ passed ($carnx_slavery_allowed_law_ai_will_do$)"
+
+ # AGOT slavery effects
+ carnx_debug_msg_realm_slavery_ended: "$carnx_debug_prefix$: Realm slavery ended"
+ carnx_debug_msg_realm_slavery_forcibly_ended: "$carnx_debug_prefix$: Realm slavery forcibly ended"
+
+ carnx_agot_debug_msg_freeing_illegal_slave: "$carnx_debug_prefix$: Freeing illegal slave, emancipator: $carnx_emancipator$"
+ carnx_agot_debug_msg_forcibly_freeing_slave: "$carnx_debug_prefix$: Forcibly freeing slave, emancipator: $carnx_emancipator$"
+
+ carnx_agot_debug_msg_character_acquired_faith_slaver_trait: "$carnx_debug_prefix$: Character acquired Slaver trait"
+ carnx_agot_debug_msg_migrating_faith_slaver_traits: "Migrating Slaver traits from CSR to CSR AGOT"
+
+ carnx_slavery_allowed_law_ai_will_do: "[THIS.Var('slavery_allowed_law_ai_will_do').GetValue]"
+ carnx_emancipator: "[THIS.Var('emancipator').Char.GetFullNameNoTooltip]"

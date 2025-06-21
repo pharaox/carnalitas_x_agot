@@ -1,0 +1,16 @@
+﻿l_french:
+ trait_carnx_agot_unsullied: "Immaculé"
+ trait_carnx_agot_unsullied_desc: "Ce personnage est un soldat esclave eunuque, entraîné dès l'enfance à l'obéissance absolue et à l'art de la guerre."
+ trait_carnx_agot_unsullied_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] est un soldat esclave eunuque, entraîné dès l'enfance à l'obéissance absolue et à l'art de la guerre."
+
+ trait_carnx_agot_thrall: "Serf"
+ trait_carnx_agot_thrall_desc: "Ce personnage a été réduit en esclavage et appartient désormais à un autre, bien qu'il ne puisse être ni vendu ni offert."
+ trait_carnx_agot_thrall_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] a été réduit en esclavage et appartient désormais à un autre, bien qu'il ne puisse être ni vendu ni offert."
+
+ trait_carnx_agot_indentured: "Servitude contractuelle"
+ trait_carnx_agot_indentured_desc: "Ce personnage est lié par un contrat de servitude et appartient à un autre, bien qu'il ne puisse être ni vendu ni offert."
+ trait_carnx_agot_indentured_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] est lié par un contrat de servitude et appartient à un autre, bien qu'il ne puisse être ni vendu ni offert."
+
+ trait_carnx_agot_faith_slaver: "Esclavagiste"
+ trait_carnx_agot_faith_slaver_desc: "Ce personnage a réduit d'autres individus en esclavage."
+ trait_carnx_agot_faith_slaver_character_desc: "[ROOT.GetCharacter.GetFirstNameNoTooltip] a réduit d'autres individus en esclavage."

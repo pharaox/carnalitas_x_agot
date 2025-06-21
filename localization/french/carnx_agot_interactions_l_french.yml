@@ -1,0 +1,19 @@
+﻿l_french:
+ # Raisons liées aux modificateurs postes au conseil
+ carnx_lacking_admiral_reason: "[recipient.GetShortUIName|U] manque d'un bon $councillor_admiral$ : $VALUE|=+0$"
+ carnx_lacking_castellan_reason: "[recipient.GetShortUIName|U] manque d'un bon $councillor_castellan$ : $VALUE|=+0$"
+ # Raisons liées aux modificateurs postes à la cour
+ carnx_lacking_household_guard_reason: "[recipient.GetShortUIName|U] manque d'un bon $household_guard_court_position$ : $VALUE|=+0$"
+ carnx_lacking_gaoler_reason: "[recipient.GetShortUIName|U] manque d'un bon $gaoler_court_position$ : $VALUE|=+0$"
+ carnx_lacking_harbormaster_reason: "[recipient.GetShortUIName|U] manque d'un bon $harbormaster_court_position$ : $VALUE|=+0$"
+ carnx_lacking_master_at_arms_reason: "[recipient.GetShortUIName|U] manque d'un bon $master_at_arms_court_position$ : $VALUE|=+0$"
+ carnx_lacking_court_smith_reason: "[recipient.GetShortUIName|U] manque d'un bon $court_smith_court_position$ : $VALUE|=+0$"
+ carnx_lacking_head_dragonkeeper_reason: "[recipient.GetShortUIName|U] manque d'un bon $head_dragonkeeper_court_position$ : $VALUE|=+0$"
+
+ # Raisons liées à l'esclavage
+ carnx_agot_slavery_capital_crime_reason: "L'esclavage est considéré comme un [crime|E] capital par le [laws|E] du suzerain de [recipient.GetShortUIName|U] : $VALUE|=+0$"
+ carnx_agot_slavery_crime_reason: "L'esclavage est considéré comme un [crime|E] par le [laws|E] du suzerain de [recipient.GetShortUIName|U] : $VALUE|=+0$"
+ carnx_agot_slavery_forbidden_reason: "L'esclavage est interdit par le [laws|E] du suzerain de [recipient.GetShortUIName|U] : $VALUE|=+0$"
+ carnx_agot_slavery_accepted_reason: "L'esclavage est accepté par la [faith|E] de [recipient.GetShortUIName|U] : $VALUE|=+0$"
+ carnx_agot_slavery_thralls_enslave_reason: "La capture ou l'asservissement de serfs est autorisé par la [faith|E] de [recipient.GetShortUIName|U] : $VALUE|=+0$"
+ carnx_agot_slavery_thralls_buy_sell_reason: "La vente ou l'achat de serfs est interdit par la [faith|E] de [recipient.GetShortUIName|U] : $VALUE|=+0$"
